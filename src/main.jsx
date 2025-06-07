@@ -10,6 +10,13 @@ import PerakEpiscopal from '@pages/PerakEpiscopal/PerakEpiscopal';
 import DetailEpiscopal from '@pages/PerakEpiscopal/Detail/DetailEpiscopal';
 import Komisi from '@pages/Komisi/Komisi';
 import WilayahKotaKupang from '@pages/Paroki/WilayahKotaKupang/WilayahKotaKupang';
+import DetailKupang from '@pages/Paroki/WilayahKotaKupang/Detail/DetailKupang';
+import WilayahKabupatenKupang from '@pages/Paroki/WilayahKabupatenKupang/WilayahKabupatenKupang';
+import DetailKabupaten from '@pages/Paroki/WilayahKabupatenKupang/Detail/DetailKabupaten';
+import WilayahTts from '@pages/Paroki/WilayahTts/WilayahTts';
+import DetailTts from '@pages/Paroki/WilayahTts/Detail/DetailTts';
+import WilayahKepulauan from '@pages/Paroki/WilayahKepulauan/WilayahKepulauan';
+import DetailKepulauan from '@pages/Paroki/WilayahKepulauan/Detail/DetailKepulauan';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -22,6 +29,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/perak-episcopal/detail/:id" element={<DetailEpiscopal />} /> {/* Halaman Detail Episcopal */}
         <Route path="/komisi/:namaKomisi" element={<Komisi />} /> {/* Halaman Komisi */}
         <Route path="/kota-kupang" element={<WilayahKotaKupang />} /> {/* Halaman Wilayah Kota Kupang */}
+        <Route path="/paroki-kota-kupang/:id" element={<DetailKupang />} /> {/* Halaman Detail Paroki */}
+        <Route path="/kabupaten-kupang" element={<WilayahKabupatenKupang />} /> {/* Halaman Wilayah Kabupaten Kupang */}
+        <Route path="/paroki-kabupaten-kupang/:id" element={<DetailKabupaten />} /> {/* Halaman Detail Paroki Kabupaten */}
+        <Route path="/tts" element={<WilayahTts />} /> {/* Halaman Wilayah TTS */}
+        <Route path="/paroki-tts/:id" element={<DetailTts />} /> {/* Halaman Detail Paroki TTS */}
+        <Route path="/kepulauan" element={<WilayahKepulauan />} /> {/* Halaman Wilayah Kepulauan */}
+        <Route path="/paroki-kepulauan/:id" element={<DetailKepulauan />} /> {/* Halaman Detail Paroki Kepulauan */}
       </Route>
     </Routes>
   </BrowserRouter>
