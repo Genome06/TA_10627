@@ -1,0 +1,17 @@
+/* Area Konten (Scrollable) */
+.content {
+  flex: 1;
+  overflow-y: auto; /* Konten bisa discroll */
+  padding: 20px;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  padding-top: 80px; /* Sesuaikan dengan tinggi navbar */
+  overflow-y: auto;
+}

@@ -1,0 +1,254 @@
+/* PerakEpiscopal.css */
+.perak-episcopal-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding-top: 110px; /* Sesuaikan dengan tinggi navbar */
+}
+
+.perak-episcopal-content {
+  padding: 20px 0 50px;
+}
+
+.perak-episcopal-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.perak-episcopal-title {
+  color: #FF8F00;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.perak-episcopal-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #FF8F00;
+  border-radius: 2px;
+}
+
+.perak-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.perak-article-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.perak-article-card:hover {
+  transform: translateY(-5px);
+}
+
+.perak-card-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.perak-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.perak-article-card:hover .perak-card-image img {
+  transform: scale(1.05);
+}
+
+.perak-card-content {
+  padding: 20px;  
+}
+
+.perak-card-content h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.perak-article-meta {
+  display: flex;
+  gap: 10px;
+  color: #FF8F00;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.perak-excerpt {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.perak-read-more {
+  background: none;
+  border: none;
+  color: #FF8F00;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none; /* Hilangkan underline meski <a> */
+}
+
+.perak-read-more:hover {
+  text-decoration: underline;
+}
+
+.perak-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.perak-nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FF8F00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.perak-nav-button:hover:not(.disabled) {
+  background: #e67e00;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.perak-nav-button.disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.perak-nav-button .icon {
+  font-size: 0.9rem;
+}
+
+.perak-page-info {
+  color: #555;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .perak-articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .perak-episcopal-content {
+    padding: 30px 0;
+  }
+  
+  .perak-episcopal-title {
+    font-size: 2rem;
+  }
+
+  .perak-nav-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .perak-articles-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .perak-pagination {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .perak-page-info {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .perak-episcopal-title {
+    font-size: 1.8rem;
+  }
+  
+  .perak-card-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .perak-pagination {
+    padding: 15px 0;
+  }
+
+  .perak-nav-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .perak-page-info {
+    font-size: 0.8rem;
+  }
+
+  .perak-nav-button .icon {
+    font-size: 0.7rem;
+  }
+}
+
+/* Untuk layar kecil (misal < 400px) sembunyikan teks "Post" */
+@media (max-width: 400px) {
+  .perak-nav-button span:not(.icon) {
+    display: none;
+  }
+
+  .perak-nav-button {
+    padding: 8px 10px;
+  }
+
+  /* .perak-nav-button::after {
+    content: "Older";
+  }
+
+  .perak-nav-button.newer::after {
+    content: "Next";
+  } */
+
+  .perak-nav-button span.icon {
+    margin: 0;
+  }
+}

@@ -1,0 +1,730 @@
+/* === Navbar Sticky === */
+.navbarContainer {
+  width: 100%;
+  position: fixed; /* Kunci navbar di atas */
+  top: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Top Bar */
+.top-bar {
+  background-color: #FF8F00;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 7%;
+  font-size: 14px;
+}
+
+.contact-info span {
+  margin-right: 15px;
+}
+
+.social-icons span {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Main Navbar */
+.navbarRegular {
+  width: 100%;
+  max-width: 100%; /* Pastikan tidak melebihi viewport */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 5%;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Optional: subtle shadow */
+  position: relative; /* Tambahkan ini */
+  /*overflow: hidden; Prevent content overflow */
+}
+
+/* Garis bawah full width */
+.navbarRegular::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px; /* Sesuaikan dengan ketebalan border */
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+  z-index: 1;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 50px !important;
+  cursor: pointer !important;
+  height: auto !important;
+  object-fit: contain !important;
+  padding: 0 !important;
+}
+
+.judulLogo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+/* Desktop Navigation */
+.nav-links.desktop {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 999;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  padding-top: 80px;
+  overflow-y: auto;
+}
+
+.mobile-menu-overlay.open {
+  transform: translateX(0);
+}
+
+.nav-links.mobile .nav-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+
+.nav-links.mobile .nav-item .has-dropdown.active + .dropdown-menu.mobile {
+  max-height: 500px;
+}
+
+.nav-links.mobile .dropdown-item {
+  padding: 12px 0;
+  display: block;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Tambahkan ini di bawah .nav-links li */
+.nav-links li a {
+  color: inherit; /* Warisi warna dari parent */
+  text-decoration: none !important;
+  display: block;
+}
+
+/* Hapus outline saat focus */
+.nav-links li a:focus {
+  outline: none;
+}
+
+/* Hapus warna biru visited link */
+.nav-links li a:visited {
+  color: inherit;
+}
+
+/* Pastikan warna hover tetap orange */
+.nav-links li:hover a {
+  color: #FF8F00 !important;
+}
+
+/* Search Container */
+.search-container {
+  transition: all 0.3s ease;
+  width: auto;
+  min-width: 150px;
+}
+
+.search-container.expanded {
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #f2f2f2;
+  padding: 5px 15px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 6px;
+  font-size: 16px;
+  width: 100%;
+  min-width: 0;
+  transition: all 0.3s ease;
+}
+
+.search-icon {
+  color: #555;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+/* === Konten Utama (Pastikan ini ada di file CSS utama) === */
+.main-content {
+  margin-top: 0; /* Tidak perlu margin atas */
+  padding: 20px;
+  overflow-y: auto; /* Aktifkan scroll konten */
+}
+
+/* Transisi untuk efek smooth */
+.navbarRegular,
+.logo-section,
+.nav-links,
+.search-box {
+  transition: all 0.3s ease;
+}
+
+.nav-link-with-dropdown { 
+  cursor: pointer; 
+}
+
+/* Scrolled State */
+.navbarContainer.scrolled .navbarRegular {
+  padding: 10px 5%;
+}
+
+.navbarContainer.scrolled .logo {
+  width: 40px !important;
+}
+
+.navbarContainer.scrolled .judulLogo {
+  font-size: 18px;
+}
+
+.navbarContainer.scrolled .nav-links {
+  gap: 15px;
+}
+
+.navbarContainer.scrolled .search-box {
+  padding: 3px 10px;
+}
+
+.active-indicator {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: #FF8F00;
+  border-radius: 2px;
+  animation: slideIn 0.3s ease;
+}
+
+.active-nav-link {
+  color: #FF8F00;
+  font-weight: 600;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 80%;
+    opacity: 1;
+  }
+}
+
+/* Badge halaman aktif */
+.current-page-badge {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FF8F00;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 0 0 8px 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  animation: badgeFade 0.5s ease;
+}
+
+@keyframes badgeFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.dropdown-arrow {
+  margin-left: 5px;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-item:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px 20px;
+  color: #555;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: #f8f8f8;
+  color: #FF8F00;
+  padding-left: 25px;
+}
+
+.nav-links.mobile {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 90%;
+  max-width: 500px;
+}
+
+.nav-item.mobile {
+  padding: 12px 0;
+  position: relative;
+}
+
+.mobile-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links.mobile .nav-item a {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 0;
+  display: block;
+  flex-grow: 1;
+}
+
+.dropdown-menu.mobile {
+  background: #f8f8f8;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu.mobile .dropdown-item {
+  display: block;
+  padding: 8px 0;
+  color: #555;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu.mobile .dropdown-item:hover {
+  color: #FF8F00;
+  padding-left: 5px;
+}
+
+.orange-divider {
+  height: 1px;
+  background: #FF8F00;
+  margin: 10px 0;
+  opacity: 0.3;
+}
+
+/* Hapus garis pembatas untuk item terakhir */
+.nav-item.mobile:last-child .orange-divider {
+  display: none;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none; /* Sembunyikan di desktop */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #FF8F00;
+  cursor: pointer;
+  z-index: 1001;
+  margin-left: 15px; /* Tambahkan margin kiri */
+  margin-right: 15px; /* Tambahkan margin kanan */
+}
+
+/* Garis oranye di atas menu mobile */
+.orange-top-border {
+  height: 3px;
+  background: #FF8F00;
+  width: 100%;
+  display: block; /* Pastikan display block */
+}
+
+/* Mobile Menu - Posisi di bawah navbar */
+.mobile-menu {
+  position: absolute;
+  top: 100%; 
+  left: 50%; /* Pusatkan secara horizontal */
+  background: white;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 0;
+  display: block;
+  max-height: 80vh;
+  overflow-y: auto;
+  width: auto; /* Ubah dari 100% menjadi auto */
+  min-width: 90%; /* Lebar minimum di mobile */
+  max-width: 600px; /* Lebar maksimum */
+  border-radius: 0 0 10px 10px; /* Tambahkan rounded corner di bawah */
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+
+/* Ubah bagian .mobile-menu-content */
+.mobile-menu-content {
+  width: 100%; /* Gunakan 100% dari parent */
+  padding: 20px; /* Tambahkan padding */
+}
+
+
+.menu-category {
+  margin-bottom: 25px;
+}
+
+.category-title {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.category-divider {
+  height: 2px;
+  background: #FF8F00;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.submenu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu-items li {
+  margin-bottom: 12px;
+}
+
+.submenu-item {
+  color: #555;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: block;
+  padding: 8px 15px;
+  transition: all 0.2s;
+  position: relative;
+  border-left: 3px solid transparent;
+}
+
+.submenu-item:hover {
+  color: #FF8F00;
+  border-left: 3px solid #FF8F00;
+  background: #fff8f0;
+  padding-left: 20px;
+}
+
+.mobile-search-container {
+  display: none; /* Sembunyikan di desktop */
+}
+
+.mobile-search-toggle {
+  background: none;
+  border: none;
+  color: #FF8F00;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none; /* Sembunyikan di desktop */
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  z-index: 1001;
+}
+
+.mobile-search-expanded {
+  display: none;
+  align-items: center;
+  background: #f2f2f2;
+  border-radius: 30px;
+  padding: 5px 15px;
+  animation: expandSearch 0.3s ease;
+  width: 150px; /* Lebar awal */
+}
+
+.mobile-search-expanded input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 6px;
+  font-size: 16px;
+  width: 100%;
+}
+
+@keyframes expandSearch {
+  from { width: 40px; opacity: 0; }
+  to { width: 150px; opacity: 1; }
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .navbarRegular {
+    padding: 15px 3%;
+  }
+  
+  .nav-links.desktop {
+    gap: 15px;
+  }
+}
+
+@media (min-width: 981px) {
+  .mobile-menu-overlay {
+    display: none;
+  }
+  
+  .mobile-menu {
+    display: none;
+  }
+  
+  /* Sembunyikan tombol hamburger di desktop */
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+}
+
+/* Responsif: tampilkan tombol hamburger di mobile */
+@media (max-width: 980px) {
+  .mobile-menu-toggle {
+    display: flex; /* Ubah dari block menjadi flex untuk alignment */
+    align-items: center;
+    margin-left: 0; /* Hapus margin kiri */
+    margin-right: 0; /* Hapus margin kanan */
+  }
+  
+  /* Sembunyikan nav-links desktop di mobile */
+  .nav-links.desktop {
+    display: none;
+  }
+  
+  /* Sesuaikan padding untuk navbar di mobile */
+  .navbarRegular {
+    padding: 12px 3%; /* Kurangi padding */
+    position: relative;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Pastikan tidak wrap */
+  }
+  
+  .logo {
+    width: 40px !important;
+  }
+  
+  .judulLogo {
+    font-size: 18px;
+    /* white-space: nowrap; */
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+    max-width: 150px; /* Batasi lebar judul */
+  }
+
+  /* KELOMPOKKAN SEARCH DAN HAMBURGER */
+  .navbar-icons-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara search dan hamburger */
+    margin-left: auto; /* Dorong ke kanan */
+  }
+
+  .mobile-search-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-search-toggle {
+    display: flex;
+    background: none;
+    border: none;
+    color: #FF8F00;
+    font-size: 1.5rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+  }
+  
+  .mobile-search-expanded {
+    display: flex;
+    align-items: center;
+    background: #f2f2f2;
+    border-radius: 30px;
+    padding: 5px 15px;
+    animation: expandSearch 0.3s ease;
+    width: 300px; /* Lebar awal */
+    position: absolute;
+    right: 60px; /* Sesuaikan dengan posisi hamburger */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+  }
+
+  /* .mobile-search-expanded input {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 6px;
+    font-size: 16px;
+    width: 100%;
+  } */
+
+  @keyframes expandSearch {
+    from { width: 40px; opacity: 0; }
+    to { width: 150px; opacity: 1; }
+  }
+  
+  /* Sembunyikan search desktop di mobile */
+  .search-container {
+    display: none !important;
+  }
+
+  .navbarRegular.search-expanded .mobile-menu-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 580px) {
+  .mobile-menu {
+    left: 0;
+    right: 0;
+    transform: none;
+    min-width: 100%; /* Full width di mobile kecil */
+    border-radius: 0;
+  }
+
+  .mobile-search-expanded {
+    width: 300px;
+    right: 50px;
+  }
+
+  .logo {
+    width: 40px !important;
+  }
+  
+  .judulLogo {
+    font-size: 12px;
+    /* white-space: nowrap; */
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+    max-width: 100px; /* Batasi lebar judul */
+  }
+}
+
+@media (max-width: 520px) {
+  .mobile-search-expanded {
+    width: 250px;
+    right: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-search-expanded {
+    width: 170px;
+    right: 50px;
+  }
+}
+
+/* ================== DROPDOWN DESKTOP ================== */
+.nav-item {
+  position: relative;
+  padding-bottom: 5px; /* Ruang untuk garis oranye */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 3px); /* Turunkan 3px untuk garis oranye */
+  left: 0;
+  width: 260%; /* Sesuaikan lebar dengan konten */
+  background: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 0 0 4px 4px;
+  padding: 10px 0;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+  /* Hapus transform sebelumnya */
+  transform: none !important;
+  /* Garis oranye di atas dropdown */
+  border-top: 3px solid #FF8F00;
+}
+
+/* Animasi baru untuk dropdown */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Perbaiki hover state */
+.nav-item:hover .dropdown-menu {
+  display: block; /* Pastikan dropdown muncul saat hover */
+}
+
+/* Garis oranye saat hover
+.nav-item:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #FF8F00;
+} */

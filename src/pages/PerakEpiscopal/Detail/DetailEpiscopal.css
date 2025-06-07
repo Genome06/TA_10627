@@ -1,0 +1,220 @@
+/* DetailEpiscopal.css */
+.detail-episcopal-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding-top: 130px; /* Sesuaikan dengan tinggi navbar */
+}
+
+.detail-episcopal-content {
+  padding: 20px 0 50px;
+}
+
+.detail-episcopal-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.detail-episcopal-title {
+  color: #FF8F00;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.detail-episcopal-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #FF8F00;
+  border-radius: 2px;
+}
+
+.episcopal-article-meta {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  color: #FF8F00;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* Styling untuk gambar utama */
+.episcopal-featured-image {
+  margin: 30px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.episcopal-featured-image img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.episcopal-article-content {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.episcopal-article-content p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.episcopal-article-content strong {
+  color: #FF8F00;
+  font-size: 1.1em;
+}
+
+/* Navigation */
+.episcopal-detail-navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0 20px;
+  margin-top: 30px;
+}
+
+.episcopal-nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FF8F00;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.episcopal-nav-button:hover:not(.disabled) {
+  background: #e67e00;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.episcopal-nav-button:hover {
+  background: #e67e00;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.episcopal-nav-button.disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.episcopal-nav-button.prev {
+  margin-right: auto;
+}
+
+.episcopal-nav-button.next {
+  margin-left: auto;
+}
+
+.episcopal-nav-button .icon {
+  font-size: 0.9rem;
+}
+
+.episcopal-loading {
+  text-align: center;
+  padding: 100px 0;
+  font-size: 1.5rem;
+  color: #FF8F00;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .detail-episcopal-container {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .detail-episcopal-title {
+    font-size: 2rem;
+  }
+
+  .episcopal-article-content {
+    padding: 30px;
+    font-size: 1rem;
+  }
+  
+  /* Perbaikan tata letak tombol navigasi pada mobile */
+  .episcopal-detail-navigation {
+    flex-direction: row; /* Tetap dalam satu baris */
+    flex-wrap: wrap; /* Jika tidak cukup ruang, tombol bisa turun */
+    gap: 10px;
+    padding: 30px 0;
+  }
+
+  .episcopal-nav-button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    flex: 1; /* Agar tombol memanfaatkan ruang yang ada */
+    min-width: 120px; /* Lebar minimum */
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-episcopal-title {
+    font-size: 1.8rem;
+    padding-bottom: 10px;
+  }
+  
+  .detail-episcopal-title::after {
+    width: 60px;
+    height: 2px;
+  }
+
+  .episcopal-article-meta {
+    font-size: 0.95rem;
+  }
+  
+  .episcopal-article-content {
+    padding: 20px;
+  }
+  
+  .episcopal-featured-image {
+    margin: 20px 0;
+  }
+
+  .episcopal-detail-navigation {
+    padding: 20px 0;
+  }
+  
+  .episcopal-nav-button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .episcopal-nav-button .icon {
+    font-size: 0.7rem;
+  }
+  
+  /* Untuk layar kecil, sembunyikan teks "Post" */
+  .episcopal-nav-button span:not(.icon) {
+    display: none;
+  }
+}

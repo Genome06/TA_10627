@@ -1,0 +1,116 @@
+/* ArahDasarKAK.css */
+.arah-dasar-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding-top: 110px; /* Sesuaikan dengan tinggi navbar */
+}
+
+.arah-dasar-content {
+  padding: 20px 0 50px;
+}
+
+.arah-dasar-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.arah-dasar-title {
+  color: #FF8F00;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.arah-dasar-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #FF8F00;
+  border-radius: 2px;
+}
+
+.arah-dasar-text {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  line-height: 1.8;
+}
+
+.arah-dasar-text h2 {
+  color: #FF8F00;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.arah-dasar-text h3 {
+  color: #2c3e50;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.arah-dasar-text ol,
+.arah-dasar-text ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.arah-dasar-text li {
+  margin-bottom: 10px;
+}
+
+/* Responsif untuk tablet */
+@media (max-width: 992px) {
+  .arah-dasar-title {
+    font-size: 2rem;
+  }
+
+  .arah-dasar-text {
+    padding: 30px;
+  }
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+  .arah-dasar-content {
+    padding: 30px 0;
+  }
+  
+  .arah-dasar-text {
+    padding: 20px;
+  }
+  
+  .arah-dasar-text p, 
+  .arah-dasar-text li {
+    font-size: 0.95rem;
+  }
+
+  .arah-dasar-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {  
+  .arah-dasar-text {
+    padding: 15px;
+  }
+  
+  .arah-dasar-text p, 
+  .arah-dasar-text li {
+    font-size: 0.9rem;
+  }
+
+  .arah-dasar-title {
+    font-size: 1.8rem;
+  }
+}
