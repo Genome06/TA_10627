@@ -52,7 +52,7 @@ const Footer = () => {
             </div>
             <div className="contact-item">
               <span className="contact-label">Email:</span>
-              <span className="contact-value">info@keuskupanagungkupang.org</span>
+              <span className="contact-value">keuskupanagungkupang@gmail.com</span>
             </div>
             <div className="social-media">
               <a href="https://www.facebook.com/DiosesAgungKupang" target="_blank" rel="noreferrer">

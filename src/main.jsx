@@ -18,6 +18,8 @@ import DetailTts from '@pages/Paroki/WilayahTts/Detail/DetailTts';
 import WilayahKepulauan from '@pages/Paroki/WilayahKepulauan/WilayahKepulauan';
 import DetailKepulauan from '@pages/Paroki/WilayahKepulauan/Detail/DetailKepulauan';
 import Download from '@pages/Download/Download';
+import Kontak from '@pages/Kontak/Kontak';
+import Galeri from '@pages/Galeri/Galeri';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -38,6 +40,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/kepulauan" element={<WilayahKepulauan />} /> {/* Halaman Wilayah Kepulauan */}
         <Route path="/kepulauan/paroki-kepulauan/:id" element={<DetailKepulauan />} /> {/* Halaman Detail Paroki Kepulauan */}
         <Route path="/informasi/download" element={<Download />} /> {/* Halaman Download */}
+        <Route path="/informasi/kontak" element={<Kontak />} /> {/* Halaman Kontak */}
+        <Route path="/informasi/galeri" element={<Galeri />} /> {/* Halaman Galeri */}
       </Route>
     </Routes>
   </BrowserRouter>
