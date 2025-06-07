@@ -82,7 +82,7 @@ const WilayahTts = () => {
 
         <div className={`tts-paroki-grid slide-${slideDirection}`}>
           {visibleParoki.map(paroki => (
-            <Link to={`/paroki-tts/${paroki.id}`} key={paroki.id} className="tts-paroki-card">
+            <Link to={`/tts/paroki-tts/${paroki.id}`} key={paroki.id} className="tts-paroki-card">
               <div className="tts-paroki-image">
                 <img src={paroki.image} alt={paroki.name} />
               </div>

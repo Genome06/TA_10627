@@ -31,10 +31,10 @@ const dropdownItems = {
     { title: 'Wilayah Kepulauan', path: '/kepulauan' }
   ],
   'Informasi': [
-    { title: 'Download Area', path: '/download' },
-    { title: 'Kontak', path: '/kontak' },
-    { title: 'Galeri', path: '/galeri' },
-    { title: 'Kegiatan Keuskupan', path: '/kegiatan-keuskupan' }
+    { title: 'Download Area', path: '/informasi/download' },
+    { title: 'Kontak', path: '/informasi/kontak' },
+    { title: 'Galeri', path: '/informasi/galeri' },
+    { title: 'Kegiatan Keuskupan', path: '/informasi/kegiatan-keuskupan' }
   ]
 };
 

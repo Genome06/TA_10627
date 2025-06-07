@@ -17,6 +17,7 @@ import WilayahTts from '@pages/Paroki/WilayahTts/WilayahTts';
 import DetailTts from '@pages/Paroki/WilayahTts/Detail/DetailTts';
 import WilayahKepulauan from '@pages/Paroki/WilayahKepulauan/WilayahKepulauan';
 import DetailKepulauan from '@pages/Paroki/WilayahKepulauan/Detail/DetailKepulauan';
+import Download from '@pages/Download/Download';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -29,13 +30,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/perak-episcopal/detail/:id" element={<DetailEpiscopal />} /> {/* Halaman Detail Episcopal */}
         <Route path="/komisi/:namaKomisi" element={<Komisi />} /> {/* Halaman Komisi */}
         <Route path="/kota-kupang" element={<WilayahKotaKupang />} /> {/* Halaman Wilayah Kota Kupang */}
-        <Route path="/paroki-kota-kupang/:id" element={<DetailKupang />} /> {/* Halaman Detail Paroki */}
+        <Route path="/kota-kupang/paroki-kota-kupang/:id" element={<DetailKupang />} /> {/* Halaman Detail Paroki */}
         <Route path="/kabupaten-kupang" element={<WilayahKabupatenKupang />} /> {/* Halaman Wilayah Kabupaten Kupang */}
-        <Route path="/paroki-kabupaten-kupang/:id" element={<DetailKabupaten />} /> {/* Halaman Detail Paroki Kabupaten */}
+        <Route path="/kabupaten-kupang/paroki-kabupaten-kupang/:id" element={<DetailKabupaten />} /> {/* Halaman Detail Paroki Kabupaten */}
         <Route path="/tts" element={<WilayahTts />} /> {/* Halaman Wilayah TTS */}
-        <Route path="/paroki-tts/:id" element={<DetailTts />} /> {/* Halaman Detail Paroki TTS */}
+        <Route path="/tts/paroki-tts/:id" element={<DetailTts />} /> {/* Halaman Detail Paroki TTS */}
         <Route path="/kepulauan" element={<WilayahKepulauan />} /> {/* Halaman Wilayah Kepulauan */}
-        <Route path="/paroki-kepulauan/:id" element={<DetailKepulauan />} /> {/* Halaman Detail Paroki Kepulauan */}
+        <Route path="/kepulauan/paroki-kepulauan/:id" element={<DetailKepulauan />} /> {/* Halaman Detail Paroki Kepulauan */}
+        <Route path="/informasi/download" element={<Download />} /> {/* Halaman Download */}
       </Route>
     </Routes>
   </BrowserRouter>
