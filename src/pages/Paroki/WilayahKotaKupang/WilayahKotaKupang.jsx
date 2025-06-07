@@ -82,7 +82,7 @@ const WilayahKotaKupang = () => {
 
         <div className={`kota-paroki-grid slide-${slideDirection}`}>
           {visibleParoki.map(paroki => (
-            <Link to={`/paroki-kota-kupang/${paroki.id}`} key={paroki.id} className="kota-paroki-card">
+            <Link to={`/kota-kupang/paroki-kota-kupang/${paroki.id}`} key={paroki.id} className="kota-paroki-card">
               <div className="kota-paroki-image">
                 <img src={paroki.image} alt={paroki.name} />
               </div>

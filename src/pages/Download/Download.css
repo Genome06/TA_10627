@@ -1,0 +1,268 @@
+.download-page {
+  padding-top: 110px; /* Adjust based on navbar height */
+  padding-bottom: 60px;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.download-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.download-container {
+  width: 100%;
+}
+
+.download-title {
+  font-size: 2.5rem;
+  color: #ff9900;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.download-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #ff9900;
+}
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.download-card {
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.download-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.download-card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.download-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.download-card:hover .download-card-image img {
+  transform: scale(1.05);
+}
+
+.download-card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.download-card-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #333;
+  line-height: 1.4;
+  text-align: center; /* Perubahan: judul menjadi terpusat */
+}
+
+.download-item-meta {
+  font-size: 0.85rem;
+  color: #ff9900; /* Perubahan: warna menjadi oranye */
+  margin-bottom: 15px;
+  display: flex;
+  gap: 8px;
+  justify-content: center; /* Perubahan: meta info menjadi terpusat */
+}
+
+.download-excerpt {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.download-button {
+  align-self: center;
+  margin-top: auto;
+  background-color: transparent;
+  color: #333;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.download-button:hover {
+  background-color: transparent;
+  color: #ff9900;
+  box-shadow: none;
+}
+
+.download-icon {
+  font-size: 2rem;
+}
+
+.download-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding: 0 10px;
+}
+
+/* Perubahan: Gaya navigasi seperti PerakEpiscopal */
+.download-nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FF8F00; /* Perubahan: warna latar belakang */
+  color: white; /* Perubahan: warna teks */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.download-nav-button:hover:not(.disabled) {
+  background: #e67e00; /* Perubahan: warna hover */
+  transform: translateY(-2px); /* Perubahan: efek hover */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Perubahan: bayangan hover */
+}
+
+.download-nav-button.disabled {
+  background: #cccccc; /* Perubahan: warna tombol disabled */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.download-page-info {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .download-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .download-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .download-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .download-title {
+    font-size: 2rem;
+  }
+  
+  .download-card-image {
+    height: 180px;
+  }
+  
+  /* Perubahan: pagination tetap dalam posisi row pada tampilan mobile */
+  .download-pagination {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .download-nav-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .download-page-info {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .download-page {
+    padding-bottom: 40px;
+  }
+  
+  .download-content {
+    padding: 0 15px;
+  }
+  
+  .download-title {
+    font-size: 1.8rem;
+  }
+  
+  .download-card-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .download-excerpt {
+    font-size: 0.9rem;
+  }
+  
+  .download-card-image {
+    height: 160px;
+  }
+  
+  .download-nav-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .download-page-info {
+    font-size: 0.8rem;
+  }
+}
+
+/* Untuk layar kecil (misal < 400px) sembunyikan teks "Post" */
+@media (max-width: 400px) {
+  .download-nav-button span:not(.icon) {
+    display: none;
+  }
+
+  .download-nav-button {
+    padding: 8px 10px;
+  }
+
+  .download-nav-button span.icon {
+    margin: 0;
+  }
+}
