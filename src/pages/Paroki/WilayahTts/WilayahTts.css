@@ -1,4 +1,4 @@
-.wilayah-kota-kupang {
+.wilayah-tts {
   padding-top: 130px;
   padding-bottom: 0; /* hilangkan padding bawah besar */
   min-height: 100vh;
@@ -7,7 +7,7 @@
   flex-direction: column;
 }
 
-.kota-kupang-container {
+.tts-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px 50px 20px; /* padding bawah agar pagination tidak mepet footer */
@@ -16,19 +16,19 @@
   flex-direction: column;
 }
 
-.kota-header-section {
+.tts-header-section {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.kota-header-section h1 {
+.tts-header-section h1 {
   color: #FF8F00;
   font-size: 2.5rem;
   position: relative;
   padding-bottom: 15px;
 }
 
-.kota-header-section h1::after {
+.tts-header-section h1::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -40,7 +40,7 @@
   border-radius: 2px;
 }
 
-.kota-paroki-grid {
+.tts-paroki-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
@@ -51,7 +51,7 @@
   /* Hapus min-height agar grid mengikuti jumlah konten */
 }
 
-.kota-paroki-card {
+.tts-paroki-card {
   background: white;
   border-radius: 8px;
   overflow: hidden;
@@ -61,28 +61,28 @@
   color: inherit;
 }
 
-.kota-paroki-card:hover {
+.tts-paroki-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
-.kota-paroki-image {
+.tts-paroki-image {
   height: 200px;
   overflow: hidden;
 }
 
-.kota-paroki-image img {
+.tts-paroki-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s;
 }
 
-.kota-paroki-card:hover .kota-paroki-image img {
+.tts-paroki-card:hover .tts-paroki-image img {
   transform: scale(1.05);
 }
 
-.kota-paroki-name {
+.tts-paroki-name {
   padding: 20px;
   text-align: center;
   color: #2c3e50;
@@ -91,7 +91,7 @@
   font-weight: 600;
 }
 
-.kota-pagination {
+.tts-pagination {
   display: flex;
   justify-content: space-between; /* tombol di kiri dan kanan */
   align-items: center;
@@ -101,7 +101,7 @@
   box-sizing: border-box;
 }
 
-.kota-nav-button {
+.tts-nav-button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -116,30 +116,30 @@
   font-size: 1rem;
 }
 
-.kota-nav-button:hover:not(.disabled) {
+.tts-nav-button:hover:not(.disabled) {
   background: #e67e00;
   transform: translateY(-2px);
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-.kota-nav-button.disabled {
+.tts-nav-button.disabled {
   background: #cccccc;
   cursor: not-allowed;
   opacity: 0.7;
 }
 
-.kota-page-info {
+.tts-page-info {
   color: #555;
   font-weight: 500;
   font-size: 1rem;
 }
 
 /* Animasi Slide */
-.kota-slide-right {
+.tts-slide-right {
   animation: slideInRight 0.5s ease-out;
 }
 
-.kota-slide-left {
+.tts-slide-left {
   animation: slideInLeft 0.5s ease-out;
 }
 
@@ -167,56 +167,56 @@
 
 /* Responsive */
 @media (max-width: 992px) {
-  .kota-paroki-grid {
+  .tts-paroki-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .kota-paroki-name {
+  .tts-paroki-name {
     font-size: 1.1rem;
     padding: 15px;
   }
 }
 
 @media (max-width: 768px) {
-  .kota-header-section h1 {
+  .tts-header-section h1 {
     font-size: 2rem;
   }
 
-  .kota-paroki-grid {
+  .tts-paroki-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .kota-nav-button {
+  .tts-nav-button {
     padding: 10px 20px;
     font-size: 0.9rem;
   }
 
-  .kota-paroki-image {
+  .tts-paroki-image {
     height: 180px;
   }
 }
 
 @media (max-width: 480px) {
-  .kota-header-section h1 {
+  .tts-header-section h1 {
     font-size: 1.8rem;
   }
 
-  .kota-pagination {
+  .tts-pagination {
     flex-direction: row; /* Tetap row di mobile */
     gap: 10px;
     justify-content: space-between;
     align-items: center;
   }
 
-  .kota-nav-button {
+  .tts-nav-button {
     width: auto;
     justify-content: center;
     font-size: 0.8rem;
     padding: 6px 12px;
   }
 
-  .kota-page-info {
+  .tts-page-info {
     order: 0;
     font-size: 0.8rem;
     text-align: center;
