@@ -1,0 +1,409 @@
+.kegiatan-keuskupan {
+  padding-top: 120px;
+  padding-bottom: 60px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.kegiatan-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kegiatan-title {
+  font-size: 2.3rem;
+  color: #ff9900;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.kegiatan-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #ff9900;
+}
+
+/* Filter styles */
+.filter-container {
+  margin-bottom: 30px;
+  position: relative; /* Tambahkan position relative */
+}
+
+.custom-datepicker-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border: 1px solid #ff9900;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 200px;
+  background-color: white;
+  transition: all 0.3s;
+  color: #333;
+  font-size: 0.95rem;
+  z-index: 1; /* Tambahkan z-index */
+}
+
+.custom-datepicker-input:hover {
+  border-color: #e67e00;
+  box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.1);
+}
+
+.dropdown-icon {
+  color: #ff9900;
+}
+
+/* React DatePicker Customization */
+.react-datepicker {
+  font-family: inherit;
+  border-color: #ff9900;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.react-datepicker__header {
+  background-color: #fff5e6;
+  border-bottom: 1px solid #ffecd1;
+}
+
+.react-datepicker__day--selected, 
+.react-datepicker__day--keyboard-selected {
+  background-color: #ff9900;
+}
+
+.react-datepicker__day:hover {
+  background-color: #fff0d9;
+}
+
+.react-datepicker__day-name {
+  color: #ff9900;
+}
+
+.react-datepicker__triangle {
+  border-bottom-color: #fff5e6 !important;
+}
+
+/* Kegiatan List */
+.kegiatan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.kegiatan-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  border: 1px solid #ff99001a;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.kegiatan-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.kegiatan-content {
+  flex: 1;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.kegiatan-image {
+  width: 250px;
+  min-width: 250px;
+  overflow: hidden;
+}
+
+.kegiatan-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.kegiatan-card:hover .kegiatan-image img {
+  transform: scale(1.05);
+}
+
+.kegiatan-card-title {
+  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.kegiatan-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ff9900;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.date-separator {
+  font-weight: 300;
+}
+
+.kegiatan-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kegiatan-readmore {
+  color: #ff9900;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-weight: 600;
+  padding: 0;
+  margin-top: auto;
+  align-self: flex-start;
+  transition: color 0.3s;
+  text-decoration: none; /* Tambahkan ini untuk menghilangkan underline */
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.kegiatan-readmore:hover {
+  color: #e67e00;
+  text-decoration: underline; /* Tampilkan underline hanya saat hover */
+}
+
+.no-kegiatan {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  color: #666;
+}
+
+.reset-filter {
+  margin-top: 15px;
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.reset-filter:hover {
+  background-color: #e67e00;
+}
+
+/* Tambahkan style untuk pagination */
+.kegiatan-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding: 0 10px;
+}
+
+.kegiatan-nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FF8F00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.kegiatan-nav-button:hover:not(.disabled) {
+  background: #e67e00;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.kegiatan-nav-button.disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.kegiatan-page-info {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Responsif untuk pagination */
+@media (max-width: 768px) {
+  .kegiatan-pagination {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+  }
+  
+  .kegiatan-nav-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .kegiatan-page-info {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .kegiatan-pagination {
+    /* Hapus flex-wrap dan justify-content: center */
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 5px; /* Kurangi gap */
+  }
+  
+  .kegiatan-nav-button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    min-width: 32px; /* Tetapkan lebar minimum */
+  }
+  
+  .kegiatan-page-info {
+    font-size: 0.75rem;
+    text-align: center;
+    /* Tambahkan ini agar tak tertekan oleh tombol */
+    flex: 0 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+/* Untuk layar sangat kecil, modifikasi tombol navigasi */
+@media (max-width: 400px) {
+  .kegiatan-nav-button {
+    padding: 6px 8px;
+  }
+  
+  .kegiatan-nav-button .icon {
+    margin: 0;
+  }
+  
+  /* Ubah text content untuk layar kecil */
+  /* .kegiatan-pagination .prev-button-text {
+    display: none;
+  }
+  
+  .kegiatan-pagination .next-button-text {
+    display: none;
+  } */
+}
+
+/* Perbaikan untuk date picker mobile */
+@media (max-width: 576px) {
+  .react-datepicker {
+    width: 280px; /* Lebih kecil untuk layar mobile */
+  }
+  
+  .react-datepicker__month-container {
+    width: 100%;
+  }
+  
+  /* Pastikan kalender tidak terpotong */
+  .react-datepicker-popper {
+    transform-origin: top left !important;
+    inset: auto !important;
+    left: 0 !important;
+    top: 100% !important;
+    margin-top: 10px !important;
+  }
+  
+  /* Perbaikan gaya modifikasi popper */
+  .filter-container {
+    overflow: visible !important;
+  }
+}
+
+/* Perbaikan untuk kartu kegiatan pada tampilan mobile */
+@media (max-width: 768px) {
+  .kegiatan-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .kegiatan-content {
+    order: 2;
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .kegiatan-image {
+    order: 1;
+    width: 100%;
+    height: 200px;
+  }
+  
+  .kegiatan-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .kegiatan-card-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .kegiatan-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  
+  .kegiatan-readmore {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .kegiatan-pagination {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 5px;
+  }
+  
+  .kegiatan-nav-button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    min-width: 32px;
+  }
+  
+  .kegiatan-page-info {
+    font-size: 0.75rem;
+    text-align: center;
+    flex: 0 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

@@ -122,11 +122,17 @@
     border: none;
     color: #FF8F00;
     font-weight: 600;
+    text-decoration: none; /* Hapus underline default */
     cursor: pointer;
     padding: 5px 0;
     display: flex;
     align-items: center;
     gap: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .read-more:hover {
+    text-decoration: underline; /* Tambahkan underline saat hover */
   }
   
   /* Responsif */

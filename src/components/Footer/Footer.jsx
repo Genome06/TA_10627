@@ -31,13 +31,13 @@ const Footer = () => {
               <Link to="/suara-gembala">Suara Gembala</Link>
               <Link to="/konsultasi-iman">Konsultasi Iman</Link>
               <Link to="/renungan-harian">Renungan Harian</Link>
-              <Link to="/download">Download</Link>
+              <Link to="/informasi/download">Download</Link>
             </div>
             <div className="link-column">
               <Link to="/berita-harian">Berita Harian</Link>
               <Link to="/serba-serbi">Serba-Serbi</Link>
               <Link to="/tokoh">Tokoh</Link>
-              <Link to="/galeri">Galeri</Link>
+              <Link to="/informasi/galeri">Galeri</Link>
             </div>
           </div>
         </div>
