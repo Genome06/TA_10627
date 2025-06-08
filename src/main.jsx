@@ -18,6 +18,12 @@ import DetailTts from '@pages/Paroki/WilayahTts/Detail/DetailTts';
 import WilayahKepulauan from '@pages/Paroki/WilayahKepulauan/WilayahKepulauan';
 import DetailKepulauan from '@pages/Paroki/WilayahKepulauan/Detail/DetailKepulauan';
 import Download from '@pages/Download/Download';
+import Kontak from '@pages/Kontak/Kontak';
+import Galeri from '@pages/Galeri/Galeri';
+import KegiatanKeuskupan from '@pages/KegiatanKeuskupan/KegiatanKeuskupan';
+import DetailKegiatan from '@/pages/KegiatanKeuskupan/Detail/DetailKegiatan';
+import SuaraGembala from '@pages/SuaraGembala/SuaraGembala';
+import DetailSuaraGembala from '@pages/SuaraGembala/Detail/DetailSuaraGembala';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -38,6 +44,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/kepulauan" element={<WilayahKepulauan />} /> {/* Halaman Wilayah Kepulauan */}
         <Route path="/kepulauan/paroki-kepulauan/:id" element={<DetailKepulauan />} /> {/* Halaman Detail Paroki Kepulauan */}
         <Route path="/informasi/download" element={<Download />} /> {/* Halaman Download */}
+        <Route path="/informasi/kontak" element={<Kontak />} /> {/* Halaman Kontak */}
+        <Route path="/informasi/galeri" element={<Galeri />} /> {/* Halaman Galeri */}
+        <Route path="/informasi/kegiatan-keuskupan" element={<KegiatanKeuskupan />} /> {/* Halaman Kegiatan Keuskupan */}
+        <Route path="/informasi/kegiatan-keuskupan/detail/:id" element={<DetailKegiatan />} /> {/* Halaman Detail Kegiatan */}
+        <Route path="/suara-gembala" element={<SuaraGembala />} /> {/* Halaman Suara Gembala */}
+        <Route path="/suara-gembala/:id" element={<DetailSuaraGembala />} /> {/* Halaman Detail Suara Gembala */}
       </Route>
     </Routes>
   </BrowserRouter>

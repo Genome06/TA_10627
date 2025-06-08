@@ -1,0 +1,205 @@
+.suara-gembala-page {
+  padding: 2rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding-top: 110px; /* Adjust based on navbar height */
+}
+
+.gembala-page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gembala-page-header h1 {
+  color: #FF8F00;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.gembala-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.gembala-article-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gembala-article-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.gembala-article-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.gembala-article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gembala-article-item:hover .gembala-article-image img {
+  transform: scale(1.05);
+}
+
+.gembala-article-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gembala-article-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #333;
+  line-height: 1.4;
+  text-align: center; /* Center the title */
+}
+
+.gembala-article-meta {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center; /* Center the meta info */
+  gap: 8px; /* Add spacing between elements */
+}
+
+.gembala-article-author {
+  color: #FF8F00;
+  font-weight: 600;
+}
+
+.gembala-article-date,
+.gembala-article-meta span {
+  color: #FF8F00; /* Make date and divider orange */
+}
+
+.gembala-article-excerpt {
+  margin-bottom: 1rem;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.gembala-read-more {
+  display: inline-flex;
+  align-items: center;
+  color: #FF8F00;
+  font-weight: 600;
+  text-decoration: none; /* Hapus underline default */
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+  transition: all 0.3s ease;
+}
+
+.gembala-read-more:hover {
+  color: #e67e00;
+  text-decoration: underline; /* Tambahkan underline saat hover */
+}
+
+/* Pagination styles */
+.gembala-pagination-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.gembala-nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FF8F00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.gembala-nav-button:hover:not(.disabled) {
+  background: #e67e00;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.gembala-nav-button.disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.gembala-page-info {
+  color: #555;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Mobile responsiveness - diperbarui */
+@media screen and (max-width: 768px) {
+  .gembala-articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .gembala-articles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gembala-pagination-container {
+    flex-direction: row; /* Tetap dalam satu baris */
+    gap: 10px;
+  }
+
+  .gembala-nav-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .gembala-page-info {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {  
+  .gembala-nav-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .gembala-page-info {
+    font-size: 0.8rem;
+  }
+}
+
+/* Untuk layar sangat kecil */
+@media screen and (max-width: 400px) {
+  .gembala-nav-button span:not(.icon) {
+    display: none;
+  }
+
+  .gembala-nav-button {
+    padding: 8px 10px;
+  }
+}

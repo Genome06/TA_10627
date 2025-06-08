@@ -83,10 +83,16 @@
   
   .link-column a {
     color: #555;
-    text-decoration: none;
+    text-decoration: none !important;
     transition: color 0.3s;
     text-align: center;
     padding: 8px 0;
+  }
+  
+  /* Tambahkan style khusus untuk download dan galeri jika diperlukan */
+  .link-column a[href="/informasi/download"],
+  .link-column a[href="/informasi/galeri"] {
+    text-decoration: none !important;
   }
   
   .link-column a:hover {
@@ -102,7 +108,7 @@
   
   .contact-info {
     width: 100%;
-    max-width: 300px;
+    max-width: 350px;
   }
   
   .contact-item {
