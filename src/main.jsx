@@ -3,7 +3,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
-import Home from '@pages/Home/Home'; // Menggunakan alias @pages
+
+// Import komponen website utama KAK
+import Home from '@pages/Home/Home';
 import Sejarah from '@pages/Sejarah/sejarah';
 import ArahDasarKAK from '@pages/ArahDasarKAK/ArahDasarKAK';
 import PerakEpiscopal from '@pages/PerakEpiscopal/PerakEpiscopal';
@@ -30,43 +32,93 @@ import SerbaSerbi from '@pages/Serba-Serbi/SerbaSerbi';
 import DetailSerba from '@pages/Serba-Serbi/Detail/DetailSerba';
 import Tokoh from '@pages/Tokoh/Tokoh'; 
 import DetailTokoh from '@pages/Tokoh/Detail/DetailTokoh';
-import RenunganHarian from '@pages/RenunganHarian/RenunganHarian'; // Import Renungan Harian
-import DetailRenungan from '@pages/RenunganHarian/Detail/DetailRenungan'; // Import Detail Renungan
+import RenunganHarian from '@pages/RenunganHarian/RenunganHarian';
+import DetailRenungan from '@pages/RenunganHarian/Detail/DetailRenungan';
+import BeritaHarian from '@pages/BeritaHarian/BeritaHarian';
+import DetailBeritaHarian from '@pages/BeritaHarian/Detail/DetailBeritaHarian';
+
+// Import komponen website pendataan umat
+// import Login from './pagePendataan/Login/Login';
+// Tambahkan import komponen pendataan umat lainnya di sini
+// import Dashboard from './pagePendataan/Dashboard/Dashboard';
+// import DataUmat from './pagePendataan/DataUmat/DataUmat';
+// import TambahUmat from './pagePendataan/TambahUmat/TambahUmat';
+// ...dst
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />}> {/* Parent route dengan navbar */}
-        <Route index element={<Home />} /> {/* Halaman utama */}
-        <Route path="/sejarah" element={<Sejarah />} /> {/* Halaman Sejarah */}
-        <Route path="/arah-dasar-kak" element={<ArahDasarKAK />} /> {/* Halaman Arah Dasar KAK */}
-        <Route path="/perak-episcopal" element={<PerakEpiscopal />} /> {/* Halaman Perak Episcopal */}
-        <Route path="/perak-episcopal/detail/:id" element={<DetailEpiscopal />} /> {/* Halaman Detail Episcopal */}
-        <Route path="/komisi/:namaKomisi" element={<Komisi />} /> {/* Halaman Komisi */}
-        <Route path="/kota-kupang" element={<WilayahKotaKupang />} /> {/* Halaman Wilayah Kota Kupang */}
-        <Route path="/kota-kupang/paroki-kota-kupang/:id" element={<DetailKupang />} /> {/* Halaman Detail Paroki */}
-        <Route path="/kabupaten-kupang" element={<WilayahKabupatenKupang />} /> {/* Halaman Wilayah Kabupaten Kupang */}
-        <Route path="/kabupaten-kupang/paroki-kabupaten-kupang/:id" element={<DetailKabupaten />} /> {/* Halaman Detail Paroki Kabupaten */}
-        <Route path="/tts" element={<WilayahTts />} /> {/* Halaman Wilayah TTS */}
-        <Route path="/tts/paroki-tts/:id" element={<DetailTts />} /> {/* Halaman Detail Paroki TTS */}
-        <Route path="/kepulauan" element={<WilayahKepulauan />} /> {/* Halaman Wilayah Kepulauan */}
-        <Route path="/kepulauan/paroki-kepulauan/:id" element={<DetailKepulauan />} /> {/* Halaman Detail Paroki Kepulauan */}
-        <Route path="/informasi/download" element={<Download />} /> {/* Halaman Download */}
-        <Route path="/informasi/kontak" element={<Kontak />} /> {/* Halaman Kontak */}
-        <Route path="/informasi/galeri" element={<Galeri />} /> {/* Halaman Galeri */}
-        <Route path="/informasi/kegiatan-keuskupan" element={<KegiatanKeuskupan />} /> {/* Halaman Kegiatan Keuskupan */}
-        <Route path="/informasi/kegiatan-keuskupan/detail/:id" element={<DetailKegiatan />} /> {/* Halaman Detail Kegiatan */}
-        <Route path="/suara-gembala" element={<SuaraGembala />} /> {/* Halaman Suara Gembala */}
-        <Route path="/suara-gembala/:id" element={<DetailSuaraGembala />} /> {/* Halaman Detail Suara Gembala */}
-        <Route path="/konsultasi-iman" element={<KonsultasiIman />} /> {/* Halaman Konsultasi Iman */}
-        <Route path="/konsultasi-iman/:id" element={<DetailKonsultasiIman />} /> {/* Halaman Detail Konsultasi Iman */}
-        <Route path="/serba-serbi" element={<SerbaSerbi />} /> {/* Halaman Serba Serbi */}
-        <Route path="/serba-serbi/:id" element={<DetailSerba />} /> {/* Halaman Detail Serba Serbi */}
-        <Route path="/tokoh" element={<Tokoh />} /> {/* Halaman Tokoh */}
-        <Route path="/tokoh/:id" element={<DetailTokoh />} /> {/* Halaman Detail Tokoh */}
-        <Route path="/renungan-harian" element={<RenunganHarian />} /> {/* Halaman Renungan Harian */}
-        <Route path="/renungan-harian/:id" element={<DetailRenungan />} /> {/* Halaman Detail Renungan */}
+      {/* ===== ROUTES WEBSITE UTAMA KAK (dengan navbar dan footer) ===== */}
+      <Route path="/" element={<App />}>
+        {/* Home */}
+        <Route index element={<Home />} />
+        
+        {/* Profil KAK */}
+        <Route path="/sejarah" element={<Sejarah />} />
+        <Route path="/arah-dasar-kak" element={<ArahDasarKAK />} />
+        <Route path="/perak-episcopal" element={<PerakEpiscopal />} />
+        <Route path="/perak-episcopal/detail/:id" element={<DetailEpiscopal />} />
+        
+        {/* Komisi */}
+        <Route path="/komisi/:namaKomisi" element={<Komisi />} />
+        
+        {/* Paroki */}
+        <Route path="/kota-kupang" element={<WilayahKotaKupang />} />
+        <Route path="/kota-kupang/paroki-kota-kupang/:id" element={<DetailKupang />} />
+        <Route path="/kabupaten-kupang" element={<WilayahKabupatenKupang />} />
+        <Route path="/kabupaten-kupang/paroki-kabupaten-kupang/:id" element={<DetailKabupaten />} />
+        <Route path="/tts" element={<WilayahTts />} />
+        <Route path="/tts/paroki-tts/:id" element={<DetailTts />} />
+        <Route path="/kepulauan" element={<WilayahKepulauan />} />
+        <Route path="/kepulauan/paroki-kepulauan/:id" element={<DetailKepulauan />} />
+        
+        {/* Informasi */}
+        <Route path="/informasi/download" element={<Download />} />
+        <Route path="/informasi/kontak" element={<Kontak />} />
+        <Route path="/informasi/galeri" element={<Galeri />} />
+        <Route path="/informasi/kegiatan-keuskupan" element={<KegiatanKeuskupan />} />
+        <Route path="/informasi/kegiatan-keuskupan/detail/:id" element={<DetailKegiatan />} />
+        
+        {/* Rubrik */}
+        <Route path="/suara-gembala" element={<SuaraGembala />} />
+        <Route path="/suara-gembala/:id" element={<DetailSuaraGembala />} />
+        <Route path="/konsultasi-iman" element={<KonsultasiIman />} />
+        <Route path="/konsultasi-iman/:id" element={<DetailKonsultasiIman />} />
+        <Route path="/serba-serbi" element={<SerbaSerbi />} />
+        <Route path="/serba-serbi/:id" element={<DetailSerba />} />
+        <Route path="/tokoh" element={<Tokoh />} />
+        <Route path="/tokoh/:id" element={<DetailTokoh />} />
+        <Route path="/renungan-harian" element={<RenunganHarian />} />
+        <Route path="/renungan-harian/:id" element={<DetailRenungan />} />
+        <Route path="/berita-harian" element={<BeritaHarian />} />
+        <Route path="/berita-harian/:id" element={<DetailBeritaHarian />} />
       </Route>
+      
+      {/* ===== ROUTES WEBSITE PENDATAAN UMAT (tanpa navbar dan footer KAK) ===== */}
+      {/* Semua route pendataan umat dimulai dengan /pendataan untuk konsistensi */}
+      
+      {/* Autentikasi */}
+      {/* <Route path="/login" element={<Login />} /> */}
+      
+      {/* Dashboard dan Menu Utama Pendataan */}
+      {/* <Route path="/pendataan/dashboard" element={<Dashboard />} /> */}
+      
+      {/* Manajemen Data Umat */}
+      {/* <Route path="/pendataan/data-umat" element={<DataUmat />} /> */}
+      {/* <Route path="/pendataan/data-umat/tambah" element={<TambahUmat />} /> */}
+      {/* <Route path="/pendataan/data-umat/:id" element={<DetailUmat />} /> */}
+      {/* <Route path="/pendataan/data-umat/:id/edit" element={<EditUmat />} /> */}
+      
+      {/* Laporan dan Statistik */}
+      {/* <Route path="/pendataan/laporan" element={<Laporan />} /> */}
+      {/* <Route path="/pendataan/statistik" element={<Statistik />} /> */}
+      
+      {/* Pengaturan Akun */}
+      {/* <Route path="/pendataan/pengaturan" element={<Pengaturan />} /> */}
+      {/* <Route path="/pendataan/profil" element={<Profil />} /> */}
+      
+      {/* Route Not Found / 404 */}
+      {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
   </BrowserRouter>
 );

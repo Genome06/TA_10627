@@ -114,18 +114,24 @@
   }
   
   .read-more-berita {
+    align-self: flex-start;
     background: none;
     border: none;
     color: #FF8F00;
     font-weight: 600;
+    text-decoration: none;
     cursor: pointer;
     padding: 5px 0;
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 0.9rem;
+    transition: all 0.3s ease;
   }
   
+  .read-more-berita:hover {
+    text-decoration: underline;
+  }
+
   .nav-arrow-berita {
     background: #FF8F00;
     color: white;
@@ -148,6 +154,31 @@
   
   /* Responsif */
   /* Tambahkan di bagian responsive */
+@media (max-width: 992px) and (min-width: 769px) {
+  .berita-card {
+    flex: 0 0 calc(50% - 10px); /* 2 card per row untuk tablet */
+  }
+  
+  .section-title-berita-harian {
+    font-size: 2rem;
+  }
+  
+  .berita-container {
+    max-width: 95%;
+    margin: 0 auto;
+    gap: 15px;
+  }
+  
+  .cards-wrapper-berita {
+    gap: 15px;
+  }
+  
+  .card-content-berita h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Media Query untuk Mobile - Optimalisasi */
 @media (max-width: 768px) {
   .berita-harian {
     padding: 20px 1% 30px;
@@ -158,13 +189,20 @@
     font-size: 1.8rem;
   }
 
+  .berita-container {
+    max-width: 90%;
+    margin: 0 auto;
+    gap: 10px;
+  }
+  
   .cards-wrapper-berita {
-    padding: 0 30px;
+    padding: 0 10px;
+    gap: 15px;
   }
 
   .berita-card {
-    flex: 0 0 85%;
-    margin: 0 7.5%;
+    flex: 0 0 100%; /* 1 card per row di mobile */
+    margin: 0;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   }
 
@@ -173,28 +211,111 @@
     width: 30px;
     height: 30px;
     font-size: 0.9rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+  
+  .nav-arrow-berita.left {
+    left: -5px;
+  }
+  
+  .nav-arrow-berita.right {
+    right: -5px;
   }
 
   .card-content-berita {
     padding: 12px;
   }
+  
+  .card-content-berita h3 {
+    font-size: 1.1rem;
+    -webkit-line-clamp: 2;
+  }
+  
+  .card-content-berita .content {
+    -webkit-line-clamp: 2;
+    margin-bottom: 10px;
+  }
+  
+  .item-meta-berita {
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+  }
 }
 
+/* Media Query untuk Mobile Kecil - Optimalisasi Lebih Lanjut */
 @media (max-width: 480px) {
   .section-title-berita-harian {
     font-size: 1.6rem;
   }
 
+  .berita-container {
+    max-width: 95%;
+    padding: 0;
+    gap: 8px;
+  }
+
   .cards-wrapper-berita {
-    padding: 0 20px;
+    padding: 0 5px;
   }
 
   .berita-card {
-    flex: 0 0 90%;
-    margin: 0 5%;
+    flex: 0 0 100%;
+    margin: 0;
   }
 
   .card-image-berita {
     height: 140px;
+  }
+  
+  .read-more-berita {
+    font-size: 0.9rem;
+  }
+  
+  .nav-arrow-berita {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Media Query untuk Mobile Sangat Kecil */
+@media (max-width: 360px) {
+  .section-title-berita-harian {
+    font-size: 1.4rem;
+  }
+  
+  .card-image-berita {
+    height: 130px;
+  }
+  
+  .card-content-berita {
+    padding: 10px;
+  }
+  
+  .card-content-berita h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .card-content-berita .content {
+    font-size: 0.85rem;
+  }
+  
+  .item-meta-berita {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .berita-container {
+    gap: 5px;
+  }
+  
+  .nav-arrow-berita {
+    width: 26px;
+    height: 26px;
   }
 }
