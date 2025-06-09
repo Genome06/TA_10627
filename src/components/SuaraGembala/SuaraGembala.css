@@ -5,14 +5,14 @@
     position: relative;
   }
   
-  .section-title {
+  .suara-gembala-section-title {
     text-align: justify;
     color: #FF8F00;
     font-size: 2.2rem;
     margin-bottom: 40px;
   }
-  
-  .articles-container {
+
+  .suara-gembala-articles-container {
     position: relative;
     width: 100%;
     margin: 0 auto;
@@ -20,8 +20,8 @@
     align-items: center;
     gap: 20px;
   }
-  
-  .nav-arrow {
+
+  .suara-gembala-nav-arrow {
     background: #FF8F00;
     color: white;
     border: none;
@@ -35,19 +35,19 @@
     transition: all 0.5s ease;
     z-index: 10;
   }
-  
-  .nav-arrow:hover {
+
+  .suara-gembala-nav-arrow:hover {
     background: #e67e00;
     transform: scale(1.1);
   }
-  
-  .article-wrapper {
+
+  .suara-gembala-article-wrapper {
     flex: 1;
     position: relative;
     height: 400px;
   }
-  
-  .article-card {
+
+  .suara-gembala-article-card {
     display: flex;
     gap: 30px;
     background: white;
@@ -60,53 +60,53 @@
     position: absolute;
     width: 100%;
   }
-  
-  .article-card.active {
+
+  .suara-gembala-article-card.active {
     opacity: 1;
     transform: translateX(0);
     position: relative;
   }
 
-  .article-card.hidden {
+  .suara-gembala-article-card.hidden {
     display: none;
   }
-  
-  .card-content {
+
+  .suara-gembala-card-content {
     padding: 20px;
     flex: 1;
     display: flex;
     flex-direction: column;
   }
-  
-  .card-image {
+
+  .suara-gembala-card-image {
     flex: 0 0 35%;
     border-radius: 8px;
     overflow: hidden;
     height: 250px;
   }
-  
-  .card-image img {
+
+  .suara-gembala-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  
-  .card-content h3 {
+
+  .suara-gembala-card-content h3 {
     color: #2c3e50;
     font-size: 1.3rem;
     margin-bottom: 15px;
   }
-  
-  .article-meta {
+
+  .suara-gembala-article-meta {
     display: flex;
     gap: 15px;
     color: #FF8F00;
     font-size: 0.9rem;
     margin-bottom: 15px;
   }
-  
-  .card-content p {
+
+  .suara-gembala-card-content p {
     color: #444;
     line-height: 1.6;
     margin-bottom: auto;
@@ -115,8 +115,8 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
-  .read-more {
+
+  .suara-gembala-read-more {
     align-self: flex-start;
     background: none;
     border: none;
@@ -130,8 +130,8 @@
     gap: 5px;
     transition: all 0.3s ease;
   }
-  
-  .read-more:hover {
+
+  .suara-gembala-read-more:hover {
     text-decoration: underline; /* Tambahkan underline saat hover */
   }
   
@@ -143,74 +143,110 @@
     padding: 30px 1% 20px;
   }
 
-  .article-card {
+  .suara-gembala-article-card {
+    flex-direction: column; /* Ubah ke column untuk mobile */
     height: auto;
     min-height: 0;
     padding: 15px;
     transform: none !important;
     position: relative;
     opacity: 1 !important;
-    display: none;
+    display: none; /* Semua kartu disembunyikan dulu */
   }
 
-  .card-image {
+  /* Pastikan kartu aktif tampil */
+  .suara-gembala-article-card.active {
+    display: flex !important; /* Paksa tampil dengan !important */
+    flex-direction: column; /* Susunan vertikal */
+  }
+
+  .suara-gembala-card-image {
     width: 100%;
     flex: 0 0 auto;
     height: 200px;
     margin-bottom: 15px;
+    order: 0; /* Gambar di atas */
   }
 
-  .card-content {
+  .suara-gembala-card-content {
     padding: 0;
     order: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
-  .section-title {
+  .suara-gembala-card-content h3 {
+    text-align: center; /* Center title */
+    margin-bottom: 10px;
+  }
+
+  .suara-gembala-article-meta {
+    justify-content: center; /* Center meta */
+    margin-bottom: 15px;
+  }
+
+  .suara-gembala-card-content p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+
+  .suara-gembala-read-more {
+    margin-top: auto;
+  }
+
+  .suara-gembala-section-title {
     font-size: 1.8rem;
     margin-bottom: 15px;
     text-align: center;
   }
 
-  .article-wrapper {
+  .suara-gembala-article-wrapper {
     height: auto;
+    min-height: 400px; /* Berikan tinggi minimum */
   }
 
-  .nav-arrow {
+  .suara-gembala-nav-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 143, 0, 0.7);
+    background: rgba(255, 143, 0, 0.9); /* Lebih opaque */
+    z-index: 10;
   }
 
-  .nav-arrow.left {
+  .suara-gembala-nav-arrow.left {
     left: 5px;
   }
 
-  .nav-arrow.right {
+  .suara-gembala-nav-arrow.right {
     right: 5px;
-  }
-
-  .article-card.active {
-    display: flex;
   }
 }
 
 @media (max-width: 480px) {
-  .card-image {
+  .suara-gembala-card-image {
     height: 160px;
   }
 
-  .section-title {
+  .suara-gembala-section-title {
     font-size: 1.5rem;
   }
 
-  .card-content h3 {
+  .suara-gembala-card-content h3 {
     font-size: 1.1rem;
   }
 
-  .nav-arrow {
+  .suara-gembala-nav-arrow {
     width: 30px;
     height: 30px;
     font-size: 0.8rem;
+  }
+
+  .suara-gembala-article-wrapper {
+    min-height: 350px; /* Kurangi tinggi minimum */
   }
 }

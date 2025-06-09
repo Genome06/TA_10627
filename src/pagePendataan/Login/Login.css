@@ -1,0 +1,296 @@
+/* Reset dan styling dasar */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling untuk full page login */
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top orange bar */
+.login-top-bar {
+  height: 10px;
+  background-color: #FF8F00;
+  width: 100%;
+}
+
+/* Header container with logo and title */
+.login-header-container {
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.login-logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.login-top-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-logo-small {
+  width: 40px;
+  height: auto;
+}
+
+.login-top-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Main content */
+.login-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.login-center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.login-logo {
+  width: 80px;
+  height: auto;
+}
+
+.login-title {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+.login-subtitle {
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+}
+
+.login-form-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  position: relative;
+  border: 1px solid #e0e0e0;
+}
+
+.user-icon-container {
+  width: 80px;
+  height: 80px;
+  background-color: #FF8F00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -70px auto 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-icon {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #FF8F00;
+}
+
+.password-group {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle:hover {
+  color: #333;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.remember-checkbox {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  accent-color: #FF8F00;
+}
+
+.checkbox-text {
+  font-size: 14px;
+  color: #555;
+}
+
+.login-button {
+  background-color: #FF8F00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 500;
+}
+
+.login-button:hover {
+  background-color: #e67e00;
+}
+
+.login-error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.login-footer {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #777;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+  .login-form-container {
+    padding: 20px;
+    max-width: 320px;
+  }
+  
+  .user-icon-container {
+    width: 70px;
+    height: 70px;
+    margin-top: -60px;
+  }
+  
+  .user-icon {
+    font-size: 2rem;
+  }
+  
+  .login-title {
+    font-size: 1.2rem;
+  }
+  
+  .login-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .form-input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .login-button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile landscape */
+@media (max-height: 500px) and (orientation: landscape) {
+  .login-center-content {
+    padding: 10px;
+  }
+  
+  .login-header {
+    margin-bottom: 60px;
+  }
+  
+  .login-logo {
+    width: 50px;
+  }
+  
+  .user-icon-container {
+    width: 60px;
+    height: 60px;
+    margin-top: -40px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .login-form {
+    gap: 10px;
+  }
+  
+  .login-footer {
+    margin-top: 15px;
+  }
+}

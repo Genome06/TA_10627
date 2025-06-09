@@ -1,0 +1,244 @@
+.berita-harian-page {
+  padding: 2rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding-top: 110px; /* Untuk menghindari tumpang tindih dengan header */
+}
+
+.berita-page-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.berita-page-header h1 {
+  font-size: 2.5rem;
+  color: #FF8F00;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.berita-page-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #FF8F00;
+}
+
+.berita-page-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.berita-page-article-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.berita-page-article-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.berita-page-article-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.berita-page-article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.berita-page-article-item:hover .berita-page-article-image img {
+  transform: scale(1.05);
+}
+
+.berita-page-article-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.berita-page-article-title {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.berita-page-article-meta {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 15px;
+  color: #FF8F00;
+  font-size: 0.85rem;
+  justify-content: center;
+}
+
+.berita-page-article-author {
+  font-weight: 600;
+}
+
+.berita-page-article-date,
+.berita-page-article-meta span {
+  color: #FF8F00;
+}
+
+.berita-page-article-excerpt {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.berita-page-read-more {
+  align-self: flex-start;
+  color: #FF8F00;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.berita-page-read-more:hover {
+  text-decoration: underline;
+}
+
+/* Pagination styles */
+.berita-page-pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.berita-page-nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FF8F00;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.berita-page-nav-button:hover:not(.disabled) {
+  background-color: #e67e00;
+}
+
+.berita-page-nav-button.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.berita-page-info {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .berita-harian-page {
+    padding: 1.5rem 3%;
+    padding-top: 100px;
+  }
+  
+  .berita-page-header h1 {
+    font-size: 2rem;
+  }
+
+  .berita-page-articles-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .berita-page-pagination-container {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .berita-page-nav-button {
+    width: auto;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .berita-page-header h1 {
+    font-size: 1.7rem;
+  }
+  
+  .berita-page-article-image {
+    height: 180px;
+  }
+
+  .berita-page-article-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .berita-harian-page {
+    padding: 1rem 3%;
+    padding-top: 90px;
+  }
+  
+  .berita-page-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .berita-page-article-content {
+    padding: 15px;
+  }
+
+  .berita-page-article-excerpt {
+    -webkit-line-clamp: 3;
+    font-size: 0.9rem;
+  }
+}
+
+/* Untuk layar sangat kecil */
+@media screen and (max-width: 400px) {
+  .berita-page-article-image {
+    height: 160px;
+  }
+
+  .berita-page-nav-button span:not(.icon) {
+    display: none;
+  }
+
+  .berita-page-nav-button {
+    padding: 8px 10px;
+  }
+}

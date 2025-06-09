@@ -1,0 +1,291 @@
+.detail-berita-container {
+  min-height: 100vh;
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  padding-top: 110px; /* Untuk menghindari tumpang tindih dengan header */
+}
+
+.detail-berita-main {
+  flex: 1;
+  min-width: 0; /* Untuk menghindari overflow pada konten fleksibel */
+}
+
+.detail-berita-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #FF8F00;
+  font-weight: 700;
+  position: relative; 
+}
+
+.detail-berita-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-berita-date {
+  color: #666; /* Ubah menjadi abu-abu */
+  font-size: 0.95rem;
+}
+
+/* Jika masih ingin memberikan penekanan pada bagian tertentu */
+.detail-berita-date .author {
+  font-weight: 600;
+}
+
+.detail-berita-social {
+  display: flex;
+  gap: 10px;
+}
+
+.detail-berita-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.detail-berita-social-icon:hover {
+  transform: translateY(-3px);
+}
+
+.whatsapp {
+  background-color: #25D366;
+}
+
+.facebook {
+  background-color: #1877F2;
+}
+
+.twitter {
+  background-color: #000000;
+}
+
+.detail-berita-content {
+  margin-bottom: 30px;
+}
+
+.detail-berita-image {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.detail-berita-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-berita-text {
+  line-height: 1.8;
+  color: #333;
+}
+
+.detail-berita-text p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.detail-berita-sidebar {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.related-berita-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #FF8F00;
+  color: #FF8F00;
+}
+
+.related-berita {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.related-berita-item {
+  display: flex;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.related-berita-item:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-2px);
+}
+
+.related-berita-image {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.related-berita-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.related-berita-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.related-berita-content h4 {
+  font-size: 0.95rem;
+  margin: 0 0 8px 0;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Untuk related articles */
+.related-berita-meta {
+  font-size: 0.8rem;
+  color: #FF8F00; /* Tetap orange */
+  margin: 0;
+}
+
+.related-berita-meta .author {
+  font-weight: 600;
+}
+
+.loading-berita-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Responsif styling */
+@media (max-width: 992px) {
+  .detail-berita-container {
+    flex-direction: column;
+  }
+
+  .detail-berita-sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .detail-berita-container {
+    padding: 0 15px;
+    padding-top: 100px;
+  }
+
+  .detail-berita-title {
+    font-size: 1.7rem;
+  }
+  
+  .detail-berita-image {
+    height: 300px;
+  }
+  
+  .related-berita {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .related-berita-item {
+    flex-direction: column;
+  }
+  
+  .related-berita-image {
+    width: 100%;
+    height: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .detail-berita-container {
+    padding: 0 10px;
+    padding-top: 90px;
+  }
+
+  .detail-berita-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .detail-berita-title {
+    font-size: 1.5rem;
+  }
+
+  .detail-berita-image {
+    height: 220px;
+  }
+  
+  .related-berita {
+    grid-template-columns: 1fr;
+  }
+
+  .related-berita-item {
+    flex-direction: row;
+  }
+  
+  .related-berita-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .detail-berita-text p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-berita-container {
+    margin: 20px auto;
+    padding-top: 80px;
+  }
+
+  .detail-berita-title {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .detail-berita-image {
+    height: 200px;
+  }
+
+  .related-berita-title {
+    font-size: 1.3rem;
+  }
+
+  .related-berita-content h4 {
+    font-size: 0.9rem;
+  }
+
+  .related-berita-meta {
+    font-size: 0.75rem;
+  }
+}
