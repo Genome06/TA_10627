@@ -38,7 +38,7 @@ import BeritaHarian from '@pages/BeritaHarian/BeritaHarian';
 import DetailBeritaHarian from '@pages/BeritaHarian/Detail/DetailBeritaHarian';
 
 // Import komponen website pendataan umat
-// import Login from './pagePendataan/Login/Login';
+import Login from './pagePendataan/Login/Login';
 // Tambahkan import komponen pendataan umat lainnya di sini
 // import Dashboard from './pagePendataan/Dashboard/Dashboard';
 // import DataUmat from './pagePendataan/DataUmat/DataUmat';
@@ -98,7 +98,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       {/* Semua route pendataan umat dimulai dengan /pendataan untuk konsistensi */}
       
       {/* Autentikasi */}
-      {/* <Route path="/login" element={<Login />} /> */}
+      <Route path="/login" element={<Login />} />
       
       {/* Dashboard dan Menu Utama Pendataan */}
       {/* <Route path="/pendataan/dashboard" element={<Dashboard />} /> */}
