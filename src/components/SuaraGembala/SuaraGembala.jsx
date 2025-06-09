@@ -36,39 +36,39 @@ const SuaraGembala = () => {
 
   return (
     <section className="suara-gembala">
-      <div className="articles-container">
-        <button className="nav-arrow left" onClick={prevArticle}>
+      <div className="suara-gembala-articles-container">
+        <button className="suara-gembala-nav-arrow left" onClick={prevArticle}>
           <FaChevronLeft />
         </button>
 
-        <div className="article-wrapper">
+        <div className="suara-gembala-article-wrapper">
           {articles.map((article, index) => (
             <div 
               key={index}
-              className={`article-card ${index === activeIndex ? 'active' : 'hidden'}`}
+              className={`suara-gembala-article-card ${index === activeIndex ? 'active' : 'hidden'}`}
             >
-              <div className="card-content">
-                <h2 className="section-title">Suara Gembala</h2>
+              <div className="suara-gembala-card-content">
+                <h2 className="suara-gembala-section-title">Suara Gembala</h2>
                 <h3>{article.title}</h3>
-                <div className="article-meta">
+                <div className="suara-gembala-article-meta">
                   <span>by {article.author}</span>
                   <span>|</span>
                   <span>{article.date}</span>
                 </div>
                 <p>{article.content}</p>
-                <Link to={`/suara-gembala/${article.id}`} className="read-more">
+                <Link to={`/suara-gembala/${article.id}`} className="suara-gembala-read-more">
                   Baca Selengkapnya <FaChevronRight />
                 </Link>
               </div>
-              
-              <div className="card-image">
+
+              <div className="suara-gembala-card-image">
                 <img src={article.image} alt={article.title} />
               </div>
             </div>
           ))}
         </div>
 
-        <button className="nav-arrow right" onClick={nextArticle}>
+        <button className="suara-gembala-nav-arrow right" onClick={nextArticle}>
           <FaChevronRight />
         </button>
       </div>

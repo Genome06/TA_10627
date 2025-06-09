@@ -1,0 +1,244 @@
+.konsultasi-iman-page {
+  padding: 2rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding-top: 110px; /* Untuk menghindari tumpang tindih dengan header */
+}
+
+.konsultasi-page-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.konsultasi-page-header h1 {
+  font-size: 2.5rem;
+  color: #FF8F00;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.konsultasi-page-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #FF8F00;
+}
+
+.konsultasi-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.konsultasi-article-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.konsultasi-article-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.konsultasi-article-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.konsultasi-article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.konsultasi-article-item:hover .konsultasi-article-image img {
+  transform: scale(1.05);
+}
+
+.konsultasi-article-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.konsultasi-article-title {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-align: center; /* Menambahkan ini */
+}
+
+.konsultasi-article-meta {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 15px;
+  color: #FF8F00;
+  font-size: 0.85rem;
+  justify-content: center; /* Menambahkan ini */
+}
+
+.konsultasi-article-author {
+  font-weight: 600;
+}
+
+.konsultasi-article-date,
+.konsultasi-article-meta span {
+  color: #FF8F00;
+}
+
+.konsultasi-article-excerpt {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.konsultasi-read-more {
+  align-self: flex-start;
+  color: #FF8F00;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.konsultasi-read-more:hover {
+  text-decoration: underline;
+}
+
+/* Pagination styles */
+.konsultasi-pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.konsultasi-nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FF8F00;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.konsultasi-nav-button:hover:not(.disabled) {
+  background-color: #e67e00;
+}
+
+.konsultasi-nav-button.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.konsultasi-page-info {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .konsultasi-iman-page {
+    padding: 1.5rem 3%;
+    padding-top: 100px;
+  }
+  
+  .konsultasi-page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .konsultasi-articles-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .konsultasi-pagination-container {
+    flex-direction: row; /* Ubah dari column ke row */
+    gap: 10px; /* Kurangi gap */
+  }
+  
+  .konsultasi-nav-button {
+    width: auto; /* Ubah dari 100% ke auto */
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .konsultasi-page-header h1 {
+    font-size: 1.7rem;
+  }
+  
+  .konsultasi-article-image {
+    height: 180px;
+  }
+  
+  .konsultasi-article-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .konsultasi-iman-page {
+    padding: 1rem 3%;
+    padding-top: 90px;
+  }
+  
+  .konsultasi-page-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .konsultasi-article-content {
+    padding: 15px;
+  }
+  
+  .konsultasi-article-excerpt {
+    -webkit-line-clamp: 3;
+    font-size: 0.9rem;
+  }
+}
+
+/* Untuk layar sangat kecil */
+@media screen and (max-width: 400px) {
+  .konsultasi-article-image {
+    height: 160px;
+  }
+
+  .konsultasi-nav-button span:not(.icon) {
+    display: none; /* Sembunyikan teks tombol, tinggalkan ikon saja */
+  }
+
+  .konsultasi-nav-button {
+    padding: 8px 10px;
+  }
+}

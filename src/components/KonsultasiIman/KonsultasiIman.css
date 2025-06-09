@@ -1,141 +1,146 @@
 /* SuaraGembala.css */
 .konsultasi-iman {
-    padding: 10px 1%;
-    background: #f8f9fa;
-    position: relative;
-  }
-  
-  .section-title {
-    text-align: justify;
-    color: #FF8F00;
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-  }
-  
-  .articles-container {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .nav-arrow {
-    background: #FF8F00;
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    z-index: 10;
-  }
-  
-  .nav-arrow:hover {
-    background: #e67e00;
-    transform: scale(1.1);
-  }
-  
-  .article-wrapper {
-    flex: 1;
-    position: relative;
-    height: 400px;
-  }
-  
-  .article-card {
-    display: flex;
-    gap: 30px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 25px;
-    opacity: 0;
-    transform: translateX(100%);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    position: absolute;
-    width: 100%;
-  }
-  
-  .article-card.active {
-    opacity: 1;
-    transform: translateX(0);
-    position: relative;
-  }
-  
-  .card-content {
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .card-image {
-    flex: 0 0 35%;
-    border-radius: 8px;
-    overflow: hidden;
-    height: 250px;
-  }
-  
-  .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  padding: 40px 1% 10px;
+  background: #f8f9fa;
+  position: relative;
+}
 
-  
-  .card-content h3 {
-    color: #2c3e50;
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-  }
-  
-  .article-meta {
-    display: flex;
-    gap: 15px;
-    color: #FF8F00;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-  }
-  
-  .card-content p {
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: auto;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  
-  .read-more {
-    align-self: flex-start;
-    background: none;
-    border: none;
-    color: #FF8F00;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 5px 0;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
+.konsultasi-iman-section-title {
+  text-align: justify;
+  color: #FF8F00;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
 
-  .article-card.hidden {
-    display: none;
-  }
-  
+.konsultasi-iman-articles-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.konsultasi-iman-nav-arrow {
+  background: #FF8F00;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  z-index: 10;
+}
+
+.konsultasi-iman-nav-arrow:hover {
+  background: #e67e00;
+  transform: scale(1.1);
+}
+
+.konsultasi-iman-article-wrapper {
+  flex: 1;
+  position: relative;
+  height: 400px;
+}
+
+.konsultasi-iman-article-card {
+  display: flex;
+  gap: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 25px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  width: 100%;
+}
+
+.konsultasi-iman-article-card.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+
+.konsultasi-iman-article-card.hidden {
+  display: none;
+}
+
+.konsultasi-iman-card-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.konsultasi-iman-card-image {
+  flex: 0 0 35%;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 250px;
+}
+
+.konsultasi-iman-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.konsultasi-iman-card-content h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.konsultasi-iman-article-meta {
+  display: flex;
+  gap: 15px;
+  color: #FF8F00;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.konsultasi-iman-card-content p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.konsultasi-iman-read-more {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #FF8F00;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.konsultasi-iman-read-more:hover {
+  text-decoration: underline;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .suara-gembala {
+  .konsultasi-iman {
     padding: 30px 1% 20px;
   }
 
-  .article-card {
+  .konsultasi-iman-article-card {
     flex-direction: column;
     height: auto;
     min-height: 0;
@@ -146,64 +151,98 @@
     display: none;
   }
 
-  .card-image {
+  .konsultasi-iman-article-card.active {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .konsultasi-iman-card-image {
     width: 100%;
     flex: 0 0 auto;
     height: 200px;
     margin-bottom: 15px;
+    order: 0;
   }
 
-  .card-content {
+  .konsultasi-iman-card-content {
     padding: 0;
     order: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
-  .section-title {
+  .konsultasi-iman-card-content h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .konsultasi-iman-article-meta {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .konsultasi-iman-card-content p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+
+  .konsultasi-iman-read-more {
+    margin-top: auto;
+  }
+
+  .konsultasi-iman-section-title {
     font-size: 1.8rem;
     margin-bottom: 15px;
     text-align: center;
   }
 
-  .article-wrapper {
+  .konsultasi-iman-article-wrapper {
     height: auto;
+    min-height: 400px;
   }
 
-  .nav-arrow {
+  .konsultasi-iman-nav-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 143, 0, 0.7);
+    background: rgba(255, 143, 0, 0.9);
+    z-index: 10;
   }
 
-  .nav-arrow.left {
+  .konsultasi-iman-nav-arrow.left {
     left: 5px;
   }
 
-  .nav-arrow.right {
+  .konsultasi-iman-nav-arrow.right {
     right: 5px;
-  }
-
-  .article-card.active {
-    display: flex;
   }
 }
 
 @media (max-width: 480px) {
-  .card-image {
+  .konsultasi-iman-card-image {
     height: 160px;
   }
 
-  .section-title {
+  .konsultasi-iman-section-title {
     font-size: 1.5rem;
   }
 
-  .card-content h3 {
+  .konsultasi-iman-card-content h3 {
     font-size: 1.1rem;
   }
 
-  .nav-arrow {
+  .konsultasi-iman-nav-arrow {
     width: 30px;
     height: 30px;
     font-size: 0.8rem;
+  }
+
+  .konsultasi-iman-article-wrapper {
+    min-height: 350px;
   }
 }

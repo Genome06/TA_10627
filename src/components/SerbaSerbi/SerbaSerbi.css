@@ -1,141 +1,146 @@
 /* SuaraGembala.css */
 .serba-serbi {
-    padding: 10px 1%;
-    background: #f8f9fa;
-    position: relative;
-  }
-  
-  .section-title {
-    text-align: justify;
-    color: #FF8F00;
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-  }
-  
-  .articles-container {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .nav-arrow {
-    background: #FF8F00;
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    z-index: 10;
-  }
-  
-  .nav-arrow:hover {
-    background: #e67e00;
-    transform: scale(1.1);
-  }
-  
-  .article-wrapper {
-    flex: 1;
-    position: relative;
-    height: 400px;
-  }
-  
-  .article-card {
-    display: flex;
-    gap: 30px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 25px;
-    opacity: 0;
-    transform: translateX(100%);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    position: absolute;
-    width: 100%;
-  }
-  
-  .article-card.active {
-    opacity: 1;
-    transform: translateX(0);
-    position: relative;
-  }
-  
-  .card-content {
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .card-image {
-    flex: 0 0 35%;
-    border-radius: 8px;
-    overflow: hidden;
-    height: 250px;
-  }
-  
-  .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  padding: 40px 1% 10px;
+  background: #f8f9fa;
+  position: relative;
+}
 
-  
-  .card-content h3 {
-    color: #2c3e50;
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-  }
-  
-  .article-meta {
-    display: flex;
-    gap: 15px;
-    color: #FF8F00;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-  }
-  
-  .card-content p {
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: auto;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  
-  .read-more {
-    align-self: flex-start;
-    background: none;
-    border: none;
-    color: #FF8F00;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 5px 0;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
+.serba-serbi-section-title {
+  text-align: justify;
+  color: #FF8F00;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
 
-  .article-card.hidden {
-    display: none;
-  }
-  
-  /* Responsif */
+.serba-serbi-articles-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.serba-serbi-nav-arrow {
+  background: #FF8F00;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  z-index: 10;
+}
+
+.serba-serbi-nav-arrow:hover {
+  background: #e67e00;
+  transform: scale(1.1);
+}
+
+.serba-serbi-article-wrapper {
+  flex: 1;
+  position: relative;
+  height: 400px;
+}
+
+.serba-serbi-article-card {
+  display: flex;
+  gap: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 25px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  width: 100%;
+}
+
+.serba-serbi-article-card.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+
+.serba-serbi-article-card.hidden {
+  display: none;
+}
+
+.serba-serbi-card-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.serba-serbi-card-image {
+  flex: 0 0 35%;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 250px;
+}
+
+.serba-serbi-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.serba-serbi-card-content h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.serba-serbi-article-meta {
+  display: flex;
+  gap: 15px;
+  color: #FF8F00;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.serba-serbi-card-content p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.serba-serbi-read-more {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #FF8F00;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.serba-serbi-read-more:hover {
+  text-decoration: underline;
+}
+
+/* Responsif */
 @media (max-width: 768px) {
-  .suara-gembala {
+  .serba-serbi {
     padding: 30px 1% 20px;
   }
 
-  .article-card {
+  .serba-serbi-article-card {
     flex-direction: column;
     height: auto;
     min-height: 0;
@@ -143,67 +148,101 @@
     transform: none !important;
     position: relative;
     opacity: 1 !important;
-    display: none; /* Hide by default */
+    display: none;
   }
 
-  .card-image {
+  .serba-serbi-article-card.active {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .serba-serbi-card-image {
     width: 100%;
     flex: 0 0 auto;
     height: 200px;
     margin-bottom: 15px;
+    order: 0;
   }
 
-  .card-content {
+  .serba-serbi-card-content {
     padding: 0;
     order: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
-  .section-title {
+  .serba-serbi-card-content h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .serba-serbi-article-meta {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .serba-serbi-card-content p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+
+  .serba-serbi-read-more {
+    margin-top: auto;
+  }
+
+  .serba-serbi-section-title {
     font-size: 1.8rem;
     margin-bottom: 15px;
     text-align: center;
   }
 
-  .article-wrapper {
+  .serba-serbi-article-wrapper {
     height: auto;
+    min-height: 400px;
   }
 
-  .nav-arrow {
+  .serba-serbi-nav-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 143, 0, 0.7);
+    background: rgba(255, 143, 0, 0.9);
+    z-index: 10;
   }
 
-  .nav-arrow.left {
+  .serba-serbi-nav-arrow.left {
     left: 5px;
   }
 
-  .nav-arrow.right {
+  .serba-serbi-nav-arrow.right {
     right: 5px;
-  }
-
-  .article-card.active {
-    display: flex;
   }
 }
 
 @media (max-width: 480px) {
-  .card-image {
+  .serba-serbi-card-image {
     height: 160px;
   }
 
-  .section-title {
+  .serba-serbi-section-title {
     font-size: 1.5rem;
   }
 
-  .card-content h3 {
+  .serba-serbi-card-content h3 {
     font-size: 1.1rem;
   }
 
-  .nav-arrow {
+  .serba-serbi-nav-arrow {
     width: 30px;
     height: 30px;
     font-size: 0.8rem;
+  }
+
+  .serba-serbi-article-wrapper {
+    min-height: 350px;
   }
 }

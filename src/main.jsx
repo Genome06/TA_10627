@@ -24,6 +24,14 @@ import KegiatanKeuskupan from '@pages/KegiatanKeuskupan/KegiatanKeuskupan';
 import DetailKegiatan from '@/pages/KegiatanKeuskupan/Detail/DetailKegiatan';
 import SuaraGembala from '@pages/SuaraGembala/SuaraGembala';
 import DetailSuaraGembala from '@pages/SuaraGembala/Detail/DetailSuaraGembala';
+import KonsultasiIman from '@pages/KonsultasiIman/KonsultasiIman';
+import DetailKonsultasiIman from '@pages/KonsultasiIman/Detail/DetailKonsultasiIman';
+import SerbaSerbi from '@pages/Serba-Serbi/SerbaSerbi';
+import DetailSerba from '@pages/Serba-Serbi/Detail/DetailSerba';
+import Tokoh from '@pages/Tokoh/Tokoh'; 
+import DetailTokoh from '@pages/Tokoh/Detail/DetailTokoh';
+import RenunganHarian from '@pages/RenunganHarian/RenunganHarian'; // Import Renungan Harian
+import DetailRenungan from '@pages/RenunganHarian/Detail/DetailRenungan'; // Import Detail Renungan
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -50,6 +58,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/informasi/kegiatan-keuskupan/detail/:id" element={<DetailKegiatan />} /> {/* Halaman Detail Kegiatan */}
         <Route path="/suara-gembala" element={<SuaraGembala />} /> {/* Halaman Suara Gembala */}
         <Route path="/suara-gembala/:id" element={<DetailSuaraGembala />} /> {/* Halaman Detail Suara Gembala */}
+        <Route path="/konsultasi-iman" element={<KonsultasiIman />} /> {/* Halaman Konsultasi Iman */}
+        <Route path="/konsultasi-iman/:id" element={<DetailKonsultasiIman />} /> {/* Halaman Detail Konsultasi Iman */}
+        <Route path="/serba-serbi" element={<SerbaSerbi />} /> {/* Halaman Serba Serbi */}
+        <Route path="/serba-serbi/:id" element={<DetailSerba />} /> {/* Halaman Detail Serba Serbi */}
+        <Route path="/tokoh" element={<Tokoh />} /> {/* Halaman Tokoh */}
+        <Route path="/tokoh/:id" element={<DetailTokoh />} /> {/* Halaman Detail Tokoh */}
+        <Route path="/renungan-harian" element={<RenunganHarian />} /> {/* Halaman Renungan Harian */}
+        <Route path="/renungan-harian/:id" element={<DetailRenungan />} /> {/* Halaman Detail Renungan */}
       </Route>
     </Routes>
   </BrowserRouter>

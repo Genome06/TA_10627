@@ -1,0 +1,321 @@
+.detail-serba-container {
+  min-height: 100vh;
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  padding-top: 110px; /* Untuk menghindari tumpang tindih dengan header */
+}
+
+.detail-serba-main {
+  flex: 1;
+  min-width: 0; /* Untuk menghindari overflow pada konten fleksibel */
+}
+
+.detail-serba-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #FF8F00;
+  font-weight: 700;
+  position: relative; 
+}
+
+.detail-serba-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-serba-date {
+  color: #666; /* Ubah menjadi abu-abu */
+  font-size: 0.95rem;
+}
+
+/* Jika masih ingin memberikan penekanan pada bagian tertentu */
+.detail-serba-date .author {
+  font-weight: 600;
+}
+
+.detail-serba-social {
+  display: flex;
+  gap: 10px;
+}
+
+.detail-serba-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.detail-serba-social-icon:hover {
+  transform: translateY(-3px);
+}
+
+.whatsapp {
+  background-color: #25D366;
+}
+
+.facebook {
+  background-color: #1877F2;
+}
+
+.twitter {
+  background-color: #000000;
+}
+
+.detail-serba-content {
+  margin-bottom: 30px;
+}
+
+.detail-serba-image {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.detail-serba-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Khusus untuk gambar logo */
+.detail-serba-logo-section {
+  margin: 25px 0;
+  text-align: center;
+}
+
+.detail-serba-logo-image {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.detail-serba-logo-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.detail-serba-text {
+  line-height: 1.8;
+  color: #333;
+}
+
+.detail-serba-text p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.detail-serba-sidebar {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.related-serba-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #FF8F00;
+  color: #FF8F00;
+}
+
+.related-serba {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.related-serba-item {
+  display: flex;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.related-serba-item:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-2px);
+}
+
+.related-serba-image {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.related-serba-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.related-serba-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.related-serba-content h4 {
+  font-size: 0.95rem;
+  margin: 0 0 8px 0;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Untuk related articles */
+.related-serba-meta {
+  font-size: 0.8rem;
+  color: #FF8F00; /* Tetap orange */
+  margin: 0;
+}
+
+.related-serba-meta .author {
+  font-weight: 600;
+}
+
+.loading-serba-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Responsif styling */
+@media (max-width: 992px) {
+  .detail-serba-container {
+    flex-direction: column;
+  }
+
+  .detail-serba-sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .detail-serba-container {
+    padding: 0 15px;
+    padding-top: 100px;
+  }
+
+  .detail-serba-title {
+    font-size: 1.7rem;
+  }
+  
+  .detail-serba-image {
+    height: 300px;
+  }
+  
+  .detail-serba-logo-image {
+    max-width: 100%;
+    padding: 15px;
+  }
+  
+  .related-serba {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .related-serba-item {
+    flex-direction: column;
+  }
+  
+  .related-serba-image {
+    width: 100%;
+    height: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .detail-serba-container {
+    padding: 0 10px;
+    padding-top: 90px;
+  }
+
+  .detail-serba-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .detail-serba-title {
+    font-size: 1.5rem;
+  }
+
+  .detail-serba-image {
+    height: 220px;
+  }
+  
+  .detail-serba-logo-image {
+    padding: 10px;
+  }
+  
+  .related-serba {
+    grid-template-columns: 1fr;
+  }
+
+  .related-serba-item {
+    flex-direction: row;
+  }
+  
+  .related-serba-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .detail-serba-text p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-serba-container {
+    margin: 20px auto;
+    padding-top: 80px;
+  }
+
+  .detail-serba-title {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .detail-serba-image {
+    height: 200px;
+  }
+
+  .related-serba-title {
+    font-size: 1.3rem;
+  }
+
+  .related-serba-content h4 {
+    font-size: 0.9rem;
+  }
+
+  .related-serba-meta {
+    font-size: 0.75rem;
+  }
+}
