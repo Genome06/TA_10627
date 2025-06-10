@@ -4,6 +4,10 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 
+// Import layout pendataan
+import PendataanLayout from './pagePendataan/Layout/PendataanLayout';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+
 // Import komponen website utama KAK
 import Home from '@pages/Home/Home';
 import Sejarah from '@pages/Sejarah/sejarah';
@@ -39,26 +43,17 @@ import DetailBeritaHarian from '@pages/BeritaHarian/Detail/DetailBeritaHarian';
 
 // Import komponen website pendataan umat
 import Login from './pagePendataan/Login/Login';
+import DashboardAdmin from './pagePendataan/Admin/DashboardAdmin/DashboardAdmin';
 
-// Import komponen admin (uncomment ketika sudah dibuat)
-// import AdminDashboard from './pagePendataan/Admin/Dashboard/AdminDashboard';
-// import AdminDataUmat from './pagePendataan/Admin/DataUmat/AdminDataUmat';
-// import AdminTambahUmat from './pagePendataan/Admin/DataUmat/AdminTambahUmat';
-// import AdminEditUmat from './pagePendataan/Admin/DataUmat/AdminEditUmat';
-// import AdminDetailUmat from './pagePendataan/Admin/DataUmat/AdminDetailUmat';
-// import AdminLaporan from './pagePendataan/Admin/Laporan/AdminLaporan';
-// import AdminStatistik from './pagePendataan/Admin/Statistik/AdminStatistik';
-// import AdminPengaturan from './pagePendataan/Admin/Pengaturan/AdminPengaturan';
-// import AdminManageUsers from './pagePendataan/Admin/ManageUsers/AdminManageUsers';
+// Temporary dashboard components (create these)
+const AdminDataUmat = () => <div>Data Umat</div>;
+const AdminMigrasiUmat = () => <div>Migrasi Umat</div>;
+const AdminListUmatTermigrasi = () => <div>List Umat Termigrasi</div>;
+const AdminStatistik = () => <div>Statistik</div>;
+const AdminKomunitasOMK = () => <div>Komunitas / OMK</div>;
+const AdminTempatZiarah = () => <div>Tempat Ziarah</div>;
 
-// Import komponen kepala keluarga (uncomment ketika sudah dibuat)
-// import KepalaKeluargaDashboard from './pagePendataan/KepalaKeluarga/Dashboard/KepalaKeluargaDashboard';
-// import KepalaKeluargaDataKeluarga from './pagePendataan/KepalaKeluarga/DataKeluarga/KepalaKeluargaDataKeluarga';
-// import KepalaKeluargaTambahAnggota from './pagePendataan/KepalaKeluarga/DataKeluarga/KepalaKeluargaTambahAnggota';
-// import KepalaKeluargaEditAnggota from './pagePendataan/KepalaKeluarga/DataKeluarga/KepalaKeluargaEditAnggota';
-// import KepalaKeluargaDetailAnggota from './pagePendataan/KepalaKeluarga/DataKeluarga/KepalaKeluargaDetailAnggota';
-// import KepalaKeluargaProfil from './pagePendataan/KepalaKeluarga/Profil/KepalaKeluargaProfil';
-// import KepalaKeluargaEditProfil from './pagePendataan/KepalaKeluarga/Profil/KepalaKeluargaEditProfil';
+const KepalaKeluargaDashboard = () => <div>Kepala Keluarga Dashboard</div>;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -109,50 +104,61 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/berita-harian/:id" element={<DetailBeritaHarian />} />
       </Route>
       
-      {/* ===== ROUTES WEBSITE PENDATAAN UMAT (tanpa navbar dan footer KAK) ===== */}
+      {/* ===== ROUTES WEBSITE PENDATAAN UMAT ===== */}
       
-      {/* Autentikasi */}
+      {/* Autentikasi (tanpa sidebar) */}
       <Route path="/login" element={<Login />} />
       
-      {/* ===== ROUTES ADMIN PENDATAAN UMAT ===== */}
-      {/* Dashboard Admin */}
-      {/* <Route path="/pendataan/admin/dashboard" element={<AdminDashboard />} /> */}
-      
-      {/* Manajemen Data Umat (Admin) */}
-      {/* <Route path="/pendataan/admin/data-umat" element={<AdminDataUmat />} /> */}
-      {/* <Route path="/pendataan/admin/data-umat/tambah" element={<AdminTambahUmat />} /> */}
-      {/* <Route path="/pendataan/admin/data-umat/:id" element={<AdminDetailUmat />} /> */}
-      {/* <Route path="/pendataan/admin/data-umat/:id/edit" element={<AdminEditUmat />} /> */}
-      
-      {/* Laporan dan Statistik (Admin) */}
-      {/* <Route path="/pendataan/admin/laporan" element={<AdminLaporan />} /> */}
-      {/* <Route path="/pendataan/admin/statistik" element={<AdminStatistik />} /> */}
-      
-      {/* Manajemen User (Admin) */}
-      {/* <Route path="/pendataan/admin/manage-users" element={<AdminManageUsers />} /> */}
-      {/* <Route path="/pendataan/admin/manage-users/tambah" element={<AdminTambahUser />} /> */}
-      {/* <Route path="/pendataan/admin/manage-users/:id/edit" element={<AdminEditUser />} /> */}
-      
-      {/* Pengaturan Sistem (Admin) */}
-      {/* <Route path="/pendataan/admin/pengaturan" element={<AdminPengaturan />} /> */}
-      {/* <Route path="/pendataan/admin/profil" element={<AdminProfil />} /> */}
-      
-      {/* ===== ROUTES KEPALA KELUARGA PENDATAAN UMAT ===== */}
-      {/* Dashboard Kepala Keluarga */}
-      {/* <Route path="/pendataan/kepalaKeluarga/dashboard" element={<KepalaKeluargaDashboard />} /> */}
-      
-      {/* Manajemen Data Keluarga (Kepala Keluarga) */}
-      {/* <Route path="/pendataan/kepalaKeluarga/data-keluarga" element={<KepalaKeluargaDataKeluarga />} /> */}
-      {/* <Route path="/pendataan/kepalaKeluarga/data-keluarga/tambah-anggota" element={<KepalaKeluargaTambahAnggota />} /> */}
-      {/* <Route path="/pendataan/kepalaKeluarga/data-keluarga/:id" element={<KepalaKeluargaDetailAnggota />} /> */}
-      {/* <Route path="/pendataan/kepalaKeluarga/data-keluarga/:id/edit" element={<KepalaKeluargaEditAnggota />} /> */}
-      
-      {/* Profil Kepala Keluarga */}
-      {/* <Route path="/pendataan/kepalaKeluarga/profil" element={<KepalaKeluargaProfil />} /> */}
-      {/* <Route path="/pendataan/kepalaKeluarga/profil/edit" element={<KepalaKeluargaEditProfil />} /> */}
-      
-      {/* Route Not Found / 404 */}
-      {/* <Route path="*" element={<NotFound />} /> */}
+      {/* Protected Routes dengan sidebar */}
+      <Route path="/pendataan" element={
+        <ProtectedRoute>
+          <PendataanLayout />
+        </ProtectedRoute>
+      }>
+        {/* ===== ROUTES ADMIN ===== */}
+        <Route path="admin/dashboard" element={
+          <ProtectedRoute requiredRole="admin">
+            <DashboardAdmin />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/data-umat" element={
+          <ProtectedRoute requiredRole="admin">
+            <AdminDataUmat />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/migrasi-umat" element={
+          <ProtectedRoute requiredRole="admin">
+            <AdminMigrasiUmat />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/list-umat-termigrasi" element={
+          <ProtectedRoute requiredRole="admin">
+            <AdminListUmatTermigrasi />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/statistik" element={
+          <ProtectedRoute requiredRole="admin">
+            <AdminStatistik />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/komunitas-omk" element={
+          <ProtectedRoute requiredRole="admin">
+            <AdminKomunitasOMK />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/tempat-ziarah" element={
+          <ProtectedRoute requiredRole="admin">
+            <AdminTempatZiarah />
+          </ProtectedRoute>
+        } />
+        
+        {/* ===== ROUTES KEPALA KELUARGA ===== */}
+        <Route path="kepalaKeluarga/dashboard" element={
+          <ProtectedRoute requiredRole="user">
+            <KepalaKeluargaDashboard />
+          </ProtectedRoute>
+        } />
+      </Route>
     </Routes>
   </BrowserRouter>
 );
