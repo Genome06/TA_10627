@@ -39,11 +39,26 @@ import DetailBeritaHarian from '@pages/BeritaHarian/Detail/DetailBeritaHarian';
 
 // Import komponen website pendataan umat
 import Login from './pagePendataan/Login/Login';
-// Tambahkan import komponen pendataan umat lainnya di sini
-// import Dashboard from './pagePendataan/Dashboard/Dashboard';
-// import DataUmat from './pagePendataan/DataUmat/DataUmat';
-// import TambahUmat from './pagePendataan/TambahUmat/TambahUmat';
-// ...dst
+
+// Import komponen admin (uncomment ketika sudah dibuat)
+// import AdminDashboard from './pagePendataan/Admin/Dashboard/AdminDashboard';
+// import AdminDataUmat from './pagePendataan/Admin/DataUmat/AdminDataUmat';
+// import AdminTambahUmat from './pagePendataan/Admin/DataUmat/AdminTambahUmat';
+// import AdminEditUmat from './pagePendataan/Admin/DataUmat/AdminEditUmat';
+// import AdminDetailUmat from './pagePendataan/Admin/DataUmat/AdminDetailUmat';
+// import AdminLaporan from './pagePendataan/Admin/Laporan/AdminLaporan';
+// import AdminStatistik from './pagePendataan/Admin/Statistik/AdminStatistik';
+// import AdminPengaturan from './pagePendataan/Admin/Pengaturan/AdminPengaturan';
+// import AdminManageUsers from './pagePendataan/Admin/ManageUsers/AdminManageUsers';
+
+// Import komponen kepala keluarga (uncomment ketika sudah dibuat)
+// import KepalaKeluargaDashboard from './pagePendataan/KepalaKeluarga/Dashboard/KepalaKeluargaDashboard';
+// import KepalaKeluargaDataKeluarga from './pagePendataan/KepalaKeluarga/DataKeluarga/KepalaKeluargaDataKeluarga';
+// import KepalaKeluargaTambahAnggota from './pagePendataan/KepalaKeluarga/DataKeluarga/KepalaKeluargaTambahAnggota';
+// import KepalaKeluargaEditAnggota from './pagePendataan/KepalaKeluarga/DataKeluarga/KepalaKeluargaEditAnggota';
+// import KepalaKeluargaDetailAnggota from './pagePendataan/KepalaKeluarga/DataKeluarga/KepalaKeluargaDetailAnggota';
+// import KepalaKeluargaProfil from './pagePendataan/KepalaKeluarga/Profil/KepalaKeluargaProfil';
+// import KepalaKeluargaEditProfil from './pagePendataan/KepalaKeluarga/Profil/KepalaKeluargaEditProfil';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -95,27 +110,46 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </Route>
       
       {/* ===== ROUTES WEBSITE PENDATAAN UMAT (tanpa navbar dan footer KAK) ===== */}
-      {/* Semua route pendataan umat dimulai dengan /pendataan untuk konsistensi */}
       
       {/* Autentikasi */}
       <Route path="/login" element={<Login />} />
       
-      {/* Dashboard dan Menu Utama Pendataan */}
-      {/* <Route path="/pendataan/dashboard" element={<Dashboard />} /> */}
+      {/* ===== ROUTES ADMIN PENDATAAN UMAT ===== */}
+      {/* Dashboard Admin */}
+      {/* <Route path="/pendataan/admin/dashboard" element={<AdminDashboard />} /> */}
       
-      {/* Manajemen Data Umat */}
-      {/* <Route path="/pendataan/data-umat" element={<DataUmat />} /> */}
-      {/* <Route path="/pendataan/data-umat/tambah" element={<TambahUmat />} /> */}
-      {/* <Route path="/pendataan/data-umat/:id" element={<DetailUmat />} /> */}
-      {/* <Route path="/pendataan/data-umat/:id/edit" element={<EditUmat />} /> */}
+      {/* Manajemen Data Umat (Admin) */}
+      {/* <Route path="/pendataan/admin/data-umat" element={<AdminDataUmat />} /> */}
+      {/* <Route path="/pendataan/admin/data-umat/tambah" element={<AdminTambahUmat />} /> */}
+      {/* <Route path="/pendataan/admin/data-umat/:id" element={<AdminDetailUmat />} /> */}
+      {/* <Route path="/pendataan/admin/data-umat/:id/edit" element={<AdminEditUmat />} /> */}
       
-      {/* Laporan dan Statistik */}
-      {/* <Route path="/pendataan/laporan" element={<Laporan />} /> */}
-      {/* <Route path="/pendataan/statistik" element={<Statistik />} /> */}
+      {/* Laporan dan Statistik (Admin) */}
+      {/* <Route path="/pendataan/admin/laporan" element={<AdminLaporan />} /> */}
+      {/* <Route path="/pendataan/admin/statistik" element={<AdminStatistik />} /> */}
       
-      {/* Pengaturan Akun */}
-      {/* <Route path="/pendataan/pengaturan" element={<Pengaturan />} /> */}
-      {/* <Route path="/pendataan/profil" element={<Profil />} /> */}
+      {/* Manajemen User (Admin) */}
+      {/* <Route path="/pendataan/admin/manage-users" element={<AdminManageUsers />} /> */}
+      {/* <Route path="/pendataan/admin/manage-users/tambah" element={<AdminTambahUser />} /> */}
+      {/* <Route path="/pendataan/admin/manage-users/:id/edit" element={<AdminEditUser />} /> */}
+      
+      {/* Pengaturan Sistem (Admin) */}
+      {/* <Route path="/pendataan/admin/pengaturan" element={<AdminPengaturan />} /> */}
+      {/* <Route path="/pendataan/admin/profil" element={<AdminProfil />} /> */}
+      
+      {/* ===== ROUTES KEPALA KELUARGA PENDATAAN UMAT ===== */}
+      {/* Dashboard Kepala Keluarga */}
+      {/* <Route path="/pendataan/kepalaKeluarga/dashboard" element={<KepalaKeluargaDashboard />} /> */}
+      
+      {/* Manajemen Data Keluarga (Kepala Keluarga) */}
+      {/* <Route path="/pendataan/kepalaKeluarga/data-keluarga" element={<KepalaKeluargaDataKeluarga />} /> */}
+      {/* <Route path="/pendataan/kepalaKeluarga/data-keluarga/tambah-anggota" element={<KepalaKeluargaTambahAnggota />} /> */}
+      {/* <Route path="/pendataan/kepalaKeluarga/data-keluarga/:id" element={<KepalaKeluargaDetailAnggota />} /> */}
+      {/* <Route path="/pendataan/kepalaKeluarga/data-keluarga/:id/edit" element={<KepalaKeluargaEditAnggota />} /> */}
+      
+      {/* Profil Kepala Keluarga */}
+      {/* <Route path="/pendataan/kepalaKeluarga/profil" element={<KepalaKeluargaProfil />} /> */}
+      {/* <Route path="/pendataan/kepalaKeluarga/profil/edit" element={<KepalaKeluargaEditProfil />} /> */}
       
       {/* Route Not Found / 404 */}
       {/* <Route path="*" element={<NotFound />} /> */}

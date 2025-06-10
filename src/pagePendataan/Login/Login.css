@@ -50,20 +50,53 @@
   color: #333;
 }
 
+/* Styling untuk concrega brand (logo + judul) */
+.concrega-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.login-logo {
+  width: 60px; /* Ukuran disesuaikan agar tidak terlalu besar */
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.login-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #FF8F00; /* Warna oranye untuk CONCREGA */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.login-subtitle {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  max-width: 90%;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 /* Main content */
 .login-container {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
 }
 
 .login-center-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 20px; /* Mengurangi padding top agar card lebih ke atas */
   flex: 1;
 }
 
@@ -71,38 +104,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
-}
-
-.login-logo {
-  width: 80px;
-  height: auto;
-}
-
-.login-title {
-  margin-top: 10px;
-  font-size: 1.4rem;
-  text-align: center;
-  color: #333;
-  font-weight: bold;
-}
-
-.login-subtitle {
-  margin-top: 5px;
-  font-size: 1rem;
-  color: #555;
+  margin-bottom: 40px; /* Sedikit lebih besar marginnya tanpa logo */
   text-align: center;
 }
 
 .login-form-container {
   background-color: #fff;
-  border-radius: 8px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
   padding: 30px;
   position: relative;
-  border: 1px solid #e0e0e0;
+  margin-top: -20px; /* Geser ke atas sedikit */
+  border: 1px solid #FF8F00; /* Border oranye sesuai desain Figma */
+  border-radius: 10px;
+}
+
+/* User icon container sekarang di dalam card */
+.user-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .user-icon-container {
@@ -113,7 +135,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: -70px auto 20px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -226,6 +247,57 @@
   padding: 10px;
 }
 
+/* Tambahkan ke Login.css */
+.captcha-group {
+  margin-bottom: 15px;
+}
+
+.captcha-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.captcha-canvas {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f9f9f9;
+}
+
+.captcha-refresh {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.captcha-refresh:hover {
+  background: #0056b3;
+}
+
+.login-warning {
+  color: #ff9800;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.form-input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
 /* Responsive styles */
 @media (max-width: 480px) {
   .login-form-container {
@@ -236,7 +308,6 @@
   .user-icon-container {
     width: 70px;
     height: 70px;
-    margin-top: -60px;
   }
   
   .user-icon {
@@ -244,11 +315,11 @@
   }
   
   .login-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   
   .login-subtitle {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   
   .form-input {
@@ -266,10 +337,11 @@
 @media (max-height: 500px) and (orientation: landscape) {
   .login-center-content {
     padding: 10px;
+    padding-top: 0;
   }
   
   .login-header {
-    margin-bottom: 60px;
+    margin-bottom: 25px;
   }
   
   .login-logo {
@@ -279,7 +351,6 @@
   .user-icon-container {
     width: 60px;
     height: 60px;
-    margin-top: -40px;
   }
   
   .form-group {
@@ -292,5 +363,13 @@
   
   .login-footer {
     margin-top: 15px;
+  }
+  
+  .login-title {
+    font-size: 1.4rem;
+  }
+  
+  .login-subtitle {
+    font-size: 0.8rem;
   }
 }
