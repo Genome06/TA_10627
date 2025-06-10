@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaUser, FaEye, FaEyeSlash, FaRedo } from 'react-icons/fa';
 import logo from '/assets/logo_2.png';
@@ -21,6 +21,28 @@ const Login = () => {
   const canvasRef = useRef(null);
   
   const navigate = useNavigate();
+
+  // Check if user is already logged in
+  useEffect(() => {
+    const token = localStorage.getItem('authToken') || sessionStorage.getItem('authToken');
+    const userRole = localStorage.getItem('userRole') || sessionStorage.getItem('userRole');
+    
+    if (token && userRole) {
+      // Redirect based on role if already logged in
+      if (userRole === 'admin') {
+        navigate('/pendataan/admin/dashboard');
+      } else if (userRole === 'user') {
+        navigate('/pendataan/kepalaKeluarga/dashboard');
+      }
+    }
+  }, [navigate]);
+
+  // Generate bearer token
+  const generateToken = (username, role) => {
+    const timestamp = Date.now();
+    const randomString = Math.random().toString(36).substring(2, 15);
+    return btoa(`${username}:${role}:${timestamp}:${randomString}`);
+  };
 
   // Generate simple CAPTCHA
   const generateCaptcha = () => {
@@ -162,21 +184,32 @@ const Login = () => {
       setLoginAttempts(0);
       setShowCaptcha(false);
       
-      // Simpan informasi login
+      // Generate bearer token
+      const authToken = generateToken(username, userRole);
+      const loginTime = new Date().toISOString();
+      const expiryTime = new Date(Date.now() + 5 * 60 * 60 * 1000).toISOString(); // 5 hours from now
+      
+      // Simpan informasi login dengan token
       const userData = {
         userRole,
         username,
-        loginTime: new Date().toISOString()
+        authToken,
+        loginTime,
+        expiryTime
       };
       
       if (rememberMe) {
         localStorage.setItem('userRole', userRole);
         localStorage.setItem('username', username);
-        localStorage.setItem('loginTime', userData.loginTime);
+        localStorage.setItem('authToken', authToken);
+        localStorage.setItem('loginTime', loginTime);
+        localStorage.setItem('expiryTime', expiryTime);
       } else {
         sessionStorage.setItem('userRole', userRole);
         sessionStorage.setItem('username', username);
-        sessionStorage.setItem('loginTime', userData.loginTime);
+        sessionStorage.setItem('authToken', authToken);
+        sessionStorage.setItem('loginTime', loginTime);
+        sessionStorage.setItem('expiryTime', expiryTime);
       }
 
       console.log('Login berhasil:', userData);
