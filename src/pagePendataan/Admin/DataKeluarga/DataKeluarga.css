@@ -1,0 +1,737 @@
+.data-keluarga {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.data-keluarga-header {
+  margin-bottom: 30px;
+}
+
+.data-keluarga-header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1A202C;
+  margin: 0;
+}
+
+/* Search and Filter Card - Same as DataUmat */
+.data-keluarga-search-filter-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 3px solid #F6AD55;
+  margin-bottom: 20px;
+  overflow: visible;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.data-keluarga-search-section {
+  width: 100%;
+}
+
+.data-keluarga-search-input-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.data-keluarga-search-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.data-keluarga-search-input:focus {
+  border-color: #F6AD55;
+}
+
+.data-keluarga-search-btn {
+  background: white;
+  color: #F6AD55;
+  border: 2px solid #F6AD55;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.data-keluarga-search-btn:hover {
+  background: #F6AD55;
+  color: #000000;
+}
+
+.data-keluarga-actions-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+}
+
+.data-keluarga-action-btn-primary,
+.data-keluarga-action-btn-secondary,
+.data-keluarga-action-btn-tertiary {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-sizing: border-box;
+  border: 2px solid;
+}
+
+.data-keluarga-action-btn-primary {
+  background: white;
+  color: #F6AD55;
+  border-color: #F6AD55;
+}
+
+.data-keluarga-action-btn-primary:hover {
+  background: #F6AD55;
+  color: #000000;
+}
+
+.data-keluarga-action-btn-secondary {
+  background: white;
+  color: #F6AD55;
+  border-color: #F6AD55;
+}
+
+.data-keluarga-action-btn-secondary:hover {
+  background: #F6AD55;
+  color: #000000;
+}
+
+.data-keluarga-action-btn-tertiary {
+  background: #F6AD55;
+  color: #000000;
+  border-color: #F6AD55;
+}
+
+.data-keluarga-action-btn-tertiary:hover {
+  background: #ED8936;
+  border-color: #ED8936;
+}
+
+/* Table Card - Same as DataUmat */
+.data-keluarga-table-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 3px solid #F6AD55;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.data-keluarga-table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 2px solid #F6AD55;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.data-keluarga-table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-keluarga-table th {
+  background: rgb(247, 218, 181);
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #2D3748;
+  border-bottom: 2px solid #F6AD55;
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.data-keluarga-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #F6AD55;
+  color: #4A5568;
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.2s ease;
+}
+
+.data-keluarga-table tbody tr:hover td {
+  background-color: rgb(247, 218, 181);
+}
+
+.data-keluarga-table tbody tr.kepala-keluarga {
+  background-color: #FEF5E7;
+  font-weight: 500;
+}
+
+.data-keluarga-table tbody tr.kepala-keluarga td {
+  background-color: #FEF5E7;
+}
+
+.data-keluarga-table tbody tr.kepala-keluarga:hover td {
+  background-color: #FED7AA;
+}
+
+.kepala-keluarga-badge {
+  display: inline-block;
+  background: #F6AD55;
+  color: #2D3748;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+/* Actions */
+.data-keluarga-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.data-keluarga-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.data-keluarga-action-btn:hover {
+  background-color: rgba(246, 173, 85, 0.1);
+  transform: scale(1.1);
+}
+
+.edit-btn svg {
+  color: #4299E1;
+}
+
+.delete-btn svg {
+  color: #F56565;
+}
+
+/* Pagination - Same as DataUmat */
+.data-keluarga-pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 0 5px;
+}
+
+.data-keluarga-pagination-info {
+  font-size: 14px;
+  color: #4A5568;
+}
+
+.data-keluarga-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.data-keluarga-pagination-btn {
+  background: #F6AD55;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.data-keluarga-pagination-btn:hover:not(:disabled) {
+  background: #ED8936;
+}
+
+.data-keluarga-pagination-btn:disabled {
+  background: #E2E8F0;
+  color: #A0AEC0;
+  cursor: not-allowed;
+}
+
+.data-keluarga-pagination-text {
+  font-size: 14px;
+  color: #4A5568;
+}
+
+/* Legend Section - Same as DataUmat */
+.data-keluarga-legend-section {
+  border-top: 1px solid #E2E8F0;
+  padding-top: 20px;
+}
+
+.data-keluarga-legend-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0 0 15px 0;
+}
+
+.data-keluarga-legend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.data-keluarga-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #4A5568;
+}
+
+.data-keluarga-legend-color-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.kepala-keluarga-color {
+  background-color: rgba(246, 173, 85, 0.2);
+  border: 1px solid #F6AD55;
+}
+
+.deceased-color {
+  background-color: #999999;
+}
+
+/* Add icon legend styling */
+.data-keluarga-legend-icon-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(246, 173, 85, 0.1);
+  border: 1px solid rgba(246, 173, 85, 0.3);
+}
+
+.edit-icon-legend svg {
+  color: #4299E1;
+}
+
+.delete-icon-legend svg {
+  color: #F56565;
+}
+
+/* Loading and Error States */
+.data-keluarga-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 20px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #E2E8F0;
+  border-top: 4px solid #F6AD55;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.data-keluarga-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 20px;
+}
+
+.data-keluarga-error h2 {
+  color: #E53E3E;
+  margin: 0;
+}
+
+/* Delete Confirmation Popup */
+.data-keluarga-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.data-keluarga-popup-container {
+  background: white;
+  border-radius: 20px;
+  border: 3px solid #F6AD55;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+  animation: popupFadeIn 0.3s ease-out;
+}
+
+.data-keluarga-popup-content {
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.data-keluarga-popup-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.data-keluarga-popup-subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0 0 30px 0;
+  line-height: 1.4;
+}
+
+.data-keluarga-popup-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.data-keluarga-popup-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid;
+  min-width: 80px;
+}
+
+.data-keluarga-popup-btn-cancel {
+  background: white;
+  color: #EF4444;
+  border-color: #EF4444;
+}
+
+.data-keluarga-popup-btn-cancel:hover {
+  background: #EF4444;
+  color: white;
+}
+
+.data-keluarga-popup-btn-confirm {
+  background: white;
+  color: #10B981;
+  border-color: #10B981;
+}
+
+.data-keluarga-popup-btn-confirm:hover {
+  background: #059669;
+  color: white;
+}
+
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive popup */
+@media (max-width: 768px) {
+  .data-keluarga-popup-overlay {
+    padding: 15px;
+  }
+
+  .data-keluarga-popup-content {
+    padding: 30px 20px;
+  }
+
+  .data-keluarga-popup-title,
+  .data-keluarga-popup-subtitle {
+    font-size: 16px;
+  }
+
+  .data-keluarga-popup-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .data-keluarga-popup-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .data-keluarga-popup-overlay {
+    padding: 10px;
+  }
+
+  .data-keluarga-popup-content {
+    padding: 25px 15px;
+  }
+
+  .data-keluarga-popup-title,
+  .data-keluarga-popup-subtitle {
+    font-size: 15px;
+  }
+}
+
+/* Responsive Design - Same structure as DataUmat */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .data-keluarga {
+    padding: 15px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .data-keluarga-search-filter-card {
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid #F6AD55;
+    width: 100%;
+  }
+
+  .data-keluarga-table-card {
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid #F6AD55;
+    width: 100%;
+  }
+
+  .data-keluarga-actions-section {
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .data-keluarga-action-btn-primary,
+  .data-keluarga-action-btn-secondary,
+  .data-keluarga-action-btn-tertiary {
+    flex: 1;
+    min-width: 140px;
+    max-width: 200px;
+  }
+
+  .data-keluarga-table {
+    font-size: 12px;
+    min-width: 900px;
+  }
+
+  .data-keluarga-table th,
+  .data-keluarga-table td {
+    padding: 12px 8px;
+    max-width: 120px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .data-keluarga {
+    padding: 10px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: unset !important;
+    overflow-x: hidden !important;
+  }
+
+  .data-keluarga-header h1 {
+    font-size: 24px !important;
+    text-align: center !important;
+  }
+
+  .data-keluarga-search-filter-card {
+    padding: 15px !important;
+    border-radius: 12px !important;
+    border: 2px solid #F6AD55 !important;
+    margin: 0 0 15px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .data-keluarga-search-input-wrapper {
+    flex-direction: row !important;
+    gap: 8px !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .data-keluarga-search-input {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .data-keluarga-search-btn {
+    flex-shrink: 0 !important;
+  }
+
+  .data-keluarga-actions-section {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+  }
+
+  .data-keluarga-action-btn-primary,
+  .data-keluarga-action-btn-secondary,
+  .data-keluarga-action-btn-tertiary {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: unset !important;
+  }
+
+  .data-keluarga-table-card {
+    padding: 15px !important;
+    border-radius: 12px !important;
+    border: 2px solid #F6AD55 !important;
+  }
+
+  .data-keluarga-table {
+    font-size: 11px !important;
+    min-width: 700px !important;
+    width: 700px !important;
+  }
+
+  .data-keluarga-table th,
+  .data-keluarga-table td {
+    padding: 8px 4px !important;
+    max-width: 80px !important;
+    font-size: 11px !important;
+  }
+
+  .data-keluarga-pagination-container {
+    flex-direction: column !important;
+    gap: 15px !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .data-keluarga {
+    padding: 8px !important;
+  }
+
+  .data-keluarga-header h1 {
+    font-size: 20px !important;
+  }
+
+  .data-keluarga-search-filter-card,
+  .data-keluarga-table-card {
+    padding: 12px !important;
+    border-radius: 8px !important;
+  }
+
+  .data-keluarga-search-input-wrapper {
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: stretch !important;
+  }
+
+  .data-keluarga-search-input,
+  .data-keluarga-search-btn {
+    width: 100% !important;
+  }
+
+  .data-keluarga-table {
+    font-size: 10px !important;
+    min-width: 600px !important;
+    width: 600px !important;
+  }
+
+  .data-keluarga-table th,
+  .data-keluarga-table td {
+    padding: 6px 3px !important;
+    max-width: 70px !important;
+    font-size: 10px !important;
+  }
+}
+
+/* Global fixes */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+/* Scrollbar Styling */
+.data-keluarga-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.data-keluarga-table-container::-webkit-scrollbar-track {
+  background: #F1F5F9;
+  border-radius: 4px;
+}
+
+.data-keluarga-table-container::-webkit-scrollbar-thumb {
+  background: #CBD5E0;
+  border-radius: 4px;
+}
+
+.data-keluarga-table-container::-webkit-scrollbar-thumb:hover {
+  background: #A0AEC0;
+}

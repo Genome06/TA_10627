@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Sidebar from '../../components/SideBar/Sidebar';
 import Logout from '../../components/LogOut/Logout';
 import { authUtils } from '../../utils/auth';
@@ -107,6 +109,20 @@ const PendataanLayout = () => {
           </div>
         )}
       </div>
+      
+      {/* Toast Container untuk semua halaman pendataan */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };
