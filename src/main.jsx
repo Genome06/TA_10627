@@ -44,9 +44,14 @@ import DetailBeritaHarian from '@pages/BeritaHarian/Detail/DetailBeritaHarian';
 // Import komponen website pendataan umat
 import Login from './pagePendataan/Login/Login';
 import DashboardAdmin from './pagePendataan/Admin/DashboardAdmin/DashboardAdmin';
+import AdminDataUmat from './pagePendataan/Admin/DataUmat/DataUmat';
+import TambahDataUmat from './pagePendataan/Admin/DataUmat/TambahDataUmat/TambahDataUmat';
+import AdminDataKeluarga from './pagePendataan/Admin/DataKeluarga/DataKeluarga';
+import TambahDataKeluarga from './pagePendataan/Admin/DataKeluarga/TambahDataKeluarga/TambahDataKeluarga';
+import EditDataKeluarga from './pagePendataan/Admin/DataKeluarga/EditDataKeluarga/EditDataKeluarga';
+import PindahDomisiliKeuskupan from './pagePendataan/Admin/DataKeluarga/PindahDomisiliKeuskupan/PindahDomisiliKeuskupan';
 
 // Temporary dashboard components (create these)
-const AdminDataUmat = () => <div>Data Umat</div>;
 const AdminMigrasiUmat = () => <div>Migrasi Umat</div>;
 const AdminListUmatTermigrasi = () => <div>List Umat Termigrasi</div>;
 const AdminStatistik = () => <div>Statistik</div>;
@@ -124,6 +129,36 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="admin/data-umat" element={
           <ProtectedRoute requiredRole="admin">
             <AdminDataUmat />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/data-umat/tambah" element={
+          <ProtectedRoute requiredRole="admin">
+            <TambahDataUmat />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/data-keluarga/:id" element={
+          <ProtectedRoute requiredRole="admin">
+            <AdminDataKeluarga />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/data-keluarga/:id/tambah" element={
+          <ProtectedRoute requiredRole="admin">
+            <TambahDataKeluarga />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/data-keluarga/:id/edit" element={
+          <ProtectedRoute requiredRole="admin">
+            <EditDataKeluarga />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/data-keluarga/:id/edit/:memberId" element={
+          <ProtectedRoute requiredRole="admin">
+            <EditDataKeluarga />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/data-keluarga/:id/pindah-domisili" element={
+          <ProtectedRoute requiredRole="admin">
+            <PindahDomisiliKeuskupan />
           </ProtectedRoute>
         } />
         <Route path="admin/migrasi-umat" element={

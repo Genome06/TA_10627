@@ -34,7 +34,12 @@ const Sidebar = () => {
       label: 'Umat',
       icon: <FaUsers />,
       path: '/pendataan/admin/data-umat',
-      type: 'link'
+      type: 'link',
+      // Tambahkan related paths untuk menu Umat
+      relatedPaths: [
+        '/pendataan/admin/data-umat/tambah',
+        '/pendataan/admin/data-keluarga'
+      ]
     },
     {
       id: 'migrasi',
@@ -125,8 +130,36 @@ const Sidebar = () => {
     setIsMobileOpen(false);
   };
 
-  const isActive = (path) => {
-    return location.pathname === path;
+  // Updated isActive function untuk menangani related paths
+  const isActive = (item) => {
+    // Jika item adalah string (path langsung)
+    if (typeof item === 'string') {
+      return location.pathname === item;
+    }
+    
+    // Jika item adalah object dengan path dan relatedPaths
+    if (item.path && location.pathname === item.path) {
+      return true;
+    }
+    
+    // Check related paths jika ada
+    if (item.relatedPaths) {
+      return item.relatedPaths.some(relatedPath => {
+        // Handle dynamic routes dengan parameter
+        if (relatedPath.includes(':')) {
+          // Convert :id pattern to regex
+          const regexPattern = relatedPath.replace(/:[\w]+/g, '[^/]+');
+          const regex = new RegExp(`^${regexPattern}$`);
+          return regex.test(location.pathname);
+        }
+        
+        // Handle exact match atau starts with untuk nested routes
+        return location.pathname === relatedPath || 
+               location.pathname.startsWith(relatedPath + '/');
+      });
+    }
+    
+    return false;
   };
 
   const isDropdownActive = (children) => {
@@ -177,7 +210,7 @@ const Sidebar = () => {
                 {item.type === 'link' ? (
                   <Link 
                     to={item.path} 
-                    className={`sidebar-nav-link ${isActive(item.path) ? 'active' : ''}`}
+                    className={`sidebar-nav-link ${isActive(item) ? 'active' : ''}`}
                     onClick={handleMenuClick}
                   >
                     <div className="sidebar-nav-content">
