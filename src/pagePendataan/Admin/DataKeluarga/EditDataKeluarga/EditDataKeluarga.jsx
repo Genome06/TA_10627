@@ -10,6 +10,545 @@ const EditDataKeluarga = () => {
   // Tentukan apakah ini kepala keluarga atau anggota
   const isKepalaKeluarga = !memberId;
   
+  // Data keluarga yang sama dengan DataKeluarga.jsx - LENGKAP untuk semua 5 keluarga
+  const familyData = {
+    1: {
+      kepalaKeluarga: {
+        id: 1,
+        nama: "Adrianus William Jensen",
+        nik: "3471012008800001",
+        jenisKelamin: "Laki-laki",
+        tempatLahir: "Yogyakarta",
+        tanggalLahir: "1980-06-20",
+        alamat: "Jl. Babarsari No. 123, Yogyakarta",
+        nomorHp: "08123456789",
+        statusPernikahan: "Sudah Menikah",
+        pekerjaan: "Dokter",
+        paroki: "Paroki Babarsari",
+        lingkungan: "Lingkungan Babarsari",
+        nomorKK: "1234567890123456",
+        statusDalamKeluarga: "Suami",
+        pendidikan: "S2 Kedokteran",
+        namaAyah: "Yohanes Jensen",
+        namaIbu: "Maria Jensen",
+        // Sakramen data
+        isBaptis: true,
+        noBaptis: "B001",
+        noBukuBaptis: "BB001",
+        tanggalBaptis: "2000-01-01",
+        namaParokiAsalBaptis: "Paroki Babarsari",
+        isKomuni: true,
+        tanggalKomuni: "2010-01-01",
+        namaParokiAsalKomuni: "Paroki Babarsari",
+        isKrisma: true,
+        tanggalKrisma: "2015-01-01",
+        namaParokiAsalKrisma: "Paroki Babarsari",
+        isPernikahan: true,
+        tanggalPernikahan: "2005-01-01",
+        nomorAktaPernikahanGereja: "AP001",
+        namaParokiAsalPernikahan: "Paroki Babarsari"
+      },
+      anggotaKeluarga: [
+        {
+          id: 2,
+          nama: "Maria Theresia Jensen",
+          nik: "3471015512850002",
+          jenisKelamin: "Perempuan",
+          tempatLahir: "Yogyakarta",
+          tanggalLahir: "1985-12-15",
+          alamat: "Jl. Babarsari No. 123, Yogyakarta",
+          nomorHp: "08123456790",
+          statusPernikahan: "Sudah Menikah",
+          pekerjaan: "Guru",
+          paroki: "Paroki Babarsari",
+          lingkungan: "Lingkungan Babarsari",
+          statusDalamKeluarga: "Istri",
+          pendidikan: "S1 Pendidikan",
+          namaAyah: "Antonius Maria",
+          namaIbu: "Theresia Maria",
+          // Sakramen data
+          isBaptis: true,
+          noBaptis: "B002",
+          noBukuBaptis: "BB002",
+          tanggalBaptis: "2000-02-01",
+          namaParokiAsalBaptis: "Paroki Babarsari",
+          isKomuni: true,
+          tanggalKomuni: "2010-02-01",
+          namaParokiAsalKomuni: "Paroki Babarsari",
+          isKrisma: true,
+          tanggalKrisma: "2015-02-01",
+          namaParokiAsalKrisma: "Paroki Babarsari",
+          isPernikahan: true,
+          tanggalPernikahan: "2005-01-01",
+          nomorAktaPernikahanGereja: "AP001",
+          namaParokiAsalPernikahan: "Paroki Babarsari"
+        },
+        {
+          id: 3,
+          nama: "Antonius William Jensen Jr",
+          nik: "3471011005100003",
+          jenisKelamin: "Laki-laki",
+          tempatLahir: "Yogyakarta",
+          tanggalLahir: "2010-05-10",
+          alamat: "Jl. Babarsari No. 123, Yogyakarta",
+          nomorHp: "",
+          statusPernikahan: "Belum Menikah",
+          pekerjaan: "Pelajar",
+          paroki: "Paroki Babarsari",
+          lingkungan: "Lingkungan Babarsari",
+          statusDalamKeluarga: "Anak",
+          pendidikan: "SD",
+          namaAyah: "Adrianus William Jensen",
+          namaIbu: "Maria Theresia Jensen",
+          // Sakramen data
+          isBaptis: true,
+          noBaptis: "B003",
+          noBukuBaptis: "BB003",
+          tanggalBaptis: "2010-06-01",
+          namaParokiAsalBaptis: "Paroki Babarsari",
+          isKomuni: true,
+          tanggalKomuni: "2020-06-01",
+          namaParokiAsalKomuni: "Paroki Babarsari",
+          isKrisma: false,
+          tanggalKrisma: "",
+          namaParokiAsalKrisma: "",
+          isPernikahan: false,
+          tanggalPernikahan: "",
+          nomorAktaPernikahanGereja: "",
+          namaParokiAsalPernikahan: ""
+        }
+      ]
+    },
+    2: {
+      kepalaKeluarga: {
+        id: 4,
+        nama: "Eduardo Camavinga",
+        nik: "3471012308900004",
+        jenisKelamin: "Laki-laki",
+        tempatLahir: "Yogyakarta",
+        tanggalLahir: "1990-08-23",
+        alamat: "Jl. Babarsari No. 456, Yogyakarta",
+        nomorHp: "08234567891",
+        statusPernikahan: "Sudah Menikah",
+        pekerjaan: "Pegawai Negeri Sipil (Pns)",
+        paroki: "Paroki Babarsari",
+        lingkungan: "Lingkungan Babarsari",
+        nomorKK: "2345678901234567",
+        statusDalamKeluarga: "Suami",
+        pendidikan: "S1 Administrasi",
+        namaAyah: "Gabriel Camavinga",
+        namaIbu: "Rosa Camavinga",
+        // Sakramen data
+        isBaptis: true,
+        noBaptis: "B004",
+        noBukuBaptis: "BB004",
+        tanggalBaptis: "2000-03-01",
+        namaParokiAsalBaptis: "Paroki Babarsari",
+        isKomuni: true,
+        tanggalKomuni: "2010-03-01",
+        namaParokiAsalKomuni: "Paroki Babarsari",
+        isKrisma: true,
+        tanggalKrisma: "2015-03-01",
+        namaParokiAsalKrisma: "Paroki Babarsari",
+        isPernikahan: true,
+        tanggalPernikahan: "2020-01-01",
+        nomorAktaPernikahanGereja: "AP004",
+        namaParokiAsalPernikahan: "Paroki Babarsari"
+      },
+      anggotaKeluarga: [
+        {
+          id: 5,
+          nama: "Felisa Thanti Adl Kurniawan",
+          nik: "3471016102920005",
+          jenisKelamin: "Perempuan",
+          tempatLahir: "Yogyakarta",
+          tanggalLahir: "2002-06-21",
+          alamat: "Jl. Babarsari No. 456, Yogyakarta",
+          nomorHp: "08234567892",
+          statusPernikahan: "Sudah Menikah",
+          pekerjaan: "Guru",
+          paroki: "Paroki Babarsari",
+          lingkungan: "Lingkungan Babarsari",
+          statusDalamKeluarga: "Istri",
+          pendidikan: "S1 Pendidikan",
+          namaAyah: "Kurniawan Adl",
+          namaIbu: "Thanti Adl",
+          // Sakramen data
+          isBaptis: true,
+          noBaptis: "B005",
+          noBukuBaptis: "BB005",
+          tanggalBaptis: "2002-07-01",
+          namaParokiAsalBaptis: "Paroki Babarsari",
+          isKomuni: true,
+          tanggalKomuni: "2012-07-01",
+          namaParokiAsalKomuni: "Paroki Babarsari",
+          isKrisma: true,
+          tanggalKrisma: "2017-07-01",
+          namaParokiAsalKrisma: "Paroki Babarsari",
+          isPernikahan: true,
+          tanggalPernikahan: "2020-01-01",
+          nomorAktaPernikahanGereja: "AP004",
+          namaParokiAsalPernikahan: "Paroki Babarsari"
+        },
+        {
+          id: 6,
+          nama: "Gabriel Camavinga",
+          nik: "3471011203150006",
+          jenisKelamin: "Laki-laki",
+          tempatLahir: "Yogyakarta",
+          tanggalLahir: "2015-03-12",
+          alamat: "Jl. Babarsari No. 456, Yogyakarta",
+          nomorHp: "",
+          statusPernikahan: "Belum Menikah",
+          pekerjaan: "Belum Bekerja",
+          paroki: "Paroki Babarsari",
+          lingkungan: "Lingkungan Babarsari",
+          statusDalamKeluarga: "Anak",
+          pendidikan: "TK",
+          namaAyah: "Eduardo Camavinga",
+          namaIbu: "Felisa Thanti Adl Kurniawan",
+          // Sakramen data
+          isBaptis: true,
+          noBaptis: "B006",
+          noBukuBaptis: "BB006",
+          tanggalBaptis: "2015-04-01",
+          namaParokiAsalBaptis: "Paroki Babarsari",
+          isKomuni: false,
+          tanggalKomuni: "",
+          namaParokiAsalKomuni: "",
+          isKrisma: false,
+          tanggalKrisma: "",
+          namaParokiAsalKrisma: "",
+          isPernikahan: false,
+          tanggalPernikahan: "",
+          nomorAktaPernikahanGereja: "",
+          namaParokiAsalPernikahan: ""
+        }
+      ]
+    },
+    3: {
+      kepalaKeluarga: {
+        id: 7,
+        nama: "Carvajal",
+        nik: "3471012306000007",
+        jenisKelamin: "Laki-laki",
+        tempatLahir: "Yogyakarta",
+        tanggalLahir: "2000-06-23",
+        alamat: "Jl. Babarsari No. 789, Yogyakarta",
+        nomorHp: "08345678903",
+        statusPernikahan: "Sudah Menikah",
+        pekerjaan: "Lurah",
+        paroki: "Paroki Babarsari",
+        lingkungan: "Lingkungan Babarsari",
+        nomorKK: "3456789012345678",
+        statusDalamKeluarga: "Suami",
+        pendidikan: "S1 Pemerintahan",
+        namaAyah: "Raphael Carvajal",
+        namaIbu: "Sofia Carvajal",
+        // Sakramen data
+        isBaptis: true,
+        noBaptis: "B007",
+        noBukuBaptis: "BB007",
+        tanggalBaptis: "2000-07-01",
+        namaParokiAsalBaptis: "Paroki Babarsari",
+        isKomuni: true,
+        tanggalKomuni: "2010-07-01",
+        namaParokiAsalKomuni: "Paroki Babarsari",
+        isKrisma: true,
+        tanggalKrisma: "2015-07-01",
+        namaParokiAsalKrisma: "Paroki Babarsari",
+        isPernikahan: true,
+        tanggalPernikahan: "2018-05-15",
+        nomorAktaPernikahanGereja: "AP007",
+        namaParokiAsalPernikahan: "Paroki Babarsari"
+      },
+      anggotaKeluarga: [
+        {
+          id: 8,
+          nama: "Theresia Wijaya Carvajal",
+          nik: "3471015507880008",
+          jenisKelamin: "Perempuan",
+          tempatLahir: "Yogyakarta",
+          tanggalLahir: "1988-07-08",
+          alamat: "Jl. Babarsari No. 789, Yogyakarta",
+          nomorHp: "08345678904",
+          statusPernikahan: "Sudah Menikah",
+          pekerjaan: "PNS",
+          paroki: "Paroki Babarsari",
+          lingkungan: "Lingkungan Babarsari",
+          statusDalamKeluarga: "Istri",
+          pendidikan: "S1 Ekonomi",
+          namaAyah: "Antonius Wijaya",
+          namaIbu: "Maria Wijaya",
+          // Sakramen data
+          isBaptis: true,
+          noBaptis: "B008",
+          noBukuBaptis: "BB008",
+          tanggalBaptis: "1988-08-01",
+          namaParokiAsalBaptis: "Paroki Babarsari",
+          isKomuni: true,
+          tanggalKomuni: "1998-08-01",
+          namaParokiAsalKomuni: "Paroki Babarsari",
+          isKrisma: true,
+          tanggalKrisma: "2003-08-01",
+          namaParokiAsalKrisma: "Paroki Babarsari",
+          isPernikahan: true,
+          tanggalPernikahan: "2018-05-15",
+          nomorAktaPernikahanGereja: "AP007",
+          namaParokiAsalPernikahan: "Paroki Babarsari"
+        },
+        {
+          id: 9,
+          nama: "Rafael Carvajal",
+          nik: "3471011008220009",
+          jenisKelamin: "Laki-laki",
+          tempatLahir: "Yogyakarta",
+          tanggalLahir: "2022-08-10",
+          alamat: "Jl. Babarsari No. 789, Yogyakarta",
+          nomorHp: "",
+          statusPernikahan: "Belum Menikah",
+          pekerjaan: "Belum Bekerja",
+          paroki: "Paroki Babarsari",
+          lingkungan: "Lingkungan Babarsari",
+          statusDalamKeluarga: "Anak",
+          pendidikan: "Belum Sekolah",
+          namaAyah: "Carvajal",
+          namaIbu: "Theresia Wijaya Carvajal",
+          // Sakramen data
+          isBaptis: true,
+          noBaptis: "B009",
+          noBukuBaptis: "BB009",
+          tanggalBaptis: "2022-09-01",
+          namaParokiAsalBaptis: "Paroki Babarsari",
+          isKomuni: false,
+          tanggalKomuni: "",
+          namaParokiAsalKomuni: "",
+          isKrisma: false,
+          tanggalKrisma: "",
+          namaParokiAsalKrisma: "",
+          isPernikahan: false,
+          tanggalPernikahan: "",
+          nomorAktaPernikahanGereja: "",
+          namaParokiAsalPernikahan: ""
+        }
+      ]
+    },
+    4: {
+      kepalaKeluarga: {
+        id: 10,
+        nama: "Richardo Kaka",
+        nik: "3471012512000010",
+        jenisKelamin: "Laki-laki",
+        tempatLahir: "Yogyakarta",
+        tanggalLahir: "2000-12-25",
+        alamat: "Jl. Babarsari No. 101, Yogyakarta",
+        nomorHp: "08456789012",
+        statusPernikahan: "Sudah Menikah",
+        pekerjaan: "Camat",
+        paroki: "Paroki Babarsari",
+        lingkungan: "Lingkungan Babarsari",
+        nomorKK: "4567890123456789",
+        statusDalamKeluarga: "Suami",
+        pendidikan: "S2 Pemerintahan",
+        namaAyah: "Ricardo Kaka Sr",
+        namaIbu: "Maria Kaka",
+        // Sakramen data
+        isBaptis: true,
+        noBaptis: "B010",
+        noBukuBaptis: "BB010",
+        tanggalBaptis: "2001-01-01",
+        namaParokiAsalBaptis: "Paroki Babarsari",
+        isKomuni: true,
+        tanggalKomuni: "2011-01-01",
+        namaParokiAsalKomuni: "Paroki Babarsari",
+        isKrisma: true,
+        tanggalKrisma: "2016-01-01",
+        namaParokiAsalKrisma: "Paroki Babarsari",
+        isPernikahan: true,
+        tanggalPernikahan: "2019-06-20",
+        nomorAktaPernikahanGereja: "AP010",
+        namaParokiAsalPernikahan: "Paroki Babarsari"
+      },
+      anggotaKeluarga: [
+        {
+          id: 11,
+          nama: "Maria Santika Dewi Kaka",
+          nik: "3471015503850011",
+          jenisKelamin: "Perempuan",
+          tempatLahir: "Yogyakarta",
+          tanggalLahir: "1985-03-15",
+          alamat: "Jl. Babarsari No. 101, Yogyakarta",
+          nomorHp: "08456789013",
+          statusPernikahan: "Sudah Menikah",
+          pekerjaan: "Wiraswasta",
+          paroki: "Paroki Babarsari",
+          lingkungan: "Lingkungan Babarsari",
+          statusDalamKeluarga: "Istri",
+          pendidikan: "S1 Bisnis",
+          namaAyah: "Santika Dewi",
+          namaIbu: "Magdalena Dewi",
+          // Sakramen data
+          isBaptis: true,
+          noBaptis: "B011",
+          noBukuBaptis: "BB011",
+          tanggalBaptis: "1985-04-01",
+          namaParokiAsalBaptis: "Paroki Babarsari",
+          isKomuni: true,
+          tanggalKomuni: "1995-04-01",
+          namaParokiAsalKomuni: "Paroki Babarsari",
+          isKrisma: true,
+          tanggalKrisma: "2000-04-01",
+          namaParokiAsalKrisma: "Paroki Babarsari",
+          isPernikahan: true,
+          tanggalPernikahan: "2019-06-20",
+          nomorAktaPernikahanGereja: "AP010",
+          namaParokiAsalPernikahan: "Paroki Babarsari"
+        },
+        {
+          id: 12,
+          nama: "Cristiano Kaka",
+          nik: "3471011807180012",
+          jenisKelamin: "Laki-laki",
+          tempatLahir: "Yogyakarta",
+          tanggalLahir: "2018-07-18",
+          alamat: "Jl. Babarsari No. 101, Yogyakarta",
+          nomorHp: "",
+          statusPernikahan: "Belum Menikah",
+          pekerjaan: "Belum Bekerja",
+          paroki: "Paroki Babarsari",
+          lingkungan: "Lingkungan Babarsari",
+          statusDalamKeluarga: "Anak",
+          pendidikan: "TK",
+          namaAyah: "Richardo Kaka",
+          namaIbu: "Maria Santika Dewi Kaka",
+          // Sakramen data
+          isBaptis: true,
+          noBaptis: "B012",
+          noBukuBaptis: "BB012",
+          tanggalBaptis: "2018-08-01",
+          namaParokiAsalBaptis: "Paroki Babarsari",
+          isKomuni: false,
+          tanggalKomuni: "",
+          namaParokiAsalKomuni: "",
+          isKrisma: false,
+          tanggalKrisma: "",
+          namaParokiAsalKrisma: "",
+          isPernikahan: false,
+          tanggalPernikahan: "",
+          nomorAktaPernikahanGereja: "",
+          namaParokiAsalPernikahan: ""
+        }
+      ]
+    },
+    5: {
+      kepalaKeluarga: {
+        id: 13,
+        nama: "Antonius Budi Setiawan",
+        nik: "3471012211920013",
+        jenisKelamin: "Laki-laki",
+        tempatLahir: "Yogyakarta",
+        tanggalLahir: "1992-11-22",
+        alamat: "Jl. Babarsari No. 202, Yogyakarta",
+        nomorHp: "08567890123",
+        statusPernikahan: "Belum Menikah",
+        pekerjaan: "Dokter",
+        paroki: "Paroki Babarsari",
+        lingkungan: "Lingkungan Babarsari",
+        nomorKK: "5678901234567890",
+        statusDalamKeluarga: "Suami",
+        pendidikan: "S2 Kedokteran",
+        namaAyah: "Yohanes Setiawan",
+        namaIbu: "Maria Setiawan",
+        // Sakramen data
+        isBaptis: true,
+        noBaptis: "B013",
+        noBukuBaptis: "BB013",
+        tanggalBaptis: "1992-12-01",
+        namaParokiAsalBaptis: "Paroki Babarsari",
+        isKomuni: true,
+        tanggalKomuni: "2002-12-01",
+        namaParokiAsalKomuni: "Paroki Babarsari",
+        isKrisma: true,
+        tanggalKrisma: "2007-12-01",
+        namaParokiAsalKrisma: "Paroki Babarsari",
+        isPernikahan: false,
+        tanggalPernikahan: "",
+        nomorAktaPernikahanGereja: "",
+        namaParokiAsalPernikahan: ""
+      },
+      anggotaKeluarga: [
+        {
+          id: 14,
+          nama: "Yohanes Kurniawan Setiawan",
+          nik: "3471011209950014",
+          jenisKelamin: "Laki-laki",
+          tempatLahir: "Yogyakarta",
+          tanggalLahir: "1995-09-12",
+          alamat: "Jl. Babarsari No. 202, Yogyakarta",
+          nomorHp: "08567890124",
+          statusPernikahan: "Belum Menikah",
+          pekerjaan: "Guru",
+          paroki: "Paroki Babarsari",
+          lingkungan: "Lingkungan Babarsari",
+          statusDalamKeluarga: "Adik",
+          pendidikan: "S1 Pendidikan",
+          namaAyah: "Yohanes Setiawan",
+          namaIbu: "Maria Setiawan",
+          // Sakramen data
+          isBaptis: true,
+          noBaptis: "B014",
+          noBukuBaptis: "BB014",
+          tanggalBaptis: "1995-10-01",
+          namaParokiAsalBaptis: "Paroki Babarsari",
+          isKomuni: true,
+          tanggalKomuni: "2005-10-01",
+          namaParokiAsalKomuni: "Paroki Babarsari",
+          isKrisma: true,
+          tanggalKrisma: "2010-10-01",
+          namaParokiAsalKrisma: "Paroki Babarsari",
+          isPernikahan: false,
+          tanggalPernikahan: "",
+          nomorAktaPernikahanGereja: "",
+          namaParokiAsalPernikahan: ""
+        },
+        {
+          id: 15,
+          nama: "Fransiskus Aldi Pratama Setiawan",
+          nik: "3471013004970015",
+          jenisKelamin: "Laki-laki",
+          tempatLahir: "Yogyakarta",
+          tanggalLahir: "1997-04-30",
+          alamat: "Jl. Babarsari No. 202, Yogyakarta",
+          nomorHp: "08567890125",
+          statusPernikahan: "Belum Menikah",
+          pekerjaan: "Wiraswasta",
+          paroki: "Paroki Babarsari",
+          lingkungan: "Lingkungan Babarsari",
+          statusDalamKeluarga: "Adik",
+          pendidikan: "S1 Bisnis",
+          namaAyah: "Yohanes Setiawan",
+          namaIbu: "Maria Setiawan",
+          // Sakramen data
+          isBaptis: true,
+          noBaptis: "B015",
+          noBukuBaptis: "BB015",
+          tanggalBaptis: "1997-05-01",
+          namaParokiAsalBaptis: "Paroki Babarsari",
+          isKomuni: true,
+          tanggalKomuni: "2007-05-01",
+          namaParokiAsalKomuni: "Paroki Babarsari",
+          isKrisma: true,
+          tanggalKrisma: "2012-05-01",
+          namaParokiAsalKrisma: "Paroki Babarsari",
+          isPernikahan: false,
+          tanggalPernikahan: "",
+          nomorAktaPernikahanGereja: "",
+          namaParokiAsalPernikahan: ""
+        }
+      ]
+    }
+  };
+  
   // Form state
   const [formData, setFormData] = useState({
     namaLengkap: '',
@@ -46,6 +585,9 @@ const EditDataKeluarga = () => {
     konfirmasiPasswordBaru: ''
   });
 
+  // Loading state
+  const [loading, setLoading] = useState(true);
+
   // State untuk password reset (hanya untuk kepala keluarga)
   const [isResetPassword, setIsResetPassword] = useState(false);
 
@@ -54,11 +596,11 @@ const EditDataKeluarga = () => {
 
   // Dropdown options
   const dropdownOptions = {
-    statusDalamKeluarga: ['Suami', 'Istri', 'Anak', 'Lain-Lain'],
-    pekerjaan: ['Dokter', 'Pegawai Negeri Sipil (Pns)', 'Wiraswasta', 'Pegawai Swasta'],
-    jenisKelamin: ['Laki - Laki', 'Perempuan'],
+    statusDalamKeluarga: ['Suami', 'Istri', 'Anak', 'Adik', 'Lain-Lain'],
+    pekerjaan: ['Dokter', 'Pegawai Negeri Sipil (Pns)', 'Wiraswasta', 'Pegawai Swasta', 'Guru', 'Pelajar', 'Belum Bekerja', 'Lurah', 'Camat', 'PNS'],
+    jenisKelamin: ['Laki-laki', 'Perempuan'],
     lingkungan: ['Lingkungan Babarsari', 'Lingkungan Baciro', 'Lingkungan Pangkalan'],
-    paroki: ['Paroki Babarsari', 'Paroki Baciro', 'Paroki Pangkalan', 'Lingkungan']
+    paroki: ['Paroki Babarsari', 'Paroki Baciro', 'Paroki Pangkalan']
   };
 
   // Load existing data
@@ -67,41 +609,72 @@ const EditDataKeluarga = () => {
   }, [id, memberId]);
 
   const loadExistingData = () => {
-    // Simulasi data yang sudah ada (replace dengan API call)
-    const existingData = {
-      namaLengkap: 'John Doe',
-      nomorKK: '1234567890123456',
-      alamat: 'Jl. Contoh No. 123',
-      paroki: 'Paroki Babarsari',
-      lingkungan: 'Lingkungan Babarsari',
-      isBaptis: true,
-      noBaptis: 'B001',
-      noBukuBaptis: 'BB001',
-      tanggalBaptis: '2000-01-01',
-      namaParokiAsalBaptis: 'Paroki Babarsari',
-      isKomuni: true,
-      tanggalKomuni: '2010-01-01',
-      namaParokiAsalKomuni: 'Paroki Babarsari',
-      isKrisma: false,
-      tanggalKrisma: '',
-      namaParokiAsalKrisma: '',
-      isPernikahan: false,
-      tanggalPernikahan: '',
-      nomorAktaPernikahanGereja: '',
-      namaParokiAsalPernikahan: '',
-      nik: '1234567890123456',
-      jenisKelamin: 'Laki - Laki',
-      tempatLahir: 'Jakarta',
-      tanggalLahir: '1990-01-01',
-      pendidikan: 'S1',
-      pekerjaan: 'Dokter',
-      nomorTelepon: '081234567890',
-      statusDalamKeluarga: isKepalaKeluarga ? 'Suami' : 'Anak',
-      namaAyah: 'Ayah Doe',
-      namaIbu: 'Ibu Doe'
-    };
+    setLoading(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      const family = familyData[id];
+      
+      // Jika family tidak ditemukan
+      if (!family) {
+        toast.error(`Data keluarga dengan ID ${id} tidak ditemukan`);
+        navigate('/pendataan/admin/data-umat');
+        return;
+      }
 
-    setFormData(existingData);
+      let memberData = null;
+
+      if (isKepalaKeluarga) {
+        // Jika edit kepala keluarga
+        memberData = family.kepalaKeluarga;
+      } else {
+        // Jika edit anggota keluarga, cari berdasarkan memberId
+        memberData = family.anggotaKeluarga?.find(member => member.id === parseInt(memberId));
+        
+        if (!memberData) {
+          toast.error(`Data anggota dengan ID ${memberId} tidak ditemukan`);
+          navigate(`/pendataan/admin/data-keluarga/${id}`);
+          return;
+        }
+      }
+
+      // Map data ke form state
+      const existingData = {
+        namaLengkap: memberData.nama || '',
+        nomorKK: memberData.nomorKK || '', // Hanya ada untuk kepala keluarga
+        alamat: memberData.alamat || '',
+        paroki: memberData.paroki || '',
+        lingkungan: memberData.lingkungan || '',
+        isBaptis: memberData.isBaptis || false,
+        noBaptis: memberData.noBaptis || '',
+        noBukuBaptis: memberData.noBukuBaptis || '',
+        tanggalBaptis: memberData.tanggalBaptis || '',
+        namaParokiAsalBaptis: memberData.namaParokiAsalBaptis || '',
+        isKomuni: memberData.isKomuni || false,
+        tanggalKomuni: memberData.tanggalKomuni || '',
+        namaParokiAsalKomuni: memberData.namaParokiAsalKomuni || '',
+        isKrisma: memberData.isKrisma || false,
+        tanggalKrisma: memberData.tanggalKrisma || '',
+        namaParokiAsalKrisma: memberData.namaParokiAsalKrisma || '',
+        isPernikahan: memberData.isPernikahan || false,
+        tanggalPernikahan: memberData.tanggalPernikahan || '',
+        nomorAktaPernikahanGereja: memberData.nomorAktaPernikahanGereja || '',
+        namaParokiAsalPernikahan: memberData.namaParokiAsalPernikahan || '',
+        nik: memberData.nik || '',
+        jenisKelamin: memberData.jenisKelamin || '',
+        tempatLahir: memberData.tempatLahir || '',
+        tanggalLahir: memberData.tanggalLahir || '',
+        pendidikan: memberData.pendidikan || '',
+        pekerjaan: memberData.pekerjaan || '',
+        nomorTelepon: memberData.nomorHp || '',
+        statusDalamKeluarga: memberData.statusDalamKeluarga || '',
+        namaAyah: memberData.namaAyah || '',
+        namaIbu: memberData.namaIbu || ''
+      };
+
+      setFormData(existingData);
+      setLoading(false);
+    }, 500);
   };
 
   // Handle input change
@@ -237,6 +810,9 @@ const EditDataKeluarga = () => {
 
     // Simulasi API call
     console.log('Data yang akan diedit:', formData);
+    console.log('Family ID:', id);
+    console.log('Member ID:', memberId);
+    console.log('Is Kepala Keluarga:', isKepalaKeluarga);
     
     // Success notification
     const successMessage = isKepalaKeluarga 
@@ -255,6 +831,18 @@ const EditDataKeluarga = () => {
   const handleBatal = () => {
     navigate(`/pendataan/admin/data-keluarga/${id}`);
   };
+
+  // Loading state
+  if (loading) {
+    return (
+      <div className="edit-data-keluarga">
+        <div className="data-keluarga-loading">
+          <div className="loading-spinner"></div>
+          <p>Memuat data untuk diedit...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="edit-data-keluarga">
