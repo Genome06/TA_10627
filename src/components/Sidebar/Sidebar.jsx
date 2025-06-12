@@ -50,12 +50,19 @@ const Sidebar = () => {
         {
           id: 'migrasi-umat',
           label: 'Migrasi Umat',
-          path: '/pendataan/admin/migrasi-umat'
+          path: '/pendataan/admin/migrasi-umat',
+          relatedPaths: [
+            '/pendataan/admin/migrasi-umat/input/:id',
+          ]
         },
         {
           id: 'list-umat-termigrasi',
           label: 'List Umat Termigrasi',
-          path: '/pendataan/admin/list-umat-termigrasi'
+          path: '/pendataan/admin/list-umat-termigrasi',
+          // Tambahkan related paths untuk submenu List Umat Termigrasi
+          relatedPaths: [
+            '/pendataan/admin/list-umat-termigrasi/lihat-data-migrasi/:id'
+          ]
         }
       ]
     },
@@ -162,8 +169,33 @@ const Sidebar = () => {
     return false;
   };
 
+  // Updated isDropdownActive function untuk menangani related paths pada dropdown children
   const isDropdownActive = (children) => {
-    return children.some(child => location.pathname === child.path);
+    return children.some(child => {
+      // Check exact path match
+      if (location.pathname === child.path) {
+        return true;
+      }
+      
+      // Check related paths jika ada
+      if (child.relatedPaths) {
+        return child.relatedPaths.some(relatedPath => {
+          // Handle dynamic routes dengan parameter
+          if (relatedPath.includes(':')) {
+            // Convert :id pattern to regex
+            const regexPattern = relatedPath.replace(/:[\w]+/g, '[^/]+');
+            const regex = new RegExp(`^${regexPattern}$`);
+            return regex.test(location.pathname);
+          }
+          
+          // Handle exact match atau starts with untuk nested routes
+          return location.pathname === relatedPath || 
+                 location.pathname.startsWith(relatedPath + '/');
+        });
+      }
+      
+      return false;
+    });
   };
 
   return (
@@ -241,7 +273,7 @@ const Sidebar = () => {
                         <li key={child.id} className="sidebar-dropdown-item">
                           <Link 
                             to={child.path} 
-                            className={`sidebar-dropdown-link ${isActive(child.path) ? 'active' : ''}`}
+                            className={`sidebar-dropdown-link ${isActive(child) ? 'active' : ''}`}
                             onClick={() => setIsMobileOpen(false)}
                           >
                             {child.label}

@@ -1,0 +1,1529 @@
+.migrasi-umat {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.migrasi-umat-header {
+  margin-bottom: 30px;
+}
+
+.migrasi-umat-header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1A202C;
+  margin: 0;
+}
+
+/* Search and Filter Card */
+.migrasi-umat-search-filter-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 3px solid #F6AD55;
+  margin-bottom: 20px;
+  overflow: visible;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.migrasi-umat-search-section {
+  width: 100%;
+}
+
+.migrasi-umat-search-input-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.migrasi-umat-search-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.migrasi-umat-search-input:focus {
+  border-color: #F6AD55;
+}
+
+.migrasi-umat-search-btn {
+  background: white;
+  color: #F6AD55;
+  border: 2px solid #F6AD55;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.migrasi-umat-search-btn:hover {
+  background: #F6AD55;
+  color: #000000;
+}
+
+.migrasi-umat-filters-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+}
+
+.migrasi-umat-filter-dropdown {
+  position: relative;
+  z-index: 200;
+}
+
+.migrasi-umat-filter-dropdown.active {
+  z-index: 1000;
+}
+
+.migrasi-umat-filter-btn {
+  background: white;
+  border: 2px solid #E2E8F0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 140px;
+  max-width: 200px;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+  position: relative;
+  color: #2D3748;
+  box-sizing: border-box;
+}
+
+.migrasi-umat-filter-btn:hover {
+  border-color: #F6AD55;
+}
+
+.migrasi-umat-filter-btn .filter-text {
+  flex: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
+  color: #2D3748;
+}
+
+.migrasi-umat-dropdown-arrow {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  color: #2D3748;
+}
+
+.migrasi-umat-filter-dropdown:has(.migrasi-umat-filter-options) .migrasi-umat-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.migrasi-umat-filter-options {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: white;
+  border: 2px solid #F6AD55;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1500;
+  max-height: 250px;
+  overflow-y: auto;
+  min-width: 220px;
+}
+
+.migrasi-umat-filter-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+  border-bottom: 1px solid #F7F7F7;
+  color: #2D3748;
+  background: white;
+}
+
+.migrasi-umat-filter-option:last-child {
+  border-bottom: none;
+}
+
+.migrasi-umat-filter-option:hover {
+  background: #FFF7ED;
+}
+
+.migrasi-umat-filter-option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #F6AD55;
+  flex-shrink: 0;
+}
+
+/* Tombol Apply Filter - Positioned at bottom right seperti tambah data umat */
+.migrasi-umat-apply-filter-btn {
+  background: #F6AD55;
+  color: #000000;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.migrasi-umat-apply-filter-btn:hover {
+  background: #ED8936;
+}
+
+/* Table Card */
+.migrasi-umat-table-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 3px solid #F6AD55;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.migrasi-umat-table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 2px solid #F6AD55;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.migrasi-umat-table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.migrasi-umat-table th {
+  background: rgb(247, 218, 181);
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #2D3748;
+  border-bottom: 2px solid #F6AD55;
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.migrasi-umat-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #F6AD55;
+  color: #4A5568;
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.2s ease;
+}
+
+.migrasi-umat-table tbody tr:hover td {
+  background-color: rgb(247, 218, 181);
+}
+
+.migrasi-umat-table tbody tr.deceased {
+  background-color: #999999;
+  color: #FFFFFF;
+}
+
+.migrasi-umat-table tbody tr.deceased td {
+  background-color: #999999;
+  color: #FFFFFF;
+}
+
+.migrasi-umat-table tbody tr.deceased:hover td {
+  background-color: #888888;
+}
+
+.migrasi-umat-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.migrasi-umat-action-btn:hover {
+  background-color: rgba(246, 173, 85, 0.1);
+  transform: scale(1.1);
+}
+
+.migrasi-umat-action-btn svg {
+  transition: all 0.2s ease;
+}
+
+.migrasi-umat-action-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.migrasi-umat-edit-btn svg {
+  color: #4299E1;
+}
+
+.migrasi-umat-pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 0 5px;
+}
+
+.migrasi-umat-pagination-info {
+  font-size: 14px;
+  color: #4A5568;
+}
+
+.migrasi-umat-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.migrasi-umat-pagination-btn {
+  background: #F6AD55;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.migrasi-umat-pagination-btn:hover:not(:disabled) {
+  background: #ED8936;
+}
+
+.migrasi-umat-pagination-btn:disabled {
+  background: #E2E8F0;
+  color: #A0AEC0;
+  cursor: not-allowed;
+}
+
+.migrasi-umat-pagination-text {
+  font-size: 14px;
+  color: #4A5568;
+}
+
+.migrasi-umat-legend-section {
+  border-top: 1px solid #E2E8F0;
+  padding-top: 20px;
+}
+
+.migrasi-umat-legend-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0 0 15px 0;
+}
+
+.migrasi-umat-legend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.migrasi-umat-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #4A5568;
+}
+
+.migrasi-umat-legend-color-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.migrasi-umat-legend-color-box.deceased {
+  background-color: #999999;
+}
+
+.migrasi-umat-legend-icon-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(246, 173, 85, 0.1);
+  border: 1px solid rgba(246, 173, 85, 0.3);
+}
+
+.edit-icon-legend svg {
+  color: #4299E1;
+}
+
+/* Tablet responsive (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .migrasi-umat {
+    padding: 15px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .migrasi-umat-search-filter-card {
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid #F6AD55;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .migrasi-umat-table-card {
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid #F6AD55;
+    width: 100%;
+  }
+
+  .migrasi-umat-search-input-wrapper {
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .migrasi-umat-search-input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .migrasi-umat-search-btn {
+    flex-shrink: 0;
+  }
+
+  .migrasi-umat-filters-section {
+    order: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    justify-content: stretch;
+  }
+
+  .migrasi-umat-filter-dropdown {
+    width: 100%;
+    z-index: 200;
+  }
+
+  .migrasi-umat-filter-dropdown.active {
+    z-index: 1000;
+  }
+
+  .migrasi-umat-filter-btn {
+    width: 100%;
+    background: white;
+    color: #2D3748;
+  }
+
+  .migrasi-umat-filter-options {
+    min-width: 180px;
+    max-width: 250px;
+    background: white;
+    z-index: 1500;
+  }
+
+  /* Move apply filter button below filters on tablet */
+  .migrasi-umat-apply-filter-btn {
+    order: 3;
+    position: static;
+    bottom: auto;
+    right: auto;
+    align-self: flex-end;
+    margin-top: 15px;
+    width: auto;
+    min-width: 140px;
+  }
+
+  .migrasi-umat-table {
+    font-size: 12px;
+    min-width: 900px;
+  }
+
+  .migrasi-umat-table th,
+  .migrasi-umat-table td {
+    padding: 12px 8px;
+    max-width: 120px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile responsive (768px and below) - OPTIMIZED VERSION */
+@media (max-width: 768px) {
+  /* Reset all potential width issues */
+  * {
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat {
+    padding: 10px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: unset !important;
+    overflow-x: hidden !important;
+  }
+
+  .migrasi-umat-header {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  .migrasi-umat-header h1 {
+    font-size: 24px !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .migrasi-umat-search-filter-card {
+    padding: 15px !important;
+    border-radius: 12px !important;
+    border: 2px solid #F6AD55 !important;
+    margin: 0 0 15px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    overflow: visible !important;
+  }
+
+  .migrasi-umat-search-section {
+    width: 100% !important;
+    order: 1 !important;
+  }
+
+  .migrasi-umat-search-input-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat-search-input {
+    flex: 1 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    font-size: 14px !important;
+    padding: 12px 16px !important;
+    background-color: white !important;
+    color: #2D3748 !important;
+    border: 2px solid #E2E8F0 !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    line-height: normal !important;
+  }
+
+  .migrasi-umat-search-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    background-color: white !important;
+    color: #F6AD55 !important;
+    border: 2px solid #F6AD55 !important;
+    border-radius: 8px !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    line-height: normal !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    min-height: 45px !important;
+    vertical-align: middle !important;
+    appearance: none !important;
+  }
+
+  .migrasi-umat-search-btn:hover {
+    background-color: #F6AD55 !important;
+    color: #000000 !important;
+  }
+
+  .migrasi-umat-filters-section {
+    order: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+  }
+
+  .migrasi-umat-filter-dropdown {
+    width: 100% !important;
+    position: relative !important;
+    z-index: 200 !important;
+  }
+
+  .migrasi-umat-filter-dropdown.active {
+    z-index: 1000 !important;
+  }
+
+  .migrasi-umat-filter-btn {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    background: white !important;
+    color: #2D3748 !important;
+    border: 2px solid #E2E8F0 !important;
+    font-size: 14px !important;
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .migrasi-umat-filter-btn .filter-text {
+    color: #2D3748 !important;
+    text-align: left !important;
+    flex: 1 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .migrasi-umat-dropdown-arrow {
+    color: #2D3748 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .migrasi-umat-filter-btn:hover {
+    border-color: #F6AD55 !important;
+    background: white !important;
+  }
+
+  .migrasi-umat-filter-options {
+    position: absolute !important;
+    top: calc(100% + 4px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: white !important;
+    border: 2px solid #F6AD55 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+    z-index: 1500 !important;
+    max-height: 250px !important;
+    overflow-y: auto !important;
+    min-width: unset !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat-filter-option {
+    background: white !important;
+    color: #2D3748 !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    border-bottom: 1px solid #F7F7F7 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat-filter-option:hover {
+    background: #FFF7ED !important;
+  }
+
+  .migrasi-umat-apply-filter-btn {
+    order: 3 !important;
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+    background: #F6AD55 !important;
+    color: #000000 !important;
+    font-size: 14px !important;
+    padding: 12px 20px !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat-table-card {
+    padding: 15px !important;
+    border-radius: 12px !important;
+    border: 2px solid #F6AD55 !important;
+    margin: 0 0 15px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .migrasi-umat-table-container {
+    border-radius: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat-table {
+    font-size: 11px !important;
+    min-width: 700px !important;
+    width: 700px !important;
+  }
+
+  .migrasi-umat-table th,
+  .migrasi-umat-table td {
+    padding: 8px 4px !important;
+    max-width: 80px !important;
+    font-size: 11px !important;
+  }
+
+  .migrasi-umat-table th:first-child,
+  .migrasi-umat-table td:first-child {
+    min-width: 30px !important;
+    max-width: 30px !important;
+  }
+
+  .migrasi-umat-table th:last-child,
+  .migrasi-umat-table td:last-child {
+    min-width: 50px !important;
+    max-width: 50px !important;
+  }
+
+  .migrasi-umat-pagination-container {
+    flex-direction: column !important;
+    gap: 15px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .migrasi-umat-legend-items {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+}
+
+/* Small mobile responsive (480px and below) */
+@media (max-width: 480px) {
+  .migrasi-umat {
+    padding: 8px !important;
+  }
+
+  .migrasi-umat-header h1 {
+    font-size: 20px !important;
+  }
+
+  .migrasi-umat-search-filter-card,
+  .migrasi-umat-table-card {
+    padding: 12px !important;
+    border-radius: 8px !important;
+    margin: 0 0 12px 0 !important;
+  }
+
+  .migrasi-umat-search-input-wrapper {
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: stretch !important;
+  }
+
+  .migrasi-umat-search-input,
+  .migrasi-umat-search-btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat-table {
+    font-size: 10px !important;
+    min-width: 600px !important;
+    width: 600px !important;
+  }
+
+  .migrasi-umat-table th,
+  .migrasi-umat-table td {
+    padding: 6px 3px !important;
+    max-width: 70px !important;
+    font-size: 10px !important;
+  }
+}
+
+/* Global fixes to prevent horizontal scroll */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+/* Scrollbar Styling */
+.migrasi-umat-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.migrasi-umat-table-container::-webkit-scrollbar-track {
+  background: #F1F5F9;
+  border-radius: 4px;
+}
+
+.migrasi-umat-table-container::-webkit-scrollbar-thumb {
+  background: #CBD5E0;
+  border-radius: 4px;
+}
+
+.migrasi-umat-table-container::-webkit-scrollbar-thumb:hover {
+  background: #A0AEC0;
+}
+
+.migrasi-umat-filter-options::-webkit-scrollbar {
+  width: 6px;
+}
+
+.migrasi-umat-filter-options::-webkit-scrollbar-track {
+  background: #F1F5F9;
+  border-radius: 3px;
+}
+
+.migrasi-umat-filter-options::-webkit-scrollbar-thumb {
+  background: #CBD5E0;
+  border-radius: 3px;
+}
+
+.migrasi-umat-filter-options::-webkit-scrollbar-thumb:hover {
+  background: #A0AEC0;
+}
+
+/* Focus States */
+.migrasi-umat-search-input:focus,
+.migrasi-umat-filter-btn:focus,
+.migrasi-umat-apply-filter-btn:focus,
+.migrasi-umat-action-btn:focus,
+.migrasi-umat-pagination-btn:focus {
+  outline: 2px solid #F6AD55;
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .migrasi-umat-search-filter-card,
+  .migrasi-umat-table-card {
+    border: 3px solid #000;
+  }
+  
+  .migrasi-umat-filter-btn,
+  .migrasi-umat-search-input {
+    border: 2px solid #000;
+  }
+  
+  .migrasi-umat-apply-filter-btn,
+  .migrasi-umat-search-btn {
+    background: #000080;
+    border: 1px solid #000;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Global box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Ensure proper color inheritance */
+.migrasi-umat-filter-btn,
+.migrasi-umat-filter-btn .filter-text,
+.migrasi-umat-dropdown-arrow {
+  color: #2D3748 !important;
+}
+
+.migrasi-umat-filter-option {
+  background: white !important;
+  color: #2D3748 !important;
+}
+
+.migrasi-umat-filter-options {
+  background: white !important;
+}
+
+/* Mobile specific fixes */
+@media (max-width: 768px) {
+  .migrasi-umat-filter-btn,
+  .migrasi-umat-filter-btn .filter-text,
+  .migrasi-umat-dropdown-arrow {
+    background: white !important;
+    color: #2D3748 !important;
+  }
+  
+  .migrasi-umat-search-input {
+    background: white !important;
+    color: #2D3748 !important;
+  }
+  
+  .migrasi-umat-search-btn {
+    background: white !important;
+    color: #F6AD55 !important;
+  }
+  
+  .migrasi-umat-apply-filter-btn {
+    background: #F6AD55 !important;
+    color: #000000 !important;
+  }
+}
+
+/* Perbaikan untuk range 1220px - 1330px - Tombol Apply Filter tertumpuk */
+@media (max-width: 1330px) and (min-width: 1220px) {
+  .migrasi-umat-search-filter-card {
+    padding: 30px;
+    padding-bottom: 80px; /* Add extra space for the button */
+    position: relative;
+    min-height: 200px; /* Ensure minimum height to accommodate button */
+  }
+
+  .migrasi-umat-filters-section {
+    margin-bottom: 20px; /* Add margin to create space from button */
+  }
+
+  /* Move apply filter button to bottom but keep it on the right */
+  .migrasi-umat-apply-filter-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    z-index: 10;
+    width: auto;
+    min-width: 120px;
+  }
+}
+
+/* Alternative solution - Move button below filters for medium screens */
+@media (max-width: 1320px) and (min-width: 1025px) {
+  .migrasi-umat-search-filter-card {
+    padding: 30px;
+    padding-bottom: 20px; /* Reset padding */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .migrasi-umat-search-section {
+    order: 1;
+  }
+
+  .migrasi-umat-filters-section {
+    order: 2;
+    margin-bottom: 0;
+  }
+
+  /* Move apply filter button below filters but align to right */
+  .migrasi-umat-apply-filter-btn {
+    order: 3;
+    position: static;
+    bottom: auto;
+    right: auto;
+    align-self: flex-end; /* Align to right */
+    margin-top: 15px;
+    width: auto;
+    min-width: 140px;
+  }
+
+  /* Ensure filters don't wrap too early */
+  .migrasi-umat-filter-dropdown {
+    min-width: 130px;
+    max-width: 160px;
+  }
+
+  .migrasi-umat-filter-btn {
+    min-width: 130px;
+    max-width: 160px;
+  }
+}
+
+/* Enhanced responsive for larger tablets and small laptops */
+@media (max-width: 1220px) and (min-width: 769px) {
+  .migrasi-umat {
+    padding: 15px;
+  }
+
+  .migrasi-umat-search-filter-card {
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid #F6AD55;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .migrasi-umat-search-section {
+    order: 1;
+  }
+
+  .migrasi-umat-filters-section {
+    order: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .migrasi-umat-filter-dropdown {
+    width: 100%;
+    min-width: 150px;
+  }
+
+  .migrasi-umat-filter-btn {
+    width: 100%;
+    min-width: 150px;
+    max-width: none;
+  }
+
+  /* Move apply filter button below filters */
+  .migrasi-umat-apply-filter-btn {
+    order: 3;
+    position: static;
+    bottom: auto;
+    right: auto;
+    align-self: flex-end;
+    margin-top: 15px;
+    width: auto;
+    min-width: 140px;
+  }
+
+  .migrasi-umat-table-card {
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid #F6AD55;
+  }
+
+  .migrasi-umat-table {
+    font-size: 12px;
+    min-width: 900px;
+  }
+
+  .migrasi-umat-table th,
+  .migrasi-umat-table td {
+    padding: 12px 8px;
+    max-width: 120px;
+    font-size: 12px;
+  }
+}
+
+/* Update existing tablet responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .migrasi-umat {
+    padding: 15px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .migrasi-umat-search-filter-card {
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid #F6AD55;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .migrasi-umat-table-card {
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid #F6AD55;
+    width: 100%;
+  }
+
+  .migrasi-umat-search-input-wrapper {
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .migrasi-umat-search-input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .migrasi-umat-search-btn {
+    flex-shrink: 0;
+  }
+
+  .migrasi-umat-filters-section {
+    order: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    justify-content: stretch;
+  }
+
+  .migrasi-umat-filter-dropdown {
+    width: 100%;
+    z-index: 200;
+  }
+
+  .migrasi-umat-filter-dropdown.active {
+    z-index: 1000;
+  }
+
+  .migrasi-umat-filter-btn {
+    width: 100%;
+    background: white;
+    color: #2D3748;
+  }
+
+  .migrasi-umat-filter-options {
+    min-width: 180px;
+    max-width: 250px;
+    background: white;
+    z-index: 1500;
+  }
+
+  /* Move apply filter button below filters on tablet */
+  .migrasi-umat-apply-filter-btn {
+    order: 3;
+    position: static;
+    bottom: auto;
+    right: auto;
+    align-self: flex-end;
+    margin-top: 15px;
+    width: auto;
+    min-width: 140px;
+  }
+
+  .migrasi-umat-table {
+    font-size: 12px;
+    min-width: 900px;
+  }
+
+  .migrasi-umat-table th,
+  .migrasi-umat-table td {
+    padding: 12px 8px;
+    max-width: 120px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile responsive (768px and below) - OPTIMIZED VERSION */
+@media (max-width: 768px) {
+  /* Reset all potential width issues */
+  * {
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat {
+    padding: 10px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: unset !important;
+    overflow-x: hidden !important;
+  }
+
+  .migrasi-umat-header {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  .migrasi-umat-header h1 {
+    font-size: 24px !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .migrasi-umat-search-filter-card {
+    padding: 15px !important;
+    border-radius: 12px !important;
+    border: 2px solid #F6AD55 !important;
+    margin: 0 0 15px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    overflow: visible !important;
+  }
+
+  .migrasi-umat-search-section {
+    width: 100% !important;
+    order: 1 !important;
+  }
+
+  .migrasi-umat-search-input-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat-search-input {
+    flex: 1 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    font-size: 14px !important;
+    padding: 12px 16px !important;
+    background-color: white !important;
+    color: #2D3748 !important;
+    border: 2px solid #E2E8F0 !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    line-height: normal !important;
+  }
+
+  .migrasi-umat-search-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    background-color: white !important;
+    color: #F6AD55 !important;
+    border: 2px solid #F6AD55 !important;
+    border-radius: 8px !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    line-height: normal !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    min-height: 45px !important;
+    vertical-align: middle !important;
+    appearance: none !important;
+  }
+
+  .migrasi-umat-search-btn:hover {
+    background-color: #F6AD55 !important;
+    color: #000000 !important;
+  }
+
+  .migrasi-umat-filters-section {
+    order: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+  }
+
+  .migrasi-umat-filter-dropdown {
+    width: 100% !important;
+    position: relative !important;
+    z-index: 200 !important;
+  }
+
+  .migrasi-umat-filter-dropdown.active {
+    z-index: 1000 !important;
+  }
+
+  .migrasi-umat-filter-btn {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    background: white !important;
+    color: #2D3748 !important;
+    border: 2px solid #E2E8F0 !important;
+    font-size: 14px !important;
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .migrasi-umat-filter-btn .filter-text {
+    color: #2D3748 !important;
+    text-align: left !important;
+    flex: 1 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .migrasi-umat-dropdown-arrow {
+    color: #2D3748 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .migrasi-umat-filter-btn:hover {
+    border-color: #F6AD55 !important;
+    background: white !important;
+  }
+
+  .migrasi-umat-filter-options {
+    position: absolute !important;
+    top: calc(100% + 4px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: white !important;
+    border: 2px solid #F6AD55 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+    z-index: 1500 !important;
+    max-height: 250px !important;
+    overflow-y: auto !important;
+    min-width: unset !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat-filter-option {
+    background: white !important;
+    color: #2D3748 !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    border-bottom: 1px solid #F7F7F7 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat-filter-option:hover {
+    background: #FFF7ED !important;
+  }
+
+  .migrasi-umat-apply-filter-btn {
+    order: 3 !important;
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+    background: #F6AD55 !important;
+    color: #000000 !important;
+    font-size: 14px !important;
+    padding: 12px 20px !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat-table-card {
+    padding: 15px !important;
+    border-radius: 12px !important;
+    border: 2px solid #F6AD55 !important;
+    margin: 0 0 15px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .migrasi-umat-table-container {
+    border-radius: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat-table {
+    font-size: 11px !important;
+    min-width: 700px !important;
+    width: 700px !important;
+  }
+
+  .migrasi-umat-table th,
+  .migrasi-umat-table td {
+    padding: 8px 4px !important;
+    max-width: 80px !important;
+    font-size: 11px !important;
+  }
+
+  .migrasi-umat-table th:first-child,
+  .migrasi-umat-table td:first-child {
+    min-width: 30px !important;
+    max-width: 30px !important;
+  }
+
+  .migrasi-umat-table th:last-child,
+  .migrasi-umat-table td:last-child {
+    min-width: 50px !important;
+    max-width: 50px !important;
+  }
+
+  .migrasi-umat-pagination-container {
+    flex-direction: column !important;
+    gap: 15px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .migrasi-umat-legend-items {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+}
+
+/* Additional fix for preventing button overlap */
+@media (max-width: 1400px) {
+  .migrasi-umat-search-filter-card {
+    position: relative;
+    overflow: visible;
+  }
+
+  /* Ensure filters section has enough bottom margin when button is positioned absolutely */
+  .migrasi-umat-filters-section {
+    margin-bottom: 60px;
+  }
+}
+
+/* Reset filters section margin for mobile */
+@media (max-width: 768px) {
+  .migrasi-umat-filters-section {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Perbaikan untuk search section di mode mobile */
+@media (max-width: 768px) {
+  .migrasi-umat-search-section {
+    width: 100% !important;
+    order: 1 !important;
+  }
+
+  .migrasi-umat-search-input-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .migrasi-umat-search-input {
+    flex: 1 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    font-size: 14px !important;
+    padding: 12px 16px !important;
+    background-color: white !important;
+    color: #2D3748 !important;
+    border: 2px solid #E2E8F0 !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    line-height: normal !important;
+  }
+
+  .migrasi-umat-search-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    background-color: white !important;
+    color: #F6AD55 !important;
+    border: 2px solid #F6AD55 !important;
+    border-radius: 8px !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    line-height: normal !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    min-height: 45px !important;
+    vertical-align: middle !important;
+    appearance: none !important;
+  }
+
+  .migrasi-umat-search-btn:hover {
+    background-color: #F6AD55 !important;
+    color: #000000 !important;
+  }
+}
+
+/* Perbaikan khusus untuk small mobile */
+@media (max-width: 480px) {
+  .migrasi-umat-search-input-wrapper {
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+
+  .migrasi-umat-search-input,
+  .migrasi-umat-search-btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+  }
+}

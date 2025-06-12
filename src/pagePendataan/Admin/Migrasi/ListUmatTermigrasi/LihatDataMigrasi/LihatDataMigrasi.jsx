@@ -11,7 +11,7 @@ const LihatDataMigrasi = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Data umat termigrasi yang sama dengan di ListUmatTermigrasi
+  // Data umat termigrasi yang lengkap sesuai dengan ListUmatTermigrasi (10 data)
   const dataUmatTermigrasi = {
     1: {
       id: 1,
@@ -49,7 +49,13 @@ const LihatDataMigrasi = () => {
       // Data migrasi
       jenisKepindahan: "Perpindahan Keuskupan",
       nomorKKBaru: "2345678901234567",
-      statusDalamKeluargaBaru: "Istri"
+      statusDalamKeluargaBaru: "Istri",
+      // Data untuk perpindahan keuskupan
+      keuskupan: "Keuskupan Semarang",
+      alamatBaru: "Jl. Pandanaran No. 45, Semarang Tengah",
+      parokiBaru: "Paroki Hati Kudus Semarang",
+      lingkunganBaru: "Lingkungan Santo Yosef",
+      tanggalPindahKeuskupan: "2024-01-15"
     },
     2: {
       id: 2,
@@ -124,8 +130,8 @@ const LihatDataMigrasi = () => {
       namaParokiAsalPernikahan: "",
       // Data migrasi
       jenisKepindahan: "Perpindahan Agama",
-      nomorKKBaru: "",
-      statusDalamKeluargaBaru: ""
+      agamaBaru: "Islam",
+      tanggalPindahAgama: "2024-02-20"
     },
     4: {
       id: 4,
@@ -201,6 +207,208 @@ const LihatDataMigrasi = () => {
       // Data migrasi
       jenisKepindahan: "Perpindahan Keuskupan",
       nomorKKBaru: "6789012345678901",
+      statusDalamKeluargaBaru: "Anak",
+      // Data untuk perpindahan keuskupan
+      keuskupan: "Keuskupan Surabaya",
+      alamatBaru: "Jl. Darmo Permai No. 123, Surabaya",
+      parokiBaru: "Paroki Santo Fransiskus Surabaya",
+      lingkunganBaru: "Lingkungan Santa Maria",
+      tanggalPindahKeuskupan: "2024-03-20"
+    },
+    6: {
+      id: 6,
+      nama: "Antonius Paulus Wijaya",
+      nik: "3471012501780006",
+      nomorKK: "6789012345678902",
+      jenisKelamin: "Laki-laki",
+      tempatLahir: "Makassar",
+      tanggalLahir: "1978-01-25",
+      alamat: "Jl. Veteran No. 987, Makassar",
+      paroki: "Paroki Babarsari",
+      lingkungan: "Lingkungan Babarsari",
+      pendidikan: "D3 Penerbangan",
+      pekerjaan: "Pilot",
+      nomorTelepon: "08666777888",
+      statusDalamKeluarga: "Suami",
+      namaAyah: "Paulus Wijaya",
+      namaIbu: "Antonina Wijaya",
+      // Sakramen data
+      isBaptis: true,
+      noBaptis: "B106001",
+      noBukuBaptis: "BB106001",
+      tanggalBaptis: "1978-02-25",
+      namaParokiAsalBaptis: "Paroki St. Antonius Makassar",
+      isKomuni: true,
+      tanggalKomuni: "1988-02-25",
+      namaParokiAsalKomuni: "Paroki St. Antonius Makassar",
+      isKrisma: true,
+      tanggalKrisma: "1993-02-25",
+      namaParokiAsalKrisma: "Paroki St. Antonius Makassar",
+      isPernikahan: true,
+      tanggalPernikahan: "2003-07-10",
+      nomorAktaPernikahanGereja: "AP106001",
+      namaParokiAsalPernikahan: "Paroki St. Antonius Makassar",
+      // Data migrasi
+      jenisKepindahan: "Perpindahan Agama",
+      agamaBaru: "Protestan",
+      tanggalPindahAgama: "2024-03-10"
+    },
+    7: {
+      id: 7,
+      nama: "Monica Kristina Lestari",
+      nik: "3471011406850007",
+      nomorKK: "7890123456789013",
+      jenisKelamin: "Perempuan",
+      tempatLahir: "Denpasar",
+      tanggalLahir: "1985-06-14",
+      alamat: "Jl. Sunset Road No. 456, Denpasar",
+      paroki: "Paroki Baciro",
+      lingkungan: "Lingkungan Baciro",
+      pendidikan: "S1 Farmasi",
+      pekerjaan: "Farmasi",
+      nomorTelepon: "08777888999",
+      statusDalamKeluarga: "Istri",
+      namaAyah: "Kristinus Lestari",
+      namaIbu: "Monica Lestari",
+      // Sakramen data
+      isBaptis: true,
+      noBaptis: "B107001",
+      noBukuBaptis: "BB107001",
+      tanggalBaptis: "1985-07-14",
+      namaParokiAsalBaptis: "Paroki St. Monica Denpasar",
+      isKomuni: true,
+      tanggalKomuni: "1995-07-14",
+      namaParokiAsalKomuni: "Paroki St. Monica Denpasar",
+      isKrisma: true,
+      tanggalKrisma: "2000-07-14",
+      namaParokiAsalKrisma: "Paroki St. Monica Denpasar",
+      isPernikahan: true,
+      tanggalPernikahan: "2008-12-06",
+      nomorAktaPernikahanGereja: "AP107001",
+      namaParokiAsalPernikahan: "Paroki St. Monica Denpasar",
+      // Data migrasi
+      jenisKepindahan: "Perpindahan KK",
+      nomorKKBaru: "8901234567890124",
+      statusDalamKeluargaBaru: "Istri"
+    },
+    8: {
+      id: 8,
+      nama: "Stefanus Martinus Adi",
+      nik: "3471012910920008",
+      nomorKK: "8901234567890125",
+      jenisKelamin: "Laki-laki",
+      tempatLahir: "Palembang",
+      tanggalLahir: "1992-10-29",
+      alamat: "Jl. Sudirman No. 789, Palembang",
+      paroki: "Paroki Pangkalan",
+      lingkungan: "Lingkungan Pangkalan",
+      pendidikan: "S1 Arsitektur",
+      pekerjaan: "Arsitek",
+      nomorTelepon: "08888999000",
+      statusDalamKeluarga: "Anak",
+      namaAyah: "Martinus Adi",
+      namaIbu: "Stefania Adi",
+      // Sakramen data
+      isBaptis: true,
+      noBaptis: "B108001",
+      noBukuBaptis: "BB108001",
+      tanggalBaptis: "1992-11-29",
+      namaParokiAsalBaptis: "Paroki St. Stefanus Palembang",
+      isKomuni: true,
+      tanggalKomuni: "2002-11-29",
+      namaParokiAsalKomuni: "Paroki St. Stefanus Palembang",
+      isKrisma: true,
+      tanggalKrisma: "2007-11-29",
+      namaParokiAsalKrisma: "Paroki St. Stefanus Palembang",
+      isPernikahan: false,
+      tanggalPernikahan: "",
+      nomorAktaPernikahanGereja: "",
+      namaParokiAsalPernikahan: "",
+      // Data migrasi
+      jenisKepindahan: "Perpindahan Keuskupan",
+      nomorKKBaru: "9012345678901236",
+      statusDalamKeluargaBaru: "Anak",
+      // Data untuk perpindahan keuskupan
+      keuskupan: "Keuskupan Bandung",
+      alamatBaru: "Jl. Merdeka No. 789, Bandung",
+      parokiBaru: "Paroki Santo Stefanus Bandung",
+      lingkunganBaru: "Lingkungan Santo Petrus",
+      tanggalPindahKeuskupan: "2024-04-10"
+    },
+    9: {
+      id: 9,
+      nama: "Agatha Veronica Sari",
+      nik: "3471011103870009",
+      nomorKK: "9012345678901237",
+      jenisKelamin: "Perempuan",
+      tempatLahir: "Balikpapan",
+      tanggalLahir: "1987-03-11",
+      alamat: "Jl. Ahmad Yani No. 321, Balikpapan",
+      paroki: "Paroki Baciro",
+      lingkungan: "Lingkungan Baciro",
+      pendidikan: "S1 Hukum",
+      pekerjaan: "Notaris",
+      nomorTelepon: "08999000111",
+      statusDalamKeluarga: "Istri",
+      namaAyah: "Veronius Sari",
+      namaIbu: "Agatha Sari",
+      // Sakramen data
+      isBaptis: true,
+      noBaptis: "B109001",
+      noBukuBaptis: "BB109001",
+      tanggalBaptis: "1987-04-11",
+      namaParokiAsalBaptis: "Paroki St. Agatha Balikpapan",
+      isKomuni: true,
+      tanggalKomuni: "1997-04-11",
+      namaParokiAsalKomuni: "Paroki St. Agatha Balikpapan",
+      isKrisma: true,
+      tanggalKrisma: "2002-04-11",
+      namaParokiAsalKrisma: "Paroki St. Agatha Balikpapan",
+      isPernikahan: true,
+      tanggalPernikahan: "2010-09-18",
+      nomorAktaPernikahanGereja: "AP109001",
+      namaParokiAsalPernikahan: "Paroki St. Agatha Balikpapan",
+      // Data migrasi
+      jenisKepindahan: "Perpindahan Agama",
+      agamaBaru: "Hindu",
+      tanggalPindahAgama: "2024-04-05"
+    },
+    10: {
+      id: 10,
+      nama: "Albertus Thomas Kurnia",
+      nik: "3471010707930010",
+      nomorKK: "0123456789012348",
+      jenisKelamin: "Laki-laki",
+      tempatLahir: "Manado",
+      tanggalLahir: "1993-07-07",
+      alamat: "Jl. Sam Ratulangi No. 654, Manado",
+      paroki: "Paroki Pangkalan",
+      lingkungan: "Lingkungan Pangkalan",
+      pendidikan: "D3 Multimedia",
+      pekerjaan: "Fotografer",
+      nomorTelepon: "08000111222",
+      statusDalamKeluarga: "Anak",
+      namaAyah: "Thomas Kurnia",
+      namaIbu: "Alberta Kurnia",
+      // Sakramen data
+      isBaptis: true,
+      noBaptis: "B110001",
+      noBukuBaptis: "BB110001",
+      tanggalBaptis: "1993-08-07",
+      namaParokiAsalBaptis: "Paroki St. Albertus Manado",
+      isKomuni: true,
+      tanggalKomuni: "2003-08-07",
+      namaParokiAsalKomuni: "Paroki St. Albertus Manado",
+      isKrisma: true,
+      tanggalKrisma: "2008-08-07",
+      namaParokiAsalKrisma: "Paroki St. Albertus Manado",
+      isPernikahan: false,
+      tanggalPernikahan: "",
+      nomorAktaPernikahanGereja: "",
+      namaParokiAsalPernikahan: "",
+      // Data migrasi
+      jenisKepindahan: "Perpindahan KK",
+      nomorKKBaru: "1234567890123459",
       statusDalamKeluargaBaru: "Anak"
     }
   };
@@ -209,7 +417,7 @@ const LihatDataMigrasi = () => {
   useEffect(() => {
     setLoading(true);
     
-    // Simulate API call - same timing as DataKeluarga
+    // Simulate API call
     setTimeout(() => {
       const data = dataUmatTermigrasi[id];
       if (data) {
@@ -238,7 +446,7 @@ const LihatDataMigrasi = () => {
     });
   };
 
-  // Loading state - SAME AS DataKeluarga
+  // Loading state
   if (loading) {
     return (
       <div className="lihat-data-migrasi-loading">
@@ -248,7 +456,7 @@ const LihatDataMigrasi = () => {
     );
   }
 
-  // Error state - SAME AS DataKeluarga structure
+  // Error state
   if (!userData) {
     return (
       <div className="lihat-data-migrasi-error">
@@ -260,6 +468,10 @@ const LihatDataMigrasi = () => {
     );
   }
 
+  // Debug log untuk melihat data
+  console.log('UserData:', userData);
+  console.log('Jenis Kepindahan:', userData.jenisKepindahan);
+
   return (
     <div className="lihat-data-migrasi">
       <div className="lihat-data-migrasi-header">
@@ -267,7 +479,7 @@ const LihatDataMigrasi = () => {
       </div>
 
       <div className="lihat-data-migrasi-content">
-        {/* Data Umat Ingin Dimigrasi (Read Only) */}
+        {/* Data Umat Sudah Dimigrasi (Read Only) */}
         <div className="lihat-data-migrasi-card">
           <h2>Data Umat Sudah Dimigrasi (Read Only)</h2>
           
@@ -705,7 +917,7 @@ const LihatDataMigrasi = () => {
           )}
         </div>
 
-        {/* Lihat Data Migrasi Umat */}
+        {/* Lihat Data Migrasi Umat - SESUAI DESAIN FIGMA */}
         <div className="lihat-data-migrasi-card">
           <h2>Lihat Data Migrasi Umat</h2>
           
@@ -718,55 +930,166 @@ const LihatDataMigrasi = () => {
           <div className="lihat-data-migrasi-migration-section">
             <h3>Informasi Migrasi</h3>
             
-            <div className="lihat-data-migrasi-row">
-              <div className="lihat-data-migrasi-col">
-                <label className="lihat-data-migrasi-label">
-                  Jenis Perpindahan <span className="required">*</span>
-                </label>
-                <select
-                  value={userData.jenisKepindahan}
-                  className="lihat-data-migrasi-select"
-                  disabled
-                >
-                  <option value={userData.jenisKepindahan}>{userData.jenisKepindahan}</option>
-                </select>
-              </div>
-              
-              <div className="lihat-data-migrasi-col">
-                {userData.jenisKepindahan !== "Perpindahan Agama" && (
-                  <>
-                    <label className="lihat-data-migrasi-label">
-                      Nomor KK (Kartu Keluarga) Yang Baru <span className="required">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      value={userData.nomorKKBaru || ''}
-                      className="lihat-data-migrasi-input"
-                      readOnly
-                    />
-                  </>
-                )}
-              </div>
+            {/* Jenis Perpindahan - Selalu ditampilkan pertama */}
+            <div className="lihat-data-migrasi-form-group">
+              <label className="lihat-data-migrasi-label">
+                Jenis Perpindahan <span className="required">*</span>
+              </label>
+              <select
+                value={userData.jenisKepindahan}
+                className="lihat-data-migrasi-select-fullwidth"
+                disabled
+              >
+                <option value={userData.jenisKepindahan}>{userData.jenisKepindahan}</option>
+              </select>
             </div>
 
-            {userData.jenisKepindahan !== "Perpindahan Agama" && (
-              <div className="lihat-data-migrasi-row">
-                <div className="lihat-data-migrasi-col">
+            {/* CONDITIONAL RENDERING BERDASARKAN JENIS KEPINDAHAN */}
+            
+            {/* 1. PERPINDAHAN AGAMA - Layout Vertikal Sesuai Figma */}
+            {userData.jenisKepindahan === "Perpindahan Agama" && (
+              <>
+                <div className="lihat-data-migrasi-form-group">
+                  <label className="lihat-data-migrasi-label">
+                    Agama Baru Yang Dianut <span className="required">*</span>
+                  </label>
+                  <select
+                    value={userData.agamaBaru || ""}
+                    className="lihat-data-migrasi-select-fullwidth"
+                    disabled
+                  >
+                    <option value={userData.agamaBaru || ""}>
+                      {userData.agamaBaru || "Tidak ada data"}
+                    </option>
+                  </select>
+                </div>
+
+                <div className="lihat-data-migrasi-form-group">
+                  <label className="lihat-data-migrasi-label">
+                    Tanggal Pindah Agama <span className="required">*</span>
+                  </label>
+                  <div className="lihat-data-migrasi-date-wrapper">
+                    <input
+                      type="date"
+                      value={userData.tanggalPindahAgama || ""}
+                      className="lihat-data-migrasi-date-input"
+                      readOnly
+                    />
+                  </div>
+                </div>
+              </>
+            )}
+
+            {/* 2. PERPINDAHAN KK - Layout Horizontal Sesuai Figma */}
+            {userData.jenisKepindahan === "Perpindahan KK" && (
+              <div className="lihat-data-migrasi-form-group-horizontal">
+                <div className="lihat-data-migrasi-form-group">
+                  <label className="lihat-data-migrasi-label">
+                    Nomor KK (Kartu Keluarga) Yang Baru <span className="required">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={userData.nomorKKBaru || ''}
+                    className="lihat-data-migrasi-input-fullwidth"
+                    readOnly
+                  />
+                </div>
+                
+                <div className="lihat-data-migrasi-form-group">
                   <label className="lihat-data-migrasi-label">
                     Status Dalam Keluarga <span className="required">*</span>
                   </label>
                   <select
-                    value={userData.statusDalamKeluargaBaru}
-                    className="lihat-data-migrasi-select"
+                    value={userData.statusDalamKeluargaBaru || ""}
+                    className="lihat-data-migrasi-select-fullwidth"
                     disabled
                   >
-                    <option value={userData.statusDalamKeluargaBaru}>{userData.statusDalamKeluargaBaru}</option>
+                    <option value={userData.statusDalamKeluargaBaru || ""}>
+                      {userData.statusDalamKeluargaBaru || "Tidak ada data"}
+                    </option>
                   </select>
                 </div>
-                <div className="lihat-data-migrasi-col">
-                  {/* Empty column for spacing */}
-                </div>
               </div>
+            )}
+
+            {/* 3. PERPINDAHAN KEUSKUPAN - Layout Vertikal Sesuai Figma */}
+            {userData.jenisKepindahan === "Perpindahan Keuskupan" && (
+              <>
+                <div className="lihat-data-migrasi-form-group-horizontal">
+                  <div className="lihat-data-migrasi-form-group">
+                    <label className="lihat-data-migrasi-label">
+                      Keuskupan <span className="required">*</span>
+                    </label>
+                    <select
+                      value={userData.keuskupan || ""}
+                      className="lihat-data-migrasi-select-fullwidth"
+                      disabled
+                    >
+                      <option value={userData.keuskupan || ""}>
+                        {userData.keuskupan || "Tidak ada data"}
+                      </option>
+                    </select>
+                  </div>
+                  
+                  <div className="lihat-data-migrasi-form-group">
+                    <label className="lihat-data-migrasi-label">
+                      Alamat <span className="required">*</span>
+                    </label>
+                    <textarea
+                      value={userData.alamatBaru || ""}
+                      className="lihat-data-migrasi-textarea-fullwidth"
+                      readOnly
+                      rows="3"
+                    />
+                  </div>
+                </div>
+
+                <div className="lihat-data-migrasi-form-group-horizontal">
+                  <div className="lihat-data-migrasi-form-group">
+                    <label className="lihat-data-migrasi-label">
+                      Paroki <span className="required">*</span>
+                    </label>
+                    <select
+                      value={userData.parokiBaru || ""}
+                      className="lihat-data-migrasi-select-fullwidth"
+                      disabled
+                    >
+                      <option value={userData.parokiBaru || ""}>
+                        {userData.parokiBaru || "Tidak ada data"}
+                      </option>
+                    </select>
+                  </div>
+                  
+                  <div className="lihat-data-migrasi-form-group">
+                    <label className="lihat-data-migrasi-label">
+                      Lingkungan <span className="required">*</span>
+                    </label>
+                    <select
+                      value={userData.lingkunganBaru || ""}
+                      className="lihat-data-migrasi-select-fullwidth"
+                      disabled
+                    >
+                      <option value={userData.lingkunganBaru || ""}>
+                        {userData.lingkunganBaru || "Tidak ada data"}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="lihat-data-migrasi-form-group">
+                  <label className="lihat-data-migrasi-label">
+                    Tanggal Pindah Keuskupan <span className="required">*</span>
+                  </label>
+                  <div className="lihat-data-migrasi-date-wrapper">
+                    <input
+                      type="date"
+                      value={userData.tanggalPindahKeuskupan || ""}
+                      className="lihat-data-migrasi-date-input"
+                      readOnly
+                    />
+                  </div>
+                </div>
+              </>
             )}
           </div>
         </div>

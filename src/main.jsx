@@ -52,9 +52,10 @@ import EditDataKeluarga from './pagePendataan/Admin/DataKeluarga/EditDataKeluarg
 import PindahDomisiliKeuskupan from './pagePendataan/Admin/DataKeluarga/PindahDomisiliKeuskupan/PindahDomisiliKeuskupan';
 import AdminListUmatTermigrasi from './pagePendataan/Admin/Migrasi/ListUmatTermigrasi/ListUmatTermigrasi';
 import LihatDataMigrasi from './pagePendataan/Admin/Migrasi/ListUmatTermigrasi/LihatDataMigrasi/LihatDataMigrasi';
+import MigrasiUmat from './pagePendataan/Admin/Migrasi/MigrasiUmat/MigrasiUmat';
+import InputMigrasiUmat from './pagePendataan/Admin/Migrasi/MigrasiUmat/InputMigrasiUmat/InputMigrasiUmat';
 
 // Temporary dashboard components (create these)
-const AdminMigrasiUmat = () => <div>Migrasi Umat</div>;
 const AdminStatistik = () => <div>Statistik</div>;
 const AdminKomunitasOMK = () => <div>Komunitas / OMK</div>;
 const AdminTempatZiarah = () => <div>Tempat Ziarah</div>;
@@ -164,7 +165,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         } />
         <Route path="admin/migrasi-umat" element={
           <ProtectedRoute requiredRole="admin">
-            <AdminMigrasiUmat />
+            <MigrasiUmat />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/migrasi-umat/input/:id" element={
+          <ProtectedRoute requiredRole="admin">
+            <InputMigrasiUmat />
           </ProtectedRoute>
         } />
         <Route path="admin/list-umat-termigrasi" element={
