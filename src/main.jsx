@@ -50,10 +50,11 @@ import AdminDataKeluarga from './pagePendataan/Admin/DataKeluarga/DataKeluarga';
 import TambahDataKeluarga from './pagePendataan/Admin/DataKeluarga/TambahDataKeluarga/TambahDataKeluarga';
 import EditDataKeluarga from './pagePendataan/Admin/DataKeluarga/EditDataKeluarga/EditDataKeluarga';
 import PindahDomisiliKeuskupan from './pagePendataan/Admin/DataKeluarga/PindahDomisiliKeuskupan/PindahDomisiliKeuskupan';
+import AdminListUmatTermigrasi from './pagePendataan/Admin/Migrasi/ListUmatTermigrasi/ListUmatTermigrasi';
+import LihatDataMigrasi from './pagePendataan/Admin/Migrasi/ListUmatTermigrasi/LihatDataMigrasi/LihatDataMigrasi';
 
 // Temporary dashboard components (create these)
 const AdminMigrasiUmat = () => <div>Migrasi Umat</div>;
-const AdminListUmatTermigrasi = () => <div>List Umat Termigrasi</div>;
 const AdminStatistik = () => <div>Statistik</div>;
 const AdminKomunitasOMK = () => <div>Komunitas / OMK</div>;
 const AdminTempatZiarah = () => <div>Tempat Ziarah</div>;
@@ -171,6 +172,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <AdminListUmatTermigrasi />
           </ProtectedRoute>
         } />
+        <Route path="admin/list-umat-termigrasi/lihat-data-migrasi/:id" element={
+          <ProtectedRoute requiredRole="admin">
+            <LihatDataMigrasi />
+          </ProtectedRoute>
+        } />
+        {/* Temporary dashboard components */}
         <Route path="admin/statistik" element={
           <ProtectedRoute requiredRole="admin">
             <AdminStatistik />
