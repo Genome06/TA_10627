@@ -268,7 +268,7 @@ const PindahDomisiliKeuskupan = () => {
         });
         
         // Navigate to migrasi page
-        navigate('/pendataan/admin/migrasi-umat');
+        navigate('/pendataan/admin/list-umat-termigrasi');
       }, 1000);
     } else {
       toast.error('Mohon lengkapi semua field yang wajib diisi', {
