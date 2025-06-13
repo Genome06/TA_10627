@@ -1,0 +1,404 @@
+.dashboard-kepala-keluarga {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Welcome Section - Updated to white background */
+.welcome-section {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
+  color: #1A202C;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 3px solid #F6AD55;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(246, 173, 85, 0.05) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-section h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: #1A202C;
+}
+
+.welcome-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  color: #4A5568;
+  font-weight: 400;
+  text-align: justify;
+}
+
+/* Chart Section - Added orange border */
+.chart-section {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 3px solid #F6AD55;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.chart-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1A202C;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.year-navigation {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #F8FAFC;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+}
+
+.year-btn {
+  background: #F6AD55;
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(246, 173, 85, 0.2);
+}
+
+.year-btn:hover {
+  background: #ED8936;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(246, 173, 85, 0.3);
+}
+
+.year-btn:active {
+  transform: translateY(0);
+}
+
+.current-year {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2D3748;
+  min-width: 60px;
+  text-align: center;
+}
+
+.chart-container {
+  height: 400px;
+  position: relative;
+  background: #FAFAFA;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #F1F5F9;
+}
+
+/* Guide Section - Added orange border */
+.guide-section {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 3px solid #F6AD55;
+}
+
+.guide-section h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1A202C;
+  margin: 0 0 20px 0;
+  line-height: 1.3;
+}
+
+.guide-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4A5568;
+  margin: 0 0 20px 0;
+  text-align: justify;
+}
+
+.guide-link {
+  display: inline-flex;
+  align-items: center;
+  color: #F6AD55;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, rgba(246, 173, 85, 0.1) 0%, rgba(246, 173, 85, 0.05) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(246, 173, 85, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.guide-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(246, 173, 85, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.guide-link:hover {
+  color: #ED8936;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(246, 173, 85, 0.2);
+  border-color: rgba(246, 173, 85, 0.3);
+}
+
+.guide-link:hover::before {
+  left: 100%;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .dashboard-kepala-keluarga {
+    padding: 0 10px;
+  }
+
+  .welcome-section {
+    padding: 30px 25px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    border: 2px solid #F6AD55;
+  }
+
+  .welcome-section h1 {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+
+  .welcome-section p {
+    font-size: 15px;
+    text-align: justify;
+  }
+
+  .chart-section {
+    padding: 25px 20px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    border: 2px solid #F6AD55;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 15px;
+  }
+
+  .chart-header h2 {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .year-navigation {
+    align-self: center;
+    padding: 6px 12px;
+    gap: 12px;
+  }
+
+  .year-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .current-year {
+    font-size: 16px;
+    min-width: 50px;
+  }
+
+  .chart-container {
+    height: 300px;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .guide-section {
+    padding: 25px 20px;
+    border-radius: 16px;
+    border: 2px solid #F6AD55;
+  }
+
+  .guide-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .guide-content p {
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+
+  .guide-link {
+    font-size: 14px;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-kepala-keluarga {
+    padding: 0 5px;
+  }
+
+  .welcome-section {
+    padding: 25px 20px;
+    border-radius: 12px;
+    border: 2px solid #F6AD55;
+  }
+
+  .welcome-section h1 {
+    font-size: 22px;
+  }
+
+  .welcome-section p {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .chart-section {
+    padding: 20px 15px;
+    border-radius: 12px;
+    border: 2px solid #F6AD55;
+  }
+
+  .chart-header h2 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .chart-container {
+    height: 280px;
+    padding: 12px;
+  }
+
+  .guide-section {
+    padding: 20px 15px;
+    border-radius: 12px;
+    border: 2px solid #F6AD55;
+  }
+
+  .guide-section h2 {
+    font-size: 18px;
+  }
+
+  .guide-content p {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .guide-link {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Focus states for accessibility */
+.year-btn:focus,
+.guide-link:focus {
+  outline: 2px solid #F6AD55;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .welcome-section,
+  .chart-section,
+  .guide-section {
+    border: 3px solid #000;
+  }
+  
+  .year-btn {
+    background: #000080;
+    border: 1px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .welcome-section::before {
+    animation: none;
+  }
+  
+  .guide-link::before {
+    transition: none;
+  }
+  
+  * {
+    transition: none !important;
+  }
+}

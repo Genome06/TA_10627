@@ -1,0 +1,755 @@
+.data-keluarga-user {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.data-keluarga-user-header {
+  margin-bottom: 30px;
+}
+
+.data-keluarga-user-header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1A202C;
+  margin: 0;
+}
+
+/* Search and Filter Card - Same as admin DataKeluarga */
+.data-keluarga-user-search-filter-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 3px solid #F6AD55;
+  margin-bottom: 20px;
+  overflow: visible;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.data-keluarga-user-search-section {
+  width: 100%;
+}
+
+.data-keluarga-user-search-input-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.data-keluarga-user-search-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.data-keluarga-user-search-input:focus {
+  border-color: #F6AD55;
+}
+
+.data-keluarga-user-search-btn {
+  background: white;
+  color: #F6AD55;
+  border: 2px solid #F6AD55;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.data-keluarga-user-search-btn:hover {
+  background: #F6AD55;
+  color: #000000;
+}
+
+.data-keluarga-user-actions-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+  /* PERBAIKAN: Posisi button ke kanan */
+  justify-content: flex-end;
+}
+
+.data-keluarga-user-action-btn-tertiary {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-sizing: border-box;
+  border: 2px solid #F6AD55;
+  background: #F6AD55;
+  color: #000000;
+}
+
+.data-keluarga-user-action-btn-tertiary:hover {
+  background: #ED8936;
+  border-color: #ED8936;
+}
+
+/* Table Card - Same as admin */
+.data-keluarga-user-table-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 3px solid #F6AD55;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.data-keluarga-user-table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 2px solid #F6AD55;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.data-keluarga-user-table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-keluarga-user-table th {
+  background: rgb(247, 218, 181);
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #2D3748;
+  border-bottom: 2px solid #F6AD55;
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.data-keluarga-user-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #F6AD55;
+  color: #4A5568;
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.2s ease;
+}
+
+.data-keluarga-user-table tbody tr:hover td {
+  background-color: rgb(247, 218, 181);
+}
+
+.data-keluarga-user-table tbody tr.kepala-keluarga-user {
+  background-color: #FEF5E7;
+  font-weight: 500;
+}
+
+.data-keluarga-user-table tbody tr.kepala-keluarga-user td {
+  background-color: #FEF5E7;
+}
+
+.data-keluarga-user-table tbody tr.kepala-keluarga-user:hover td {
+  background-color: #FED7AA;
+}
+
+.kepala-keluarga-user-badge {
+  display: inline-block;
+  background: #F6AD55;
+  color: #2D3748;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+/* Actions */
+.data-keluarga-user-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.data-keluarga-user-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.data-keluarga-user-action-btn:hover {
+  background-color: rgba(246, 173, 85, 0.1);
+  transform: scale(1.1);
+}
+
+.edit-btn-user svg {
+  color: #4299E1;
+}
+
+.delete-btn-user svg {
+  color: #F56565;
+}
+
+/* Pagination - Same as admin */
+.data-keluarga-user-pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 0 5px;
+}
+
+.data-keluarga-user-pagination-info {
+  font-size: 14px;
+  color: #4A5568;
+}
+
+.data-keluarga-user-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.data-keluarga-user-pagination-btn {
+  background: #F6AD55;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.data-keluarga-user-pagination-btn:hover:not(:disabled) {
+  background: #ED8936;
+}
+
+.data-keluarga-user-pagination-btn:disabled {
+  background: #E2E8F0;
+  color: #A0AEC0;
+  cursor: not-allowed;
+}
+
+.data-keluarga-user-pagination-text {
+  font-size: 14px;
+  color: #4A5568;
+}
+
+/* Legend Section - Same as admin */
+.data-keluarga-user-legend-section {
+  border-top: 1px solid #E2E8F0;
+  padding-top: 20px;
+}
+
+.data-keluarga-user-legend-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0 0 15px 0;
+}
+
+.data-keluarga-user-legend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.data-keluarga-user-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #4A5568;
+}
+
+.data-keluarga-user-legend-color-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.kepala-keluarga-user-color {
+  background-color: rgba(246, 173, 85, 0.2);
+  border: 1px solid #F6AD55;
+}
+
+.deceased-user-color {
+  background-color: #999999;
+}
+
+.data-keluarga-user-legend-icon-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(246, 173, 85, 0.1);
+  border: 1px solid rgba(246, 173, 85, 0.3);
+}
+
+.edit-icon-user-legend svg {
+  color: #4299E1;
+}
+
+.delete-icon-user-legend svg {
+  color: #F56565;
+}
+
+/* Loading and Error States */
+.data-keluarga-user-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 20px;
+}
+
+.loading-spinner-user {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #E2E8F0;
+  border-top: 4px solid #F6AD55;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.data-keluarga-user-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 20px;
+}
+
+.data-keluarga-user-error h2 {
+  color: #E53E3E;
+  margin: 0;
+}
+
+/* Delete Confirmation Popup - Hanya untuk anggota keluarga */
+.data-keluarga-user-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.data-keluarga-user-popup-container {
+  background: white;
+  border-radius: 20px;
+  border: 3px solid #F6AD55;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+  animation: popupFadeInUser 0.3s ease-out;
+}
+
+.data-keluarga-user-popup-content {
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.data-keluarga-user-popup-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.data-keluarga-user-popup-subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0 0 30px 0;
+  line-height: 1.4;
+}
+
+.data-keluarga-user-popup-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.data-keluarga-user-popup-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid;
+  min-width: 80px;
+}
+
+.data-keluarga-user-popup-btn-cancel {
+  background: white;
+  color: #EF4444;
+  border-color: #EF4444;
+}
+
+.data-keluarga-user-popup-btn-cancel:hover {
+  background: #EF4444;
+  color: white;
+}
+
+.data-keluarga-user-popup-btn-confirm {
+  background: white;
+  color: #10B981;
+  border-color: #10B981;
+}
+
+.data-keluarga-user-popup-btn-confirm:hover {
+  background: #059669;
+  color: white;
+}
+
+@keyframes popupFadeInUser {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* OPTIMALISASI RESPONSIF MOBILE */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .data-keluarga-user {
+    padding: 15px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .data-keluarga-user-search-filter-card {
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid #F6AD55;
+    width: 100%;
+  }
+
+  .data-keluarga-user-table-card {
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid #F6AD55;
+    width: 100%;
+  }
+
+  .data-keluarga-user-actions-section {
+    /* PERBAIKAN: Tetap di kanan untuk tablet */
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .data-keluarga-user-action-btn-tertiary {
+    flex: 0 0 auto; /* Tidak flex, ukuran sesuai konten */
+    min-width: 200px;
+    max-width: 300px;
+  }
+
+  .data-keluarga-user-table {
+    font-size: 12px;
+    min-width: 900px;
+  }
+
+  .data-keluarga-user-table th,
+  .data-keluarga-user-table td {
+    padding: 12px 8px;
+    max-width: 120px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .data-keluarga-user {
+    padding: 10px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: unset !important;
+    overflow-x: hidden !important;
+  }
+
+  .data-keluarga-user-header h1 {
+    font-size: 24px !important;
+    text-align: center !important;
+  }
+
+  .data-keluarga-user-search-filter-card {
+    padding: 15px !important;
+    border-radius: 12px !important;
+    border: 2px solid #F6AD55 !important;
+    margin: 0 0 15px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .data-keluarga-user-search-input-wrapper {
+    flex-direction: row !important;
+    gap: 8px !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .data-keluarga-user-search-input {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .data-keluarga-user-search-btn {
+    flex-shrink: 0 !important;
+  }
+
+  .data-keluarga-user-actions-section {
+    display: flex !important;
+    /* PERBAIKAN: Di mobile tetap di kanan tapi responsive */
+    justify-content: flex-end !important;
+    width: 100% !important;
+    gap: 12px !important;
+    align-items: center !important;
+  }
+
+  .data-keluarga-user-action-btn-tertiary {
+    flex: 0 0 auto !important; /* Tidak full width di mobile */
+    min-width: 200px !important;
+    max-width: 300px !important;
+  }
+
+  .data-keluarga-user-table-card {
+    padding: 15px !important;
+    border-radius: 12px !important;
+    border: 2px solid #F6AD55 !important;
+  }
+
+  .data-keluarga-user-table {
+    font-size: 11px !important;
+    min-width: 700px !important;
+    width: 700px !important;
+  }
+
+  .data-keluarga-user-table th,
+  .data-keluarga-user-table td {
+    padding: 8px 4px !important;
+    max-width: 80px !important;
+    font-size: 11px !important;
+  }
+
+  .data-keluarga-user-pagination-container {
+    flex-direction: column !important;
+    gap: 15px !important;
+    text-align: center !important;
+  }
+
+  /* Mobile legend responsive */
+  .data-keluarga-user-legend-items {
+    gap: 15px !important;
+    justify-content: center !important;
+  }
+
+  .data-keluarga-user-legend-item {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .data-keluarga-user {
+    padding: 8px !important;
+  }
+
+  .data-keluarga-user-header h1 {
+    font-size: 20px !important;
+  }
+
+  .data-keluarga-user-search-filter-card,
+  .data-keluarga-user-table-card {
+    padding: 12px !important;
+    border-radius: 8px !important;
+  }
+
+  .data-keluarga-user-search-input-wrapper {
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: stretch !important;
+  }
+
+  .data-keluarga-user-search-input,
+  .data-keluarga-user-search-btn {
+    width: 100% !important;
+  }
+
+  .data-keluarga-user-actions-section {
+    /* PERBAIKAN: Di small mobile, center untuk kemudahan akses */
+    justify-content: center !important;
+  }
+
+  .data-keluarga-user-action-btn-tertiary {
+    min-width: unset !important;
+    max-width: unset !important;
+    width: 100% !important; /* Full width di small mobile untuk kemudahan tap */
+  }
+
+  .data-keluarga-user-table {
+    font-size: 10px !important;
+    min-width: 600px !important;
+    width: 600px !important;
+  }
+
+  .data-keluarga-user-table th,
+  .data-keluarga-user-table td {
+    padding: 6px 3px !important;
+    max-width: 70px !important;
+    font-size: 10px !important;
+  }
+
+  .kepala-keluarga-user-badge {
+    font-size: 8px !important;
+    padding: 1px 4px !important;
+  }
+
+  /* Responsive popup for mobile */
+  .data-keluarga-user-popup-overlay {
+    padding: 15px !important;
+  }
+
+  .data-keluarga-user-popup-content {
+    padding: 30px 20px !important;
+  }
+
+  .data-keluarga-user-popup-title,
+  .data-keluarga-user-popup-subtitle {
+    font-size: 16px !important;
+  }
+
+  .data-keluarga-user-popup-buttons {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .data-keluarga-user-popup-btn {
+    width: 100% !important;
+  }
+}
+
+/* Global fixes untuk mobile */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+/* Scrollbar Styling */
+.data-keluarga-user-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.data-keluarga-user-table-container::-webkit-scrollbar-track {
+  background: #F1F5F9;
+  border-radius: 4px;
+}
+
+.data-keluarga-user-table-container::-webkit-scrollbar-thumb {
+  background: #CBD5E0;
+  border-radius: 4px;
+}
+
+.data-keluarga-user-table-container::-webkit-scrollbar-thumb:hover {
+  background: #A0AEC0;
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 360px) {
+  .data-keluarga-user-table {
+    min-width: 550px !important;
+    width: 550px !important;
+  }
+
+  .data-keluarga-user-table th,
+  .data-keluarga-user-table td {
+    max-width: 60px !important;
+    padding: 4px 2px !important;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .data-keluarga-user-popup-container {
+    animation: none;
+  }
+  
+  .data-keluarga-user-action-btn:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .data-keluarga-user-search-filter-card,
+  .data-keluarga-user-table-card {
+    border: 3px solid #000;
+  }
+  
+  .data-keluarga-user-action-btn-tertiary {
+    background: #000080;
+    border-color: #000;
+    color: white;
+  }
+}
