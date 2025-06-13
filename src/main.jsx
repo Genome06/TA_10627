@@ -54,13 +54,20 @@ import AdminListUmatTermigrasi from './pagePendataan/Admin/Migrasi/ListUmatTermi
 import LihatDataMigrasi from './pagePendataan/Admin/Migrasi/ListUmatTermigrasi/LihatDataMigrasi/LihatDataMigrasi';
 import MigrasiUmat from './pagePendataan/Admin/Migrasi/MigrasiUmat/MigrasiUmat';
 import InputMigrasiUmat from './pagePendataan/Admin/Migrasi/MigrasiUmat/InputMigrasiUmat/InputMigrasiUmat';
-
-// Temporary dashboard components (create these)
-const AdminStatistik = () => <div>Statistik</div>;
-const AdminKomunitasOMK = () => <div>Komunitas / OMK</div>;
-const AdminTempatZiarah = () => <div>Tempat Ziarah</div>;
-
-const KepalaKeluargaDashboard = () => <div>Kepala Keluarga Dashboard</div>;
+import TempatZiarah from './pagePendataan/Admin/Paroki/TempatZiarah/Tempatziarah';
+import TambahTempatZiarah from './pagePendataan/Admin/Paroki/TempatZiarah/TambahTempatZiarah/TambahTempatZiarah';
+import Komunitas from './pagePendataan/Admin/Paroki/Komunitas/Komunitas';
+import TambahKomunitas from './pagePendataan/Admin/Paroki/Komunitas/TambahKomunitas/TambahKomunitas';
+import DetailKomunitas from './pagePendataan/Admin/Paroki/Komunitas/DetailKomunitas/DetailKomunitas';
+import EditKomunitas from './pagePendataan/Admin/Paroki/Komunitas/EditKomunitas/EditKomunitas';
+import TambahAnggotaKomunitas from './pagePendataan/Admin/Paroki/Komunitas/DetailKomunitas/TambahAnggotaKomunitas/TambahAnggotaKomunitas';
+import EditAnggotaKomunitas from './pagePendataan/Admin/Paroki/Komunitas/DetailKomunitas/EditAnggotaKomunitas/EditAnggotaKomunitas';
+import EditTempatZiarah from './pagePendataan/Admin/Paroki/TempatZiarah/EditTempatZiarah/EditTempatZiarah';
+import Statistik from './pagePendataan/Admin/Statistik/Statistik';
+import DashboardKepalaKeluarga from './pagePendataan/User/DashboardKepalaKeluarga/DashboardKepalaKeluarga';
+import DataKeluarga from './pagePendataan/User/DataKeluarga/DataKeluarga';
+import TambahDataAnggotaKeluarga from './pagePendataan/User/DataKeluarga/TambahDataAnggotaKeluarga/TambahDataAnggotaKeluarga';
+import EditDataAnggotaKeluarga from './pagePendataan/User/DataKeluarga/EditDataAnggotaKeluarga/EditDataAnggotaKeluarga';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -186,24 +193,82 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         {/* Temporary dashboard components */}
         <Route path="admin/statistik" element={
           <ProtectedRoute requiredRole="admin">
-            <AdminStatistik />
-          </ProtectedRoute>
-        } />
-        <Route path="admin/komunitas-omk" element={
-          <ProtectedRoute requiredRole="admin">
-            <AdminKomunitasOMK />
-          </ProtectedRoute>
-        } />
-        <Route path="admin/tempat-ziarah" element={
-          <ProtectedRoute requiredRole="admin">
-            <AdminTempatZiarah />
+            <Statistik />
           </ProtectedRoute>
         } />
         
+        {/* ===== ROUTES KOMUNITAS ===== */}
+        <Route path="admin/komunitas-omk" element={
+          <ProtectedRoute requiredRole="admin">
+            <Komunitas />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/komunitas-omk/tambah" element={
+          <ProtectedRoute requiredRole="admin">
+            <TambahKomunitas />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/komunitas-omk/detail/:id" element={
+          <ProtectedRoute requiredRole="admin">
+            <DetailKomunitas />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/komunitas-omk/detail/:id/tambah-anggota" element={
+          <ProtectedRoute requiredRole="admin">
+            <TambahAnggotaKomunitas />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/komunitas-omk/edit/:id" element={
+          <ProtectedRoute requiredRole="admin">
+            <EditKomunitas />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/komunitas-omk/detail/:id/edit-anggota/:anggotaId" element={
+          <ProtectedRoute requiredRole="admin">
+            <EditAnggotaKomunitas />
+          </ProtectedRoute>
+        } />
+        {/* ===== ROUTES TEMPAT ZIARAH ===== */}
+        <Route path="admin/tempat-ziarah" element={
+          <ProtectedRoute requiredRole="admin">
+            <TempatZiarah />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/tempat-ziarah/tambah" element={
+          <ProtectedRoute requiredRole="admin">
+            <TambahTempatZiarah />
+          </ProtectedRoute>
+        } />
+        <Route path="admin/tempat-ziarah/edit/:id" element={
+          <ProtectedRoute requiredRole="admin">
+            <EditTempatZiarah />
+          </ProtectedRoute>
+        } />
+
         {/* ===== ROUTES KEPALA KELUARGA ===== */}
         <Route path="kepalaKeluarga/dashboard" element={
           <ProtectedRoute requiredRole="user">
-            <KepalaKeluargaDashboard />
+            <DashboardKepalaKeluarga />
+          </ProtectedRoute>
+        } />
+        <Route path="kepalaKeluarga/data-keluarga" element={
+          <ProtectedRoute requiredRole="user">
+            <DataKeluarga />
+          </ProtectedRoute>
+        } />
+        <Route path="kepalaKeluarga/data-keluarga/tambah" element={
+          <ProtectedRoute requiredRole="user">
+            <TambahDataAnggotaKeluarga />
+          </ProtectedRoute>
+        } />
+        <Route path="kepalaKeluarga/data-keluarga/edit" element={
+          <ProtectedRoute requiredRole="user">
+            <EditDataAnggotaKeluarga />
+          </ProtectedRoute>
+        } />
+        <Route path="kepalaKeluarga/data-keluarga/edit/:memberId" element={
+          <ProtectedRoute requiredRole="user">
+            <EditDataAnggotaKeluarga />
           </ProtectedRoute>
         } />
       </Route>
