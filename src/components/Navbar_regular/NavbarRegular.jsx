@@ -137,7 +137,7 @@ const Navbar_regular = () => {
                 className={`nav-item${isActive ? ' active' : ''}`}
               >
                 {path ? (
-                  <Link to={path} className={isActive ? 'active-nav-link' : ''}>
+                  <Link to={path} className={isActive ? 'nav-link active-nav-link' : 'nav-link'}>
                     {item}
                     {hasDropdown && <FaChevronDown className="dropdown-arrow" />}
                     {isActive && <div className="active-indicator" />}

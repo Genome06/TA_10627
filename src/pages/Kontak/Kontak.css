@@ -166,11 +166,11 @@
 .kontak-info-item h3 {
   font-size: 1.1rem;
   margin-bottom: 5px;
-  color: #333;
+  color: #000000;
 }
 
 .kontak-info-item p {
-  color: #666;
+  color: #000000;
   line-height: 1.5;
   margin: 0;
 }
