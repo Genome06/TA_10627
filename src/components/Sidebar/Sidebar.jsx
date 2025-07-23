@@ -22,7 +22,7 @@ const Sidebar = () => {
 
   // PERBAIKAN: Function untuk mendapatkan user role sesuai struktur localStorage yang sebenarnya
   const getUserRole = () => {
-    // Cek localStorage untuk userRole (sesuai screenshot)
+    // Cek localStorage untuk userRole
     const userRoleFromLocal = localStorage.getItem('userRole');
     if (userRoleFromLocal) {
       return userRoleFromLocal;
