@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import './NavbarRegular.css';
 import { FaSearch, FaTimes, FaChevronDown, FaBars } from 'react-icons/fa';
 import logo from '/assets/logo_2.png';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { SearchContext } from '../../context/SearchContext';
 
 // Data dropdown items
 const dropdownItems = {
@@ -41,7 +42,8 @@ const dropdownItems = {
 const Navbar_regular = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const { searchQuery, setSearchQuery } = useContext(SearchContext);
+  const navigate = useNavigate();
   const searchRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -50,6 +52,25 @@ const Navbar_regular = () => {
   const mobileMenuRef = useRef(null);
   const [isSearchExpandedMobile, setIsSearchExpandedMobile] = useState(false);
   const mobileSearchRef = useRef(null);
+
+  // Simulated searchable items for frontend-only search
+  const searchableItems = [
+    { title: 'Home', path: '/' },
+    ...Object.values(dropdownItems).flat(),
+    { title: 'Login', path: '/login' },
+    { title: 'Berita Harian', path: '/berita-harian' },
+    { title: 'Suara Gembala', path: '/suara-gembala' },
+    { title: 'Tokoh', path: '/tokoh' },
+    { title: 'Konsultasi Iman', path: '/konsultasi-iman' },
+    { title: 'Serba-Serbi', path: '/serba-serbi' },
+    { title: 'Renungan Harian', path: '/renungan-harian' }
+  ];
+
+  const filteredResults = searchQuery
+    ? searchableItems.filter(item =>
+        item.title.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
 
   // Handle dropdown hover
   const handleDropdownHover = (item) => {
@@ -195,6 +216,12 @@ const Navbar_regular = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onFocus={() => setIsSearchExpanded(true)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && searchQuery.trim()) {
+                  navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+                  setIsSearchExpanded(false);
+                }
+              }}
             />
             {isSearchExpanded ? (
               <FaTimes 
@@ -208,6 +235,28 @@ const Navbar_regular = () => {
               <FaSearch className="search-icon" onClick={() => setIsSearchExpanded(true)} />
             )}
           </div>
+          {/* Hasil pencarian simulasi */}
+          {isSearchExpanded && searchQuery && (
+            <div className="search-results">
+              {filteredResults.length > 0 ? (
+                filteredResults.map(item => (
+                  <Link
+                    key={item.title}
+                    to={item.path}
+                    className="search-result-item"
+                    onClick={() => {
+                      setSearchQuery('');
+                      setIsSearchExpanded(false);
+                    }}
+                  >
+                    {item.title}
+                  </Link>
+                ))
+              ) : (
+                <div className="no-results">No results found</div>
+              )}
+            </div>
+          )}
         </div>
         <div className="navbar-icons-container">
           {/* Hamburger Menu Button */}
@@ -287,6 +336,12 @@ const Navbar_regular = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   autoFocus
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && searchQuery.trim()) {
+                      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+                      setIsSearchExpandedMobile(false);
+                    }
+                  }}
                 />
                 <FaTimes 
                   className="search-icon" 
@@ -295,6 +350,28 @@ const Navbar_regular = () => {
                     setIsSearchExpandedMobile(false);
                   }}
                 />
+                {/* Hasil pencarian untuk mobile */}
+                {searchQuery && (
+                  <div className="mobile-search-results">
+                    {filteredResults.length > 0 ? (
+                      filteredResults.map(item => (
+                        <Link
+                          key={item.title}
+                          to={item.path}
+                          className="mobile-search-result-item"
+                          onClick={() => {
+                            setSearchQuery('');
+                            setIsSearchExpandedMobile(false);
+                          }}
+                        >
+                          {item.title}
+                        </Link>
+                      ))
+                    ) : (
+                      <div className="mobile-no-results">No results found</div>
+                    )}
+                  </div>
+                )}
               </div>
             ) : (
               <button 
