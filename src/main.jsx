@@ -40,6 +40,7 @@ import RenunganHarian from '@pages/RenunganHarian/RenunganHarian';
 import DetailRenungan from '@pages/RenunganHarian/Detail/DetailRenungan';
 import BeritaHarian from '@pages/BeritaHarian/BeritaHarian';
 import DetailBeritaHarian from '@pages/BeritaHarian/Detail/DetailBeritaHarian';
+import SearchResults from '@pages/SearchResults/SearchResults';
 
 // Import komponen website pendataan umat
 import Login from './pagePendataan/Login/Login';
@@ -74,6 +75,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Routes>
       {/* ===== ROUTES WEBSITE UTAMA KAK (dengan navbar dan footer) ===== */}
       <Route path="/" element={<App />}>
+        {/* Search Results */}
+        <Route path="search" element={<SearchResults />} />
         {/* Home */}
         <Route index element={<Home />} />
         
