@@ -241,15 +241,12 @@ const DashboardKepalaKeluarga = () => {
             panduan lengkap penggunaan portal kepala keluarga.
           </p>
           <a 
-            href="#" 
+            href="https://studentsuajyac-my.sharepoint.com/:b:/g/personal/200710627_students_uajy_ac_id/Eb81qp5Nms9Nk6E9_YnMYWABys9PKq_8jLzcWb744UTstQ?e=jeSOE0" 
             className="guide-link"
-            onClick={(e) => {
-              e.preventDefault();
-              // Handle guide link click
-              console.log('Opening user guide for kepala keluarga...');
-            }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Lihat panduan penggunaan portal kepala keluarga disini
+            Lihat panduan penggunaan concrega di sini
           </a>
         </div>
       </div>
